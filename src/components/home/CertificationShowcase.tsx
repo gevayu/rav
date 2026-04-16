@@ -38,9 +38,9 @@ export function CertificationShowcase() {
         <Reveal>
           <SectionHeading
             align="center"
-            eyebrow="מערכת הסרטיפיקציה"
+            eyebrow="מדרג ההסמכה"
             title="שלוש דרגות. נתיב אחד."
-            lede="כל קורס מעלה דרגה אחת. מ-AI01 (יסוד) דרך AI05 (מקצועי) ועד AI09 (מאסטר). תעודות מוסדיות ממכללה מפוקחת — עם ערך אמיתי בשוק העבודה."
+            lede="כל קורס מעלה דרגה אחת. מ-AI01 (יסוד) דרך AI05 (מקצועי) ועד AI09 (מאסטר). תעודות מוסדיות ממכללה מפוקחת - עם ערך אמיתי בשוק העבודה."
           />
         </Reveal>
 
@@ -107,7 +107,7 @@ export function CertificationShowcase() {
               מוכר על ידי מכללה מפוקחת משרד העבודה, הביטחון והחינוך
             </div>
             <Button as="a" href="/certification" variant="secondary" size="md">
-              על מערכת הסרטיפיקציה
+              על מדרג ההסמכה
             </Button>
           </div>
         </Reveal>

@@ -31,12 +31,12 @@ export function CatalogHero({ totalCourses, totalSectors }: CatalogHeroProps) {
             כל הקורסים של המרכז.
             <br />
             <span className="text-[color:var(--color-bronze-ink)]">
-              לכל תחום — מסלול אחד שמדבר בשפה שלו.
+              לכל תחום - מסלול אחד שמדבר בשפה שלו.
             </span>
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-ink-muted)]">
-            קורסי AI סקטוריאליים שנבנו על-ידי אנשי מקצוע פעילים — עם דוגמאות
+            קורסי AI סקטוריאליים שנבנו על-ידי אנשי מקצוע פעילים - עם דוגמאות
             מהיומיום שלך, תיק פרויקטים אמיתי, וליווי אישי לאורך כל המחזור.
             בחר את התחום, הרמה והפורמט שמתאימים לך.
           </p>

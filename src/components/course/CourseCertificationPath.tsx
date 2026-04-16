@@ -32,13 +32,13 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
           <div className="flex flex-col gap-4">
             <span className="inline-flex items-center gap-2 self-start text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.8} aria-hidden="true" />
-              סרטיפיקציה
+              מדרג ההסמכה
             </span>
             <h2
               id="cert-path-title"
               className="font-display text-[clamp(2rem,4vw,2.8rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]"
             >
-              מסלול הסרטיפיקציה שלך
+              מסלול ההסמכה שלך
             </h2>
             <p className="max-w-md text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/70">
               {cert.entry
@@ -50,7 +50,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
           <div
             className="flex items-center justify-between gap-3 sm:gap-6"
             role="list"
-            aria-label="שלושת דרגות הסרטיפיקציה"
+            aria-label="שלושת דרגות ההסמכה"
           >
             {CERTIFICATION_ORDER.map((tier, idx) => {
               const active = isActive(tier);

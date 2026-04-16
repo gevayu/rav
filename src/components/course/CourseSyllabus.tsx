@@ -189,7 +189,7 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
                           </div>
                         </div>
                         <p className="mt-3 text-[13px] text-[color:var(--color-ink-muted)]">
-                          צפו בקטע מתוך המפגש — טעימה ממה שמחכה לכם בפנים.
+                          צפו בקטע מתוך המפגש - טעימה ממה שמחכה לכם בפנים.
                         </p>
                       </div>
                     )}

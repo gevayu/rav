@@ -5,7 +5,7 @@ export function CertificationLegend() {
   return (
     <div
       className="mb-8 rounded-[22px] border border-[color:var(--color-ink)]/10 bg-white/60 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-6"
-      aria-label="מערכת הסרטיפיקציה AI01 AI05 AI09"
+      aria-label="מדרג ההסמכה AI01 AI05 AI09"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
         <div className="flex items-start gap-3 sm:max-w-xs">
@@ -16,10 +16,10 @@ export function CertificationLegend() {
           />
           <div className="flex flex-col gap-1">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
-              מערכת הסרטיפיקציה
+              מדרג ההסמכה
             </p>
             <p className="text-[13px] leading-relaxed text-[color:var(--color-ink-muted)]">
-              שלוש דרגות — כל קורס מעלה דרגה אחת לפי רמת העומק שלו.
+              שלוש דרגות - כל קורס מעלה דרגה אחת לפי רמת העומק שלו.
             </p>
           </div>
         </div>

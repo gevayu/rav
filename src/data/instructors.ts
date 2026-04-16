@@ -10,7 +10,7 @@ export type Instructor = {
 const p = (gender: "men" | "women", id: number) =>
   `https://randomuser.me/api/portraits/${gender}/${id}.jpg`;
 
-// Hero grid — 40 instructor portraits, tiled and layered.
+// Hero grid - 40 instructor portraits, tiled and layered.
 export const heroGridInstructors = [
   ...Array.from({ length: 20 }, (_, i) => ({
     id: `hero-m-${i}`,
@@ -22,7 +22,7 @@ export const heroGridInstructors = [
   })),
 ];
 
-// Featured champions — curated, diverse, with real micro-bio.
+// Featured champions - curated, diverse, with real micro-bio.
 export const champions: Instructor[] = [
   {
     id: "c1",

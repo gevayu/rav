@@ -24,7 +24,7 @@ export function CertHero() {
           <div className="flex flex-col items-center gap-8">
             <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.8} />
-              מערכת הסרטיפיקציה
+              מדרג ההסמכה
             </span>
 
             <h1 className="font-display text-[clamp(2.5rem,5.5vw,4.5rem)] font-medium leading-[1.02] tracking-tight text-[color:var(--color-paper-soft)]">
@@ -32,7 +32,7 @@ export function CertHero() {
             </h1>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/70">
-              שלוש רמות סרטיפיקציה — AI01, AI05, AI09 — שמסמנות בדיוק מה אתה יודע
+              שלוש רמות הסמכה - AI01, AI05, AI09 - שמסמנות בדיוק מה אתה יודע
               לעשות עם AI בתחום שלך. תעודות ממכללה מפוקחת, עם תוכנית חידוש שנתית
               שמבטיחה שהדרגה שלך תמיד רלוונטית.
             </p>
@@ -40,7 +40,7 @@ export function CertHero() {
             <div
               className="mt-4 flex items-center justify-center gap-3 sm:gap-5"
               role="list"
-              aria-label="שלוש דרגות הסרטיפיקציה"
+              aria-label="שלוש דרגות ההסמכה"
             >
               {CERTIFICATION_ORDER.map((tier, idx) => {
                 const { label, name } = CERTIFICATION_TIERS[tier];

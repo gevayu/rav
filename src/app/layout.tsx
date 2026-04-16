@@ -19,7 +19,7 @@ const polin = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ai.rav-thumi.co.il"),
   title: {
-    default: "המרכז הרב-תחומי להכשרות Ai | השלב הבא של AI — התמקצעות",
+    default: "המרכז הרב-תחומי להכשרות Ai | השלב הבא של AI - התמקצעות",
     template: "%s | המרכז הרב-תחומי להכשרות Ai",
   },
   description:

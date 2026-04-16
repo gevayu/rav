@@ -12,7 +12,7 @@ const cards = [
     benefits: [
       "קורסים שמעבירים עצמאיים ושותפים-בכירים מהתחום שלך",
       "מסלולי תשלומים גמישים ואפשרות מענק ממשרד העבודה",
-      "כל השיעורים מוקלטים, למד בקצב שלך — בלי לבטל פגישות",
+      "כל השיעורים מוקלטים, למד בקצב שלך - בלי לבטל פגישות",
     ],
     cta: "לעמוד לפרילאנסרים",
     href: "/solo",
@@ -50,7 +50,7 @@ export function AudienceRouter() {
             id="audience-title"
             className="max-w-2xl font-display text-[clamp(1.75rem,3.6vw,2.6rem)] font-medium leading-[1.1] text-[color:var(--color-paper-soft)]"
           >
-            מי שואל את השאלה משנה את התשובה
+            עצמאים או חברה גדולה?<br />יש לנו פתרונות לכולם
           </h2>
           <p className="max-w-xl text-base leading-relaxed text-[color:var(--color-paper-soft)]/65">
             פרילאנסר ומנהל ארגון מחפשים דברים שונים. בחר את המסלול שלך ונראה לך

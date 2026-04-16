@@ -15,9 +15,6 @@ const columns: { title: string; links: FooterLink[] }[] = [
       "יצירת תוכן",
       "מכירות",
       "פיתוח תוכנה",
-      "ניהול מידע",
-      "IT וסייבר",
-      "תשתיות ודבאופס",
     ].map((s) => ({ label: s, href: "#" })),
   },
   {
@@ -25,7 +22,7 @@ const columns: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "דף הבית", href: "/" },
       { label: "קורסים", href: "/courses" },
-      { label: "סרטיפיקציה", href: "/certification" },
+      { label: "מדרג ההסמכה", href: "/certification" },
       { label: "למסלול פרילאנסרים", href: "/solo" },
       { label: "למסלול ארגוני", href: "/business" },
       { label: "המומחים", href: "/#champions" },
@@ -121,17 +118,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex items-center justify-center gap-3 rounded-[16px] border border-[color:var(--color-bronze)]/20 bg-[color:var(--color-bronze)]/[0.04] px-6 py-4">
-          <ShieldCheck className="h-4 w-4 shrink-0 text-[color:var(--color-bronze)]" strokeWidth={1.6} />
-          <p className="text-[12px] leading-relaxed text-[color:var(--color-paper-soft)]/60">
-            מכללה מפוקחת משרד העבודה, הביטחון והחינוך ·{" "}
-            <a href="/certification" className="text-[color:var(--color-bronze)] transition-colors hover:text-[color:var(--color-bronze-deep)]">
-              מערכת סרטיפיקציה AI01 / AI05 / AI09
-            </a>
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-[11px] text-[color:var(--color-paper-soft)]/45 sm:flex-row sm:items-center">
+        <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-[11px] text-[color:var(--color-paper-soft)]/45 sm:flex-row sm:items-center">
           <span>© 2026 המרכז הרב-תחומי להכשרות Ai. כל הזכויות שמורות.</span>
           <div className="flex items-center gap-5">
             <a href="#" className="transition-colors hover:text-[color:var(--color-paper-soft)]">

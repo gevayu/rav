@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 const navItems = [
   { label: "קורסים", href: "/courses" },
-  { label: "סרטיפיקציה", href: "/certification" },
+  { label: "מדרג ההסמכה", href: "/certification" },
   { label: "לעצמאיים", href: "/solo" },
   { label: "לארגונים", href: "/business" },
   { label: "המומחים", href: "/#champions" },
@@ -48,7 +48,7 @@ export function Header() {
               : "border-white/10 bg-white/5 backdrop-blur-md")
           }
         >
-          <a href="#top" className="flex items-center gap-3 rounded-full py-1 pr-1">
+          <a href="/" className="flex items-center gap-3 rounded-full py-1 pr-1">
             <Logo tone="bronze" />
             <span className="hidden flex-col leading-tight sm:flex">
               <span className="font-display text-[15px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">

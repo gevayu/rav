@@ -11,13 +11,13 @@ import { CertOrganizations } from "@/components/certification/CertOrganizations"
 import { CertFaq } from "@/components/certification/CertFaq";
 
 export const metadata: Metadata = {
-  title: "מערכת הסרטיפיקציה AI01 / AI05 / AI09 | המרכז הרב-תחומי להכשרות Ai",
+  title: "מדרג ההסמכה AI01 / AI05 / AI09 | המרכז הרב-תחומי להכשרות Ai",
   description:
-    "שלוש דרגות סרטיפיקציה ממכללה מפוקחת — AI01 יסוד, AI05 מקצועי, AI09 מאסטר. תעודות שמסמנות יכולות אמיתיות בשוק העבודה.",
+    "שלוש דרגות מדרג ההסמכה ממכללה מפוקחת - AI01 יסוד, AI05 מקצועי, AI09 מאסטר. תעודות שמסמנות יכולות אמיתיות בשוק העבודה.",
   openGraph: {
-    title: "מערכת הסרטיפיקציה | המרכז הרב-תחומי להכשרות Ai",
+    title: "מדרג ההסמכה | המרכז הרב-תחומי להכשרות Ai",
     description:
-      "שלוש דרגות סרטיפיקציה — AI01, AI05, AI09. תעודות ממכללה מפוקחת עם תוכנית חידוש שנתית.",
+      "שלוש דרגות מדרג ההסמכה - AI01, AI05, AI09. תעודות ממכללה מפוקחת עם תוכנית חידוש שנתית.",
     locale: "he_IL",
     type: "website",
   },

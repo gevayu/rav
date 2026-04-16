@@ -23,7 +23,7 @@ export function SocialProofBar() {
             העוצמה במספרים
           </span>
           <h2 className="max-w-2xl font-display text-[clamp(1.75rem,3.4vw,2.5rem)] font-medium leading-[1.1] text-[color:var(--color-ink)]">
-            חמש שנים. 4,500 בוגרים. תוצאות מדידות.
+            חמש שנים. 4,500 בוגרים.<br />תוצאות מדידות.
           </h2>
         </Reveal>
 
