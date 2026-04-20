@@ -8,7 +8,7 @@ const cards = [
     image: "/images/audience-solo.jpg",
     title: "עובד לבד. מתחרה מול גדולים.",
     subtitle:
-      "AI הוא היתרון שיאפשר לך להציע שירות ברמה של משרד עם 30 עובדים, בלי להפסיק להיות עצמאי.",
+      "Ai הוא היתרון שיאפשר לך להציע שירות ברמה של משרד עם 30 עובדים, בלי להפסיק להיות עצמאי.",
     benefits: [
       "קורסים שמעבירים עצמאיים ושותפים-בכירים מהתחום שלך",
       "מסלולי תשלומים גמישים ואפשרות מענק ממשרד העבודה",
@@ -107,7 +107,7 @@ export function AudienceRouter() {
                   </ul>
 
                   <div className="mt-auto pt-4">
-                    <span className="inline-flex h-12 items-center justify-center gap-3 rounded-full border border-[color:var(--color-bronze)]/55 px-6 text-[14px] font-medium text-[color:var(--color-bronze)] transition-all duration-300 group-hover:border-[color:var(--color-signal)] group-hover:bg-[color:var(--color-signal)] group-hover:text-white group-hover:shadow-[0_12px_32px_-12px_rgba(232,16,44,0.5)]">
+                    <span className="inline-flex h-12 items-center justify-center gap-3 rounded-full border border-[#2563eb] bg-[#2563eb] px-6 text-[14px] font-medium text-white transition-all duration-300 group-hover:bg-[#1e3a8a] group-hover:border-[#1e3a8a] group-hover:shadow-[0_12px_32px_-12px_rgba(37,99,235,0.5)]">
                       {card.cta}
                     </span>
                   </div>

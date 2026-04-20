@@ -36,7 +36,7 @@ export function CatalogHero({ totalCourses, totalSectors }: CatalogHeroProps) {
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-ink-muted)]">
-            קורסי AI סקטוריאליים שנבנו על-ידי אנשי מקצוע פעילים - עם דוגמאות
+            קורסי Ai סקטוריאליים שנבנו על-ידי אנשי מקצוע פעילים - עם דוגמאות
             מהיומיום שלך, תיק פרויקטים אמיתי, וליווי אישי לאורך כל המחזור.
             בחר את התחום, הרמה והפורמט שמתאימים לך.
           </p>

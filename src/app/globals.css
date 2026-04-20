@@ -11,8 +11,21 @@
   --color-bronze: #e5b89b;
   --color-bronze-deep: #c89a7c;
   --color-bronze-ink: #8a5d41;
-  --color-signal: #e8102c;
-  --color-signal-deep: #a00d24;
+  --color-signal: #059669;
+  --color-signal-deep: #064e3b;
+
+  /* Certification tier greens — solid fills */
+  --color-tier-01-bg:     #88efad;  /* Ai01 light green */
+  --color-tier-01-border: #22c55e;  /* green-500 — Ai01 border */
+  --color-tier-01-ink:    #14532d;  /* green-950 — Ai01 text */
+
+  --color-tier-05-bg:     #15803d;  /* green-700 — Ai05 medium-dark bg */
+  --color-tier-05-border: #166534;  /* green-800 — Ai05 border */
+  --color-tier-05-ink:    #f0fdf4;  /* green-50 — Ai05 text */
+
+  --color-tier-09-bg:     #14532d;  /* green-900 — Ai09 dark bg */
+  --color-tier-09-border: #052e16;  /* green-950 — Ai09 border */
+  --color-tier-09-ink:    #dcfce7;  /* green-100 — Ai09 text */
 
   --font-display: system-ui, sans-serif;
   --font-sans: system-ui, sans-serif;

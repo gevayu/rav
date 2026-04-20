@@ -1,11 +1,11 @@
 import { ShieldCheck } from "lucide-react";
-import { CERTIFICATION_ORDER, CERTIFICATION_TIERS } from "./labels";
+import { CERTIFICATION_ORDER, CERTIFICATION_TIERS, TIER_COLORS } from "./labels";
 
 export function CertificationLegend() {
   return (
     <div
       className="mb-8 rounded-[22px] border border-[color:var(--color-ink)]/10 bg-white/60 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-6"
-      aria-label="מדרג ההסמכה AI01 AI05 AI09"
+      aria-label="מדרג ההסמכה Ai01 Ai05 Ai10"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
         <div className="flex items-start gap-3 sm:max-w-xs">
@@ -30,7 +30,7 @@ export function CertificationLegend() {
             return (
               <div key={tier} className="flex items-center gap-2 sm:gap-3" role="listitem">
                 <div className="flex flex-col items-center gap-1">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--color-bronze)]/45 bg-[color:var(--color-bronze)]/10 text-[12px] font-medium tracking-[0.06em] text-[color:var(--color-bronze-ink)]">
+                  <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[12px] font-medium tracking-[0.06em] ${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`}>
                     {label}
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-muted)]/80">

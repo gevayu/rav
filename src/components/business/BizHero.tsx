@@ -15,7 +15,7 @@ export function BizHero() {
         </span>
 
         <h1 className="font-display text-[clamp(2.2rem,5.2vw,4rem)] font-medium leading-[0.95] tracking-tight text-[color:var(--color-paper-soft)]">
-          העובדים שלך כבר משתמשים ב-AI.
+          העובדים שלך כבר משתמשים ב-Ai.
           <br />
           <span className="text-[color:var(--color-bronze)]">
             השאלה היחידה: איך.
@@ -23,7 +23,7 @@ export function BizHero() {
         </h1>
 
         <p className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/70">
-          50 עובדים, 50 גישות שונות ל-AI. הכשרה מובנית אחת מסדרת את זה.
+          50 עובדים, 50 גישות שונות ל-Ai. הכשרה מובנית אחת מסדרת את זה.
         </p>
 
         <p className="max-w-2xl text-base leading-relaxed text-[color:var(--color-paper-soft)]/55">

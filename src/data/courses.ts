@@ -26,7 +26,7 @@ export type PreCourseBlock = {
   topics: string[];
 };
 
-export type CertificationTier = "AI01" | "AI05" | "AI09";
+export type CertificationTier = "Ai01" | "Ai05" | "Ai10";
 
 export type CourseAxes = {
   ai: string[];
@@ -83,7 +83,7 @@ export const courses: Course[] = [
     sectorSlug: "law",
     title: "יישומי בינה מלאכותית בעריכת דין",
     subtitle:
-      "מהבנה מעשית של כלי AI ועד הטמעה בעבודה המשפטית - מחקר, חוזים, ליטיגציה וניהול ידע.",
+      "מהבנה מעשית של כלי Ai ועד הטמעה בעבודה המשפטית - מחקר, חוזים, ליטיגציה וניהול ידע.",
     level: "advanced",
     format: "live",
     durationWeeks: 10,
@@ -97,32 +97,32 @@ export const courses: Course[] = [
     instructorPortraitUrl: "/images/instructor-sarah-tsarfati.jpg",
     highlights: [
       "10 מפגשי לייב בהעברת עו״ד שרה צרפתי כהן",
-      "מכינה (Pre-Course) כלולה - למי שאין רקע ב-AI",
+      "מכינה (Pre-Course) כלולה - למי שאין רקע ב-Ai",
       "4 צירי עבודה: מחקר, חוזים, ליטיגציה וניהול ידע",
       "פרויקט מסכם אישי + הצגה בפני הכיתה",
     ],
     isFlagship: true,
     overview:
-      "המקצוע המשפטי עובר שינוי עומק - כלי AI מאפשרים היום לעורכת דין לצמצם שעות מחקר, לנסח חוזים בגרסה ראשונה תוך דקות, להכין תיקי ליטיגציה עם ניתוח תרחישים רב-שכבתי ולנהל ידע ארגוני באופן חכם. הקורס הזה הוא לא מבוא כללי ל-AI - אלא מסלול יישומי בן 10 מפגשים שבסופו תצאי עם מתודולוגיית עבודה מבוססת, תבניות מוכנות לשימוש ואסטרטגיית הטמעה למשרד שלך. הקורס פתוח לעורכי דין מכל רמות הניסיון. מי שלא עבד עם כלי AI בעבר מקבל מכינה (Pre-Course) שמיישרת את הבסיס לפני המפגש הראשון.",
+      "המקצוע המשפטי עובר שינוי עומק - כלי Ai מאפשרים היום לעורכת דין לצמצם שעות מחקר, לנסח חוזים בגרסה ראשונה תוך דקות, להכין תיקי ליטיגציה עם ניתוח תרחישים רב-שכבתי ולנהל ידע ארגוני באופן חכם. הקורס הזה הוא לא מבוא כללי ל-Ai - אלא מסלול יישומי בן 10 מפגשים שבסופו תצאי עם מתודולוגיית עבודה מבוססת, תבניות מוכנות לשימוש ואסטרטגיית הטמעה למשרד שלך. הקורס פתוח לעורכי דין מכל רמות הניסיון. מי שלא עבד עם כלי Ai בעבר מקבל מכינה (Pre-Course) שמיישרת את הבסיס לפני המפגש הראשון.",
     sampleVideoModuleId: "mod-7",
     whatYouLearn: [
       { text: "הנדסת פרומפטים משפטיים מתקדמים לעבודה עם מסמכים מורכבים", saving: "~3 שעות/שבוע" },
       { text: "בניית תהליך מחקר משפטי חכם - פסיקה, חקיקה והשוואת מקורות", saving: "~5 שעות/תיק" },
-      { text: "ניסוח חוזים, זיהוי סיכונים והתאמה ללקוח עם כלי AI", saving: "~4 שעות/חוזה" },
+      { text: "ניסוח חוזים, זיהוי סיכונים והתאמה ללקוח עם כלי Ai", saving: "~4 שעות/חוזה" },
       { text: "הכנת תיקי ליטיגציה: טיעונים, סימולציות חקירה וניתוח תרחישים", saving: "~6 שעות/תיק" },
       { text: "ארגון מסמכים ובניית מאגרי ידע חכמים למשרד", saving: "~₪8,000/שנה" },
-      { text: "אוטומציה של תהליכים משפטיים וסוכני AI ייעודיים", saving: "~10 שעות/שבוע" },
-      { text: "אסטרטגיית AI למשרד - ROI, שינוי תהליכים והתנעת פרויקט אישי", saving: "~₪120,000/שנה" },
+      { text: "אוטומציה של תהליכים משפטיים וסוכני Ai ייעודיים", saving: "~10 שעות/שבוע" },
+      { text: "אסטרטגיית Ai למשרד - ROI, שינוי תהליכים והתנעת פרויקט אישי", saving: "~₪120,000/שנה" },
     ],
     targetAudience: [
       "עורכי דין במשרדים פרטיים - משותפים ועד מתמחים",
       "פרקליטים במחלקות משפטיות פנימיות בחברות",
-      "עו״ד שרוצים להוביל את הטמעת ה-AI במשרד שלהם",
+      "עו״ד שרוצים להוביל את הטמעת ה-Ai במשרד שלהם",
       "יועצים משפטיים וסגני יועמ״ש בארגונים ציבוריים",
     ],
     prerequisites: [
       "רישיון עריכת דין פעיל או תעודת סיום של הפקולטה למשפטים",
-      "אין צורך בניסיון קודם ב-AI - המכינה מיישרת את הבסיס",
+      "אין צורך בניסיון קודם ב-Ai - המכינה מיישרת את הבסיס",
     ],
     tools: [
       "ChatGPT",
@@ -135,7 +135,7 @@ export const courses: Course[] = [
     preCourse: {
       title: "מכינה (Pre-Course)",
       topics: [
-        "היכרות בסיסית עם כלי AI המובילים בשוק",
+        "היכרות בסיסית עם כלי Ai המובילים בשוק",
         "עקרונות עבודה בסיסיים ומושגי יסוד",
         "הבדלים מעשיים בין הכלים - מתי משתמשים במה",
         "תרגיל מקדים - פרומפט ראשון בהקשר משפטי",
@@ -144,7 +144,7 @@ export const courses: Course[] = [
     axes: {
       ai: [
         "הנדסת פרומפטים מתקדמת",
-        "סוכני AI ומתודולוגיות עבודה",
+        "סוכני Ai ומתודולוגיות עבודה",
         "אוטומציה וזרימות עבודה",
         "זיהוי ומניעת הזיות מודל",
       ],
@@ -155,9 +155,9 @@ export const courses: Course[] = [
         "ניהול ידע משפטי וארגון מסמכים",
       ],
       general: [
-        "אסטרטגיית AI למשרד - תכנון והטמעה",
+        "אסטרטגיית Ai למשרד - תכנון והטמעה",
         "ROI ושינוי תהליכי עבודה",
-        "עבודה בצוות עם כלי AI",
+        "עבודה בצוות עם כלי Ai",
         "התנעת פרויקט פנים-ארגוני",
       ],
     },
@@ -169,9 +169,9 @@ export const courses: Course[] = [
         sessions: 1,
         topics: [
           "היכרות עם המשתתפים והמרצה",
-          "מגמות AI בשוק המשפטי הישראלי והעולמי",
+          "מגמות Ai בשוק המשפטי הישראלי והעולמי",
           "הפער בין שימוש בסיסי ליישום מקצועי",
-          "דוגמאות ממשרדים שהטמיעו AI בהצלחה",
+          "דוגמאות ממשרדים שהטמיעו Ai בהצלחה",
         ],
       },
       {
@@ -183,7 +183,7 @@ export const courses: Course[] = [
           "עקרונות פרומפטים משפטיים",
           "עבודה עם מסמכים מורכבים",
           "תבניות פרומפט לעבודה שוטפת",
-          "סוכני AI במשפט",
+          "סוכני Ai במשפט",
         ],
       },
       {
@@ -192,7 +192,7 @@ export const courses: Course[] = [
         durationHours: 4,
         sessions: 1,
         topics: [
-          "שימוש ב-AI לאיתור פסיקה וחקיקה",
+          "שימוש ב-Ai לאיתור פסיקה וחקיקה",
           "השוואת מקורות וניתוח הפסיקה",
           "תהליך מחקר חכם מא׳ ועד ת׳",
           "הכנת דוח מחקר מלא",
@@ -204,7 +204,7 @@ export const courses: Course[] = [
         durationHours: 4,
         sessions: 1,
         topics: [
-          "יצירת חוזים עם AI",
+          "יצירת חוזים עם Ai",
           "זיהוי סיכונים בחוזה קיים",
           "התאמת חוזה ללקוח ולעסקה",
           "ניהול גרסאות ושבלונות",
@@ -242,20 +242,20 @@ export const courses: Course[] = [
         topics: [
           "תהליכים אוטומטיים במשרד",
           "שילוב עם כלים קיימים",
-          "סוכני AI ייעודיים",
+          "סוכני Ai ייעודיים",
           "בניית אוטומציות בסיסיות",
         ],
       },
       {
         id: "mod-8",
-        title: "מתודולוגיות עבודה עם AI",
+        title: "מתודולוגיות עבודה עם Ai",
         durationHours: 4,
         sessions: 1,
         topics: [
           "מהראש לפרקטיקה - העברת רעיון ליישום",
           "המרדף אחר הידע",
           "המהפכה הטקסטואלית במשפט",
-          "שפת AI למקצוע המשפטי",
+          "שפת Ai למקצוע המשפטי",
         ],
       },
       {
@@ -264,7 +264,7 @@ export const courses: Course[] = [
         durationHours: 4,
         sessions: 1,
         topics: [
-          "אסטרטגיית AI למשרד",
+          "אסטרטגיית Ai למשרד",
           "שינוי תהליכי עבודה",
           "מדידת ROI",
           "התנעת פרויקט אישי",
@@ -284,10 +284,10 @@ export const courses: Course[] = [
       },
     ],
     instructorBio:
-      "עו״ד שרה צרפתי כהן מלווה משרדי עורכי דין ויחידות משפטיות בהטמעת כלי AI. בפרקטיקה היומיומית שלה היא בונה תהליכי עבודה שעורכי דין באמת משתמשים בהם, ומפתחת שיטות לשילוב הכלים בצורה בטוחה.\n\nשרה מרצה בפורומים מקצועיים ומפרסמת תוכן על AI במשפט. היא מביאה לקורס ניסיון מעשי מהשטח, מעבר לתיאוריה.",
+      "עו״ד שרה צרפתי כהן מלווה משרדי עורכי דין ויחידות משפטיות בהטמעת כלי Ai. בפרקטיקה היומיומית שלה היא בונה תהליכי עבודה שעורכי דין באמת משתמשים בהם, ומפתחת שיטות לשילוב הכלים בצורה בטוחה.\n\nשרה מרצה בפורומים מקצועיים ומפרסמת תוכן על Ai במשפט. היא מביאה לקורס ניסיון מעשי מהשטח, מעבר לתיאוריה.",
     faq: [
       {
-        q: "מה אם אין לי רקע ב-AI?",
+        q: "מה אם אין לי רקע ב-Ai?",
         a: "המכינה (Pre-Course) כלולה בקורס ונועדה בדיוק בשביל זה. בין ההרשמה למפגש הראשון תקבלו גישה לחומר יסודי - הכרות עם הכלים, מושגי בסיס ותרגיל מעשי - כך שתגיעו מוכנים. אין צורך בניסיון מוקדם.",
       },
       {
@@ -304,7 +304,7 @@ export const courses: Course[] = [
       },
       {
         q: "האם יש ליווי לאחר סיום הקורס?",
-        a: "בוגרי הקורס מקבלים גישה לקהילת הבוגרים, עדכוני תוכן כשמשתחררים כלים חדשים, וגישה מוקדמת לקורסי ההמשך ברמת AI09.",
+        a: "בוגרי הקורס מקבלים גישה לקהילת הבוגרים, עדכוני תוכן כשמשתחררים כלים חדשים, וגישה מוקדמת לקורסי ההמשך ברמת Ai10.",
       },
     ],
   },
@@ -312,7 +312,7 @@ export const courses: Course[] = [
     id: "c-law-2",
     slug: "ai-legal-research",
     sectorSlug: "law",
-    title: "מחקר משפטי בעזרת AI",
+    title: "מחקר משפטי בעזרת Ai",
     subtitle:
       "איך לנסח prompts משפטיים מדויקים, לבצע ניתוח פסיקה רב-מקורי ולחסוך שעות בהכנת תיק.",
     level: "foundation",
@@ -336,7 +336,7 @@ export const courses: Course[] = [
     id: "c-acc-1",
     slug: "ai-closing-automation",
     sectorSlug: "accounting",
-    title: "אוטומציית סגירות חודשיות עם סוכני AI",
+    title: "אוטומציית סגירות חודשיות עם סוכני Ai",
     subtitle:
       "איך להעביר את סגירת החודש משבוע עבודה לעשר שעות, תוך שמירה על סטנדרט ביקורת.",
     level: "advanced",
@@ -359,7 +359,7 @@ export const courses: Course[] = [
     id: "c-acc-2",
     slug: "ai-audit-foundations",
     sectorSlug: "accounting",
-    title: "יסודות AI לביקורת",
+    title: "יסודות Ai לביקורת",
     subtitle:
       "קורס מבוא למבקרי פנים וחוץ - איזה כלים להכניס לפלואו הביקורת ומתי האנוש חייב להישאר במשוואה.",
     level: "foundation",
@@ -373,7 +373,7 @@ export const courses: Course[] = [
     instructorName: nameFor("accounting"),
     instructorPortraitUrl: portraitFor("accounting"),
     highlights: [
-      "מפת כלי AI לביקורת ב-2026",
+      "מפת כלי Ai לביקורת ב-2026",
       "ניהול סיכונים אתיים ורגולטוריים",
       "מתודולוגיה לאימוץ הדרגתי בצוות",
     ],
@@ -383,7 +383,7 @@ export const courses: Course[] = [
     id: "c-med-1",
     slug: "ai-clinical-docs",
     sectorSlug: "medicine",
-    title: "תיעוד קליני חכם עם AI",
+    title: "תיעוד קליני חכם עם Ai",
     subtitle:
       "איך לצמצם 70% מזמן כתיבת סיכומי הביקור מבלי לפגוע בקשר האישי עם המטופל.",
     level: "foundation",
@@ -420,7 +420,7 @@ export const courses: Course[] = [
     instructorName: nameFor("medicine"),
     instructorPortraitUrl: portraitFor("medicine"),
     highlights: [
-      "ניתוח מקרה רב-תחומי עם AI",
+      "ניתוח מקרה רב-תחומי עם Ai",
       "הפחתת שגיאות אבחון",
       "אתיקה רפואית ועבודה מול רגולציה",
     ],
@@ -430,7 +430,7 @@ export const courses: Course[] = [
     id: "c-re-1",
     slug: "ai-realestate-analysis",
     sectorSlug: "realestate",
-    title: "AI לאנליזת עסקאות נדל״ן",
+    title: "Ai לאנליזת עסקאות נדל״ן",
     subtitle:
       "מודלים לחיזוי שווי, ניתוח שוק וסקירת פרויקטים - מה שקופץ מאקסל לפלטפורמת החלטה.",
     level: "advanced",
@@ -454,7 +454,7 @@ export const courses: Course[] = [
     id: "c-eng-1",
     slug: "ai-structural-engineering",
     sectorSlug: "engineering",
-    title: "AI בתכנון הנדסי מתקדם",
+    title: "Ai בתכנון הנדסי מתקדם",
     subtitle:
       "אינטגרציה של כלי סימולציה חכמים עם BIM ותכנון סטרוקטורלי - מהכיתה לפרויקט רב-קומות.",
     level: "mastery",
@@ -478,7 +478,7 @@ export const courses: Course[] = [
     id: "c-content-1",
     slug: "ai-content-studio",
     sectorSlug: "content",
-    title: "סטודיו תוכן עם AI",
+    title: "סטודיו תוכן עם Ai",
     subtitle:
       "זרימת יצירה מלאה - מקריאייטיב לעריכת וידאו - שמכפילה פי 4 את קצב ההפקה של צוותים קטנים.",
     level: "advanced",
@@ -501,9 +501,9 @@ export const courses: Course[] = [
     id: "c-content-2",
     slug: "ai-copy-foundations",
     sectorSlug: "content",
-    title: "יסודות קופירייטינג עם AI",
+    title: "יסודות קופירייטינג עם Ai",
     subtitle:
-      "איך לכתוב טקסט שיווקי, עמודי נחיתה ופוסטים ברמה מקצועית, בלי ליפול לסגנון AI גנרי.",
+      "איך לכתוב טקסט שיווקי, עמודי נחיתה ופוסטים ברמה מקצועית, בלי ליפול לסגנון Ai גנרי.",
     level: "foundation",
     format: "self-paced",
     durationWeeks: 6,
@@ -525,7 +525,7 @@ export const courses: Course[] = [
     id: "c-sales-1",
     slug: "ai-sales-enablement",
     sectorSlug: "sales",
-    title: "AI לצוותי מכירות B2B",
+    title: "Ai לצוותי מכירות B2B",
     subtitle:
       "מחקר ליד, תסריטי שיחה דינמיים, חיזוי סגירות - כלי עבודה יומיומיים לסוכן ולמנהל.",
     level: "advanced",
@@ -549,7 +549,7 @@ export const courses: Course[] = [
     id: "c-sw-1",
     slug: "ai-engineering-agents",
     sectorSlug: "engineering-soft",
-    title: "בניית סוכני AI לפיתוח תוכנה",
+    title: "בניית סוכני Ai לפיתוח תוכנה",
     subtitle:
       "מהסרט עם Copilot אל סוכנים אוטונומיים לקוד ריוויו, רפקטורינג ותחזוקת מערכת.",
     level: "mastery",
@@ -574,7 +574,7 @@ export const courses: Course[] = [
     sectorSlug: "engineering-soft",
     title: "Prompt Engineering למפתחים",
     subtitle:
-      "הנדסת prompts מקצועית לשילוב AI במוצר - לא כצעצוע אלא כרכיב פרודקשן.",
+      "הנדסת prompts מקצועית לשילוב Ai במוצר - לא כצעצוע אלא כרכיב פרודקשן.",
     level: "foundation",
     format: "self-paced",
     durationWeeks: 6,
@@ -596,7 +596,7 @@ export const courses: Course[] = [
     id: "c-data-1",
     slug: "ai-data-insights",
     sectorSlug: "data",
-    title: "AI לניתוח נתונים ו-BI",
+    title: "Ai לניתוח נתונים ו-BI",
     subtitle:
       "מעבר מדשבורדים סטטיים לדוחות שנכתבים בשפה טבעית ומודלים לחיזוי עסקי.",
     level: "advanced",
@@ -620,7 +620,7 @@ export const courses: Course[] = [
     id: "c-cyber-1",
     slug: "ai-cyber-defense",
     sectorSlug: "cyber",
-    title: "AI בהגנת סייבר",
+    title: "Ai בהגנת סייבר",
     subtitle:
       "זיהוי איומים, ניתוח לוגים וכתיבת playbooks - מהמעבדה למרכזי SOC של אמת.",
     level: "advanced",
@@ -643,9 +643,9 @@ export const courses: Course[] = [
     id: "c-cyber-2",
     slug: "ai-cyber-foundations",
     sectorSlug: "cyber",
-    title: "יסודות AI ל-IT ואבטחת מידע",
+    title: "יסודות Ai ל-IT ואבטחת מידע",
     subtitle:
-      "קורס מבוא לאנשי IT - איך לאמץ AI בלי להעמיס על הארגון סיכונים חדשים.",
+      "קורס מבוא לאנשי IT - איך לאמץ Ai בלי להעמיס על הארגון סיכונים חדשים.",
     level: "foundation",
     format: "self-paced",
     durationWeeks: 6,
@@ -657,7 +657,7 @@ export const courses: Course[] = [
     instructorName: nameFor("cyber"),
     instructorPortraitUrl: portraitFor("cyber"),
     highlights: [
-      "מודלים של איום לאימוץ AI",
+      "מודלים של איום לאימוץ Ai",
       "מדיניות שימוש ארגונית",
       "פיקוח וניהול סיכונים",
     ],
@@ -667,7 +667,7 @@ export const courses: Course[] = [
     id: "c-devops-1",
     slug: "ai-devops-pipelines",
     sectorSlug: "devops",
-    title: "AI ב-DevOps ו-Cloud Infrastructure",
+    title: "Ai ב-DevOps ו-Cloud Infrastructure",
     subtitle:
       "אוטומציית pipelines, observability חכם וניהול עלויות ענן עם סוכנים.",
     level: "advanced",
@@ -681,8 +681,8 @@ export const courses: Course[] = [
     instructorName: nameFor("devops"),
     instructorPortraitUrl: portraitFor("devops"),
     highlights: [
-      "AIOps לאינצידנטים אוטומטיים",
-      "אופטימיזציית FinOps עם AI",
+      "AiOps לאינצידנטים אוטומטיים",
+      "אופטימיזציית FinOps עם Ai",
       "Self-healing infrastructure",
     ],
   },

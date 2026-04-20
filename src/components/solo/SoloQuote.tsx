@@ -29,7 +29,7 @@ export function SoloQuote() {
                 עו&quot;ד אמיר לוי
               </span>
               <span className="text-[13px] text-[color:var(--color-ink-muted)]">
-                עצמאי, תל אביב | בוגר AI למשפטים 2024
+                עצמאי, תל אביב | בוגר Ai למשפטים 2024
               </span>
             </div>
           </div>

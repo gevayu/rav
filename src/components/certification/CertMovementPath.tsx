@@ -1,25 +1,23 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ShieldCheck, ArrowLeft } from "lucide-react";
+import { TIER_COLORS } from "@/components/courses/labels";
 
 const steps = [
   {
-    tier: "AI01",
+    tier: "Ai01" as const,
     name: "יסוד",
     desc: "מכינה או קורס מבוא. 6-10 שעות של עקרונות וכלים ראשוניים.",
-    color: "border-[color:var(--color-signal)]/40 bg-[color:var(--color-signal)]/10 text-[color:var(--color-signal)]",
   },
   {
-    tier: "AI05",
+    tier: "Ai05" as const,
     name: "מקצועי",
-    desc: "קורס סקטוריאלי מלא. 40 שעות של יישום AI בתחום שלך.",
-    color: "border-[color:var(--color-bronze)]/40 bg-[color:var(--color-bronze)]/10 text-[color:var(--color-bronze-ink)]",
+    desc: "קורס סקטוריאלי מלא. 40 שעות של יישום Ai בתחום שלך.",
   },
   {
-    tier: "AI09",
+    tier: "Ai10" as const,
     name: "מאסטר",
-    desc: "קורס המשך מתקדם. הובלה, הטמעה ואסטרטגיית AI ארגונית.",
-    color: "border-[color:var(--color-ink)]/20 bg-[color:var(--color-ink)]/8 text-[color:var(--color-ink)]",
+    desc: "קורס המשך מתקדם. הובלה, הטמעה ואסטרטגיית Ai ארגונית.",
   },
 ];
 
@@ -31,7 +29,7 @@ export function CertMovementPath() {
           <SectionHeading
             align="center"
             eyebrow="המסלול"
-            title="דרגה אחת בכל קורס. שלושה קורסים עד AI09."
+            title="דרגה אחת בכל קורס. שלושה קורסים עד Ai10."
             lede="כל קורס מעלה דרגה אחת. הנתיב ברור, הקצב שלך."
           />
         </Reveal>
@@ -47,15 +45,11 @@ export function CertMovementPath() {
               {steps.map((step, i) => (
                 <div key={step.tier} className="flex flex-col items-center gap-5 text-center">
                   <div className="relative">
-                    <div
-                      className={`flex h-[104px] w-[104px] items-center justify-center rounded-full border-2 ${step.color}`}
+                    <span
+                      className={`inline-flex items-center rounded-full border-2 px-5 py-2 font-display text-xl font-medium tracking-[0.06em] ${TIER_COLORS[step.tier].bg} ${TIER_COLORS[step.tier].border} ${TIER_COLORS[step.tier].text}`}
                     >
-                      <div className="flex flex-col items-center">
-                        <span className="font-display text-xl font-medium tracking-[0.06em]">
-                          {step.tier}
-                        </span>
-                      </div>
-                    </div>
+                      {step.tier}
+                    </span>
                     {i < steps.length - 1 && (
                       <ArrowLeft
                         className="absolute -left-4 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-[color:var(--color-bronze)]/50 sm:block"

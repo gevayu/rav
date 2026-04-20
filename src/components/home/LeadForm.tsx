@@ -31,14 +31,10 @@ export function LeadForm() {
             <div className="flex flex-col gap-6">
               <Eyebrow tone="paper">תיאום שיחה</Eyebrow>
               <h2 className="font-display text-[clamp(2rem,4.6vw,3.4rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]">
-                15 דקות עם יועץ הדרכה.
-                <br />
-                <span className="text-[color:var(--color-bronze)]">
-                  שיחה, לא מכירה.
-                </span>
+                לשיחה עם יועץ הדרכה
               </h2>
               <p className="max-w-md text-lg leading-relaxed text-[color:var(--color-paper-soft)]/70">
-                שיחה קצרה של 15 דקות בה נסביר איפה AI יכול לעזור בתחום המקצועי
+                שיחה קצרה של 15 דקות בה נסביר איפה Ai יכול לעזור בתחום המקצועי
                 שלך, איזה מסלול מתאים לך, ומה ההתקדמות הריאלית שאפשר לצפות בתוך
                 שלושה חודשים.
               </p>

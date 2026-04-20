@@ -7,6 +7,99 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Logo } from "@/components/brand/Logo";
 import { heroGridInstructors } from "@/data/instructors";
 import { ShieldCheck } from "lucide-react";
+import { useState, useEffect } from "react";
+
+type Phrase = { line1: string; line2Pre: string; line2Typed: string; line2Suf: string };
+type Phase = "typing" | "pause" | "deleting";
+
+const PHRASES: Phrase[] = [
+  { line1: "לפיננסים",  line2Pre: "",               line2Typed: "לומדים ממומחה ל", line2Suf: "פיננסים" },
+  { line1: "למשפטים",  line2Pre: "לומדים ממומחה ", line2Typed: "למשפטים",          line2Suf: "" },
+  { line1: "לרפואה",   line2Pre: "",               line2Typed: "לומדים מ",          line2Suf: "רופאה" },
+  { line1: 'לנדל"ן',  line2Pre: "",               line2Typed: 'לומדים ממומחה ל',   line2Suf: 'נדל"ן' },
+  { line1: "למכירות", line2Pre: "",               line2Typed: "לומדים ממומחה ל",   line2Suf: "מכירות" },
+];
+
+function TypewriterCycle() {
+  const [idx, setIdx]       = useState(0);
+  const [phase, setPhase]   = useState<Phase>("typing");
+  const [chars1, setChars1] = useState(0);
+  const [chars2, setChars2] = useState(0);
+  const [blink, setBlink]   = useState(true);
+
+  const phrase = PHRASES[idx];
+
+  // Line 1 typing / deleting
+  useEffect(() => {
+    if (phase === "typing" && chars1 < phrase.line1.length) {
+      const t = setTimeout(() => setChars1(c => c + 1), 80);
+      return () => clearTimeout(t);
+    }
+    if (phase === "deleting" && chars1 > 0) {
+      const t = setTimeout(() => setChars1(c => c - 1), 38);
+      return () => clearTimeout(t);
+    }
+  }, [phase, chars1, phrase.line1]);
+
+  // Line 2 typing / deleting
+  useEffect(() => {
+    if (phase === "typing" && chars2 < phrase.line2Typed.length) {
+      const t = setTimeout(() => setChars2(c => c + 1), 80);
+      return () => clearTimeout(t);
+    }
+    if (phase === "deleting" && chars2 > 0) {
+      const t = setTimeout(() => setChars2(c => c - 1), 38);
+      return () => clearTimeout(t);
+    }
+  }, [phase, chars2, phrase.line2Typed]);
+
+  // Phase transitions
+  useEffect(() => {
+    if (phase === "typing" && chars1 >= phrase.line1.length && chars2 >= phrase.line2Typed.length) {
+      const t = setTimeout(() => setPhase("pause"), 2200);
+      return () => clearTimeout(t);
+    }
+    if (phase === "pause") {
+      const t = setTimeout(() => setPhase("deleting"), 0);
+      return () => clearTimeout(t);
+    }
+    if (phase === "deleting" && chars1 === 0 && chars2 === 0) {
+      setIdx(i => (i + 1) % PHRASES.length);
+      setPhase("typing");
+    }
+  }, [phase, chars1, chars2, phrase]);
+
+  useEffect(() => {
+    const t = setInterval(() => setBlink(v => !v), 530);
+    return () => clearInterval(t);
+  }, []);
+
+  const Cursor = () => (
+    <span aria-hidden className="text-[color:var(--color-bronze)]" style={{ opacity: blink ? 1 : 0 }}>|</span>
+  );
+
+  const cursor1 = phase === "typing" || (phase === "deleting" && chars1 > 0);
+  const cursor2 = phase === "typing" || (phase === "deleting" && chars2 > 0);
+  const showLine2Suf = chars2 === phrase.line2Typed.length && phase !== "deleting";
+  const showLine2 = phase === "typing" || phase === "deleting";
+
+  return (
+    <span className="flex flex-col gap-1">
+      <span className="text-[color:var(--color-bronze)]">
+        Ai {phrase.line1.slice(0, chars1)}
+        {cursor1 && <Cursor />}
+      </span>
+      {showLine2 && (
+        <span className="text-[color:var(--color-paper-soft)]">
+          {phrase.line2Pre}
+          {phrase.line2Typed.slice(0, chars2)}
+          {showLine2Suf && phrase.line2Suf}
+          {cursor2 && <Cursor />}
+        </span>
+      )}
+    </span>
+  );
+}
 
 // Grid: 9 columns x 5 rows of faces, masked + layered with radial gradient.
 const COLS = 9;
@@ -23,7 +116,7 @@ export function Hero() {
     <section
       id="top"
       className="relative isolate overflow-hidden bg-[color:var(--color-ink)] pt-36 pb-24 sm:pt-44 sm:pb-32"
-      aria-label="השלב הבא של AI - התמקצעות מקצועית"
+      aria-label="השלב הבא של Ai - התמקצעות מקצועית"
     >
       {/* Face grid background */}
       <div
@@ -106,7 +199,7 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Logo className="mb-2 scale-125" />
+          <Logo className="mb-2 scale-[1.625]" />
         </motion.div>
 
         <motion.div
@@ -114,22 +207,16 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
         >
-          <Eyebrow>השלב הבא של AI</Eyebrow>
+          <span className="inline-flex items-center text-[20px] font-medium tracking-[0.22em] text-[color:var(--color-bronze)]" style={{ textTransform: "none" }}>השלב הבא ב-Ai</span>
         </motion.div>
 
         <motion.h1
           initial={reduce ? undefined : { opacity: 0, y: 32, filter: "blur(10px)" }}
           animate={reduce ? undefined : { opacity: 1, y: 0, filter: "blur(0)" }}
           transition={{ duration: 1.1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-[clamp(2.6rem,6.2vw,5rem)] font-medium leading-[0.95] tracking-tight text-[color:var(--color-paper-soft)]"
+          className="font-display text-[clamp(2rem,4.8vw,4rem)] font-medium leading-[1.1] tracking-tight text-[color:var(--color-paper-soft)]"
         >
-          לא מלמדים AI.
-          <br />
-          <span className="text-[color:var(--color-bronze)]">
-            מלמדים איך ליישם אותו
-          </span>
-          <br />
-          בתחום שלך.
+          <TypewriterCycle />
         </motion.h1>
 
         <motion.p
@@ -138,9 +225,9 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.7 }}
           className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/75 sm:text-xl"
         >
-          הכשרות AI סקטוריאליות לעורכי דין, רופאים, אנשי נדל״ן, מהנדסים,
-          אנשי כספים ועוד. את הקורס מעביר מומחה אמיתי מהתחום שלך —
-          לא מרצה גנרי.
+          לא עוד הכשרת Ai כללית. אנחנו מלמדים איך ליישם Ai
+          <br />
+          בתחום שלך עם מדריך מהתחום שלך.
         </motion.p>
 
         <motion.div
@@ -153,7 +240,7 @@ export function Hero() {
             לקטלוג הקורסים
           </Button>
           <Button as="a" href="#lead" variant="secondary" size="lg">
-            לתיאום ייעוץ
+            פתרונות לארגונים
           </Button>
         </motion.div>
 

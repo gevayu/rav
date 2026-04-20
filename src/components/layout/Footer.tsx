@@ -47,9 +47,12 @@ export function Footer() {
       <div className="relative mx-auto w-full max-w-[1180px] px-6 pt-24 pb-12 sm:px-10">
         <div className="grid gap-16 lg:grid-cols-[1.25fr_1fr_1fr_1.1fr]">
           <div className="flex flex-col gap-6">
-            <Logo tone="bronze" showWordmark />
+            <Logo tone="bronze" showWordmark className="scale-[0.85] translate-x-[10px] origin-right" />
+            <p className="text-[11px] text-[color:var(--color-paper-soft)]/45">
+              מקבוצת אנליזה - המרכז הישראלי להכשרות הייטק
+            </p>
             <p className="max-w-sm text-sm leading-relaxed text-[color:var(--color-paper-soft)]/70">
-              לא מלמדים AI. מלמדים איך ליישם את ה-AI בתחום המקצועי שלך.
+              לא מלמדים Ai. מלמדים איך ליישם את ה-Ai בתחום המקצועי שלך.
               הכשרות סקטוריאליות ברמה הגבוהה בישראל.
             </p>
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/5 px-4 py-2 text-[11px] font-medium text-[color:var(--color-bronze)]">
@@ -114,6 +117,15 @@ export function Footer() {
                   הרשמה
                 </button>
               </div>
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="h-3.5 w-3.5 accent-[color:var(--color-bronze)] cursor-pointer"
+                />
+                <span className="text-[11px] text-[color:var(--color-paper-soft)]/50">
+                  מוסכם עלי לקבל מהאתר דיוור פרסומי
+                </span>
+              </label>
             </div>
           </div>
         </div>

@@ -1,27 +1,25 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TIER_COLORS } from "@/components/courses/labels";
 
 const rows = [
   {
-    tier: "AI01",
+    tier: "Ai01" as const,
     validity: "שנתיים",
     renewal: "מבחן מקוון (30 דקות)",
     cost: "ללא עלות",
-    tagColor: "bg-[color:var(--color-signal)]/10 text-[color:var(--color-signal)] border-[color:var(--color-signal)]/30",
   },
   {
-    tier: "AI05",
+    tier: "Ai05" as const,
     validity: "שנתיים",
     renewal: "מבחן מקוון או קורס עדכון (4 שעות)",
     cost: "מסובסד לבוגרים",
-    tagColor: "bg-[color:var(--color-bronze)]/10 text-[color:var(--color-bronze-ink)] border-[color:var(--color-bronze)]/30",
   },
   {
-    tier: "AI09",
+    tier: "Ai10" as const,
     validity: "שנתיים",
     renewal: "קורס עדכון (8 שעות) + פרויקט",
     cost: "מסובסד לבוגרים",
-    tagColor: "bg-[color:var(--color-ink)]/8 text-[color:var(--color-ink)] border-[color:var(--color-ink)]/20",
   },
 ];
 
@@ -34,7 +32,7 @@ export function CertValidity() {
             align="center"
             eyebrow="תוקף וחידוש"
             title="הדרגה שלך תקפה לשנתיים. החידוש פשוט."
-            lede="AI משתנה מהר. תוכנית החידוש מבטיחה שהתעודה שלך תמיד מעודכנת - בלי לחזור על כל הקורס."
+            lede="Ai משתנה מהר. תוכנית החידוש מבטיחה שהתעודה שלך תמיד מעודכנת - בלי לחזור על כל הקורס."
           />
         </Reveal>
 
@@ -56,7 +54,7 @@ export function CertValidity() {
                 }
               >
                 <span
-                  className={`inline-flex w-fit items-center rounded-full border px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] ${row.tagColor}`}
+                  className={`inline-flex w-fit items-center rounded-full border px-2 py-0.5 font-display text-[13px] font-medium tracking-[0.06em] ${TIER_COLORS[row.tier].bg} ${TIER_COLORS[row.tier].border} ${TIER_COLORS[row.tier].text}`}
                 >
                   {row.tier}
                 </span>

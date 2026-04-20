@@ -101,7 +101,7 @@ export function StickyLead() {
             </div>
             <button
               type="submit"
-              className="mt-4 h-11 w-full rounded-full bg-[color:var(--color-signal)] text-[13px] font-medium text-white shadow-[0_12px_32px_-10px_rgba(232,16,44,0.6)] transition-colors hover:bg-[color:var(--color-signal-deep)]"
+              className="mt-4 h-11 w-full rounded-full bg-[color:var(--color-signal)] text-[13px] font-medium text-white shadow-[0_12px_32px_-10px_rgba(6,78,59,0.6)] transition-colors hover:bg-[color:var(--color-signal-deep)]"
             >
               שלח פרטים
             </button>

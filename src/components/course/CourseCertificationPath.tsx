@@ -3,6 +3,7 @@ import type { Course } from "@/data/courses";
 import {
   CERTIFICATION_ORDER,
   CERTIFICATION_TIERS,
+  TIER_COLORS,
   getCertificationPath,
 } from "@/components/courses/labels";
 
@@ -43,7 +44,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
             <p className="max-w-md text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/70">
               {cert.entry
                 ? `מגיעים עם ${cert.entry} ויוצאים עם ${cert.exit}. קורסי ההמשך שלנו זמינים לבוגרים שלנו אחרי הסיום.`
-                : `קורס זה הוא נקודת הכניסה לעולם ה-AI. מסיימים עם ${cert.exit} ויכולים להמשיך לקורסי AI05.`}
+                : `קורס זה הוא נקודת הכניסה לעולם ה-Ai. מסיימים עם ${cert.exit} ויכולים להמשיך לקורסי Ai05.`}
             </p>
           </div>
 
@@ -63,16 +64,15 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                   role="listitem"
                 >
                   <div className="flex flex-1 flex-col items-center gap-3">
-                    <div
-                      className={
-                        "relative flex h-16 w-16 items-center justify-center rounded-full border transition-colors sm:h-20 sm:w-20 " +
-                        (active
-                          ? "border-[color:var(--color-bronze)] bg-[color:var(--color-bronze)]/15 text-[color:var(--color-bronze)] shadow-[0_0_0_4px_rgba(229,184,155,0.1)]"
-                          : "border-white/15 bg-white/[0.03] text-[color:var(--color-paper-soft)]/35")
-                      }
-                      aria-current={exit ? "step" : undefined}
-                    >
-                      <span className="font-display text-[15px] font-medium tracking-[0.06em] sm:text-[17px]">
+                    <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
+                      <span
+                        className={
+                          "inline-flex items-center rounded-full border px-2.5 py-1 font-display text-[15px] font-medium tracking-[0.06em] transition-colors sm:px-3 sm:py-1.5 sm:text-[17px] " +
+                          (active
+                            ? `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
+                            : "border-white/15 bg-white/[0.03] text-[color:var(--color-paper-soft)]/35")
+                        }
+                      >
                         {label}
                       </span>
                       {exit && (

@@ -29,7 +29,7 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-[color:var(--color-signal)] text-white shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_12px_32px_-12px_rgba(232,16,44,0.6)] hover:bg-[color:var(--color-signal-deep)] hover:shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_16px_40px_-10px_rgba(232,16,44,0.7)]",
+    "bg-[#059669] text-white shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_12px_32px_-12px_rgba(5,150,105,0.6)] hover:bg-[#064e3b] hover:shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_16px_40px_-10px_rgba(5,150,105,0.7)]",
   secondary:
     "bg-transparent text-[color:var(--color-bronze)] border border-[color:var(--color-bronze)]/55 hover:bg-[color:var(--color-bronze)]/10 hover:border-[color:var(--color-bronze)]",
   ghost:

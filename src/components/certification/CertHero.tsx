@@ -3,13 +3,8 @@ import { ShieldCheck } from "lucide-react";
 import {
   CERTIFICATION_ORDER,
   CERTIFICATION_TIERS,
+  TIER_COLORS,
 } from "@/components/courses/labels";
-
-const tierColors: Record<string, string> = {
-  AI01: "border-[color:var(--color-signal)]/50 bg-[color:var(--color-signal)]/15 text-[color:var(--color-signal)]",
-  AI05: "border-[color:var(--color-bronze)]/50 bg-[color:var(--color-bronze)]/15 text-[color:var(--color-bronze)]",
-  AI09: "border-white/25 bg-white/10 text-[color:var(--color-paper-soft)]",
-};
 
 export function CertHero() {
   return (
@@ -28,12 +23,12 @@ export function CertHero() {
             </span>
 
             <h1 className="font-display text-[clamp(2.5rem,5.5vw,4.5rem)] font-medium leading-[1.02] tracking-tight text-[color:var(--color-paper-soft)]">
-              מידרג של דרגות מוסדיות.
+              סטנדרט חדש בשוק התעסוקה
             </h1>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/70">
-              שלוש רמות הסמכה - AI01, AI05, AI09 - שמסמנות בדיוק מה אתה יודע
-              לעשות עם AI בתחום שלך. תעודות ממכללה מפוקחת, עם תוכנית חידוש שנתית
+              שלוש רמות הסמכה - Ai01, Ai05, Ai10 - שמסמנות בדיוק מה אתה יודע
+              לעשות עם Ai בתחום שלך. תעודות ממכללה מפוקחת, עם תוכנית חידוש שנתית
               שמבטיחה שהדרגה שלך תמיד רלוונטית.
             </p>
 
@@ -47,13 +42,11 @@ export function CertHero() {
                 return (
                   <div key={tier} className="flex items-center gap-3 sm:gap-5" role="listitem">
                     <div className="flex flex-col items-center gap-2">
-                      <div
-                        className={`flex h-16 w-16 items-center justify-center rounded-full border-2 sm:h-20 sm:w-20 ${tierColors[tier]}`}
+                      <span
+                        className={`inline-flex items-center rounded-full border-2 px-3 py-1.5 font-display text-[15px] font-medium tracking-[0.06em] sm:px-4 sm:py-2 sm:text-[17px] ${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`}
                       >
-                        <span className="font-display text-[15px] font-medium tracking-[0.06em] sm:text-[17px]">
-                          {label}
-                        </span>
-                      </div>
+                        {label}
+                      </span>
                       <span className="text-[12px] font-medium text-[color:var(--color-paper-soft)]/60">
                         {name}
                       </span>

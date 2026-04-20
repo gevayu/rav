@@ -24,10 +24,10 @@ export function SoloHero() {
         </h2>
 
         <p className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/70">
-          במרכז הרב-תחומי להכשרות Ai אנחנו מלמדים איך להפוך את ה-AI לעובד השקט
+          במרכז הרב-תחומי להכשרות Ai אנחנו מלמדים איך להפוך את ה-Ai לעובד השקט
           ביותר שלך. אחד שלא לוקח משכורת, זמין 24/7, וכן - באמת טוב בתחום
           הספציפי שלך. הקורסים מועברים על ידי עצמאיים ושותפים-בכירים מהתחום שלך,
-          לא ידועני-של-AI שמלמדים את הכל.
+          לא ידועני-של-Ai שמלמדים את הכל.
         </p>
 
         <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">

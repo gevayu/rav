@@ -4,6 +4,7 @@ type LogoProps = {
   className?: string;
   showWordmark?: boolean;
   tone?: "bronze" | "ink" | "paper";
+  size?: "sm" | "md" | "lg";
 };
 
 // CSS filter to recolor the bronze PNG for different tones
@@ -19,25 +20,33 @@ const wordmarkColor: Record<string, string> = {
   paper: "var(--color-paper-soft)",
 };
 
-export function Logo({ className, showWordmark = false, tone = "bronze" }: LogoProps) {
+const sizeClass = {
+  sm: "h-12 w-12",
+  md: "h-16 w-16",
+  lg: "h-24 w-24",
+};
+
+const sizePx = { sm: "48px", md: "64px", lg: "96px" };
+
+export function Logo({ className, showWordmark = false, tone = "bronze", size = "lg" }: LogoProps) {
   return (
     <div className={`flex items-center gap-3 ${className ?? ""}`.trim()}>
       <div
-        className="relative h-12 w-12 shrink-0"
+        className={`relative ${sizeClass[size]} shrink-0`}
         style={{ filter: toneFilter[tone] }}
       >
         <Image
           src="/images/logo-mark.png"
           alt="לוגו המרכז הרב-תחומי להכשרות Ai"
           fill
-          sizes="48px"
+          sizes={sizePx[size]}
           className="object-contain"
           priority
           unoptimized
         />
       </div>
       {showWordmark ? (
-        <div className="flex flex-col leading-tight">
+        <div className="flex flex-col leading-[1.5]">
           <span
             className="font-display text-lg font-medium tracking-tight"
             style={{ color: wordmarkColor[tone] }}
@@ -45,8 +54,8 @@ export function Logo({ className, showWordmark = false, tone = "bronze" }: LogoP
             המרכז הרב-תחומי
           </span>
           <span
-            className="text-[11px] uppercase tracking-[0.2em]"
-            style={{ color: wordmarkColor[tone], opacity: 0.75 }}
+            className="font-display text-lg font-medium tracking-tight"
+            style={{ color: wordmarkColor[tone] }}
           >
             להכשרות Ai
           </span>

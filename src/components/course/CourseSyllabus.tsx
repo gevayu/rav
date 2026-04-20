@@ -169,7 +169,7 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
                           <div className="relative aspect-video w-full">
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[color:var(--color-signal)] shadow-[0_8px_32px_-8px_rgba(232,16,44,0.6)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/video:scale-110">
+                              <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[color:var(--color-signal)] shadow-[0_8px_32px_-8px_rgba(6,78,59,0.6)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/video:scale-110">
                                 <Play
                                   className="h-5 w-5 text-white"
                                   strokeWidth={2}

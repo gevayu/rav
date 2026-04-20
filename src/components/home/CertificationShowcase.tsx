@@ -5,30 +5,13 @@ import { ShieldCheck } from "lucide-react";
 import {
   CERTIFICATION_ORDER,
   CERTIFICATION_TIERS,
+  TIER_COLORS,
 } from "@/components/courses/labels";
 
-const tierColors: Record<string, { bg: string; border: string; text: string }> = {
-  AI01: {
-    bg: "bg-[color:var(--color-signal)]/10",
-    border: "border-[color:var(--color-signal)]/40",
-    text: "text-[color:var(--color-signal)]",
-  },
-  AI05: {
-    bg: "bg-[color:var(--color-bronze)]/10",
-    border: "border-[color:var(--color-bronze)]/40",
-    text: "text-[color:var(--color-bronze-ink)]",
-  },
-  AI09: {
-    bg: "bg-[color:var(--color-ink)]/10",
-    border: "border-[color:var(--color-ink)]/25",
-    text: "text-[color:var(--color-ink)]",
-  },
-};
-
 const tierDescriptions: Record<string, string> = {
-  AI01: "מבוא ל-AI, מושגי בסיס ועקרונות עבודה. נקודת הכניסה לכל מי שמתחיל.",
-  AI05: "התמחות סקטוריאלית. 40 שעות של יישום AI בתחום המקצועי שלך.",
-  AI09: "העמקה, הובלה והטמעה ארגונית. לבוגרי AI05 שרוצים להוביל את השינוי.",
+  Ai01: "מבוא ל-Ai, מושגי בסיס ועקרונות עבודה. נקודת הכניסה לכל מי שמתחיל.",
+  Ai05: "התמחות סקטוריאלית. 40 שעות של יישום Ai בתחום המקצועי שלך.",
+  Ai10: "העמקה, הובלה והטמעה ארגונית. לבוגרי Ai05 שרוצים להוביל את השינוי.",
 };
 
 export function CertificationShowcase() {
@@ -39,28 +22,24 @@ export function CertificationShowcase() {
           <SectionHeading
             align="center"
             eyebrow="מדרג ההסמכה"
-            title="שלוש דרגות. נתיב אחד."
-            lede="כל קורס מעלה דרגה אחת. מ-AI01 (יסוד) דרך AI05 (מקצועי) ועד AI09 (מאסטר). תעודות מוסדיות ממכללה מפוקחת - עם ערך אמיתי בשוק העבודה."
+            title="סטנדרט חדש בשוק התעסוקה"
+            lede="כל קורס מעלה דרגה אחת. מ-Ai01 (יסוד) דרך Ai05 (מקצועי) ועד Ai10 (מאסטר). תעודות מוסדיות ממכללה מפוקחת - עם ערך אמיתי בשוק העבודה."
           />
         </Reveal>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {CERTIFICATION_ORDER.map((tier, i) => {
             const { label, name } = CERTIFICATION_TIERS[tier];
-            const colors = tierColors[tier];
+            const colors = TIER_COLORS[tier];
             return (
               <Reveal key={tier} delay={i * 0.1}>
                 <article className="group relative flex h-full flex-col items-center gap-6 rounded-[32px] bg-white p-2 ring-1 ring-[color:var(--color-ink)]/5 transition-all duration-500 hover:ring-[color:var(--color-bronze)]/40">
                   <div className="flex h-full w-full flex-col items-center gap-5 rounded-[calc(32px-0.5rem)] bg-[color:var(--color-paper-soft)] p-8 pt-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_1px_2px_rgba(28,28,30,0.04)] transition-transform duration-500 group-hover:-translate-y-1">
-                    <div
-                      className={`flex h-20 w-20 items-center justify-center rounded-full border-2 ${colors.border} ${colors.bg}`}
+                    <span
+                      className={`inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] ${colors.border} ${colors.bg} ${colors.text}`}
                     >
-                      <span
-                        className={`font-display text-xl font-medium tracking-[0.06em] ${colors.text}`}
-                      >
-                        {label}
-                      </span>
-                    </div>
+                      {label}
+                    </span>
 
                     <div className="flex flex-col items-center gap-1.5">
                       <h3 className="font-display text-lg font-medium text-[color:var(--color-ink)]">
@@ -87,7 +66,7 @@ export function CertificationShowcase() {
               {CERTIFICATION_ORDER.map((tier, idx) => (
                 <div key={tier} className="flex items-center gap-2 sm:gap-4">
                   <span
-                    className={`inline-flex h-8 w-8 items-center justify-center rounded-full border text-[10px] font-medium tracking-wider ${tierColors[tier].border} ${tierColors[tier].bg} ${tierColors[tier].text}`}
+                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-medium tracking-wider ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].text}`}
                   >
                     {tier}
                   </span>

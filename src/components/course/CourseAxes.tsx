@@ -13,7 +13,7 @@ type AxisSpec = {
 };
 
 const AXES: AxisSpec[] = [
-  { key: "ai", title: "תהליכי AI", eyebrow: "ציר ראשון", icon: Cpu },
+  { key: "ai", title: "תהליכי Ai", eyebrow: "ציר ראשון", icon: Cpu },
   { key: "sector", title: "תהליכים סקטוריאליים", eyebrow: "ציר שני", icon: Layers },
   { key: "general", title: "תהליכים עסקיים כלליים", eyebrow: "ציר שלישי", icon: Briefcase },
 ];

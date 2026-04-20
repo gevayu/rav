@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const rows = [
   {
-    today: "50 עובדים, 50 רמות שימוש ב-AI",
+    today: "50 עובדים, 50 רמות שימוש ב-Ai",
     after: "צוות שלם שעובד בשיטה אחת, מוכחת",
   },
   {
@@ -31,7 +31,7 @@ export function BizProblem() {
         <Reveal>
           <SectionHeading
             eyebrow="האתגר הארגוני"
-            title="ב-AI אין לכם חוסר. בסדר, כן."
+            title="ב-Ai אין לכם חוסר. בסדר, כן."
             lede="עובדים כבר משתמשים ב-ChatGPT, Claude, ובעשרות כלים אחרים. חלקם - ברמה סבירה. חלקם - מעלים סיכונים של פרטיות, סודיות, איכות. אף אחד מהם לא - בשיטה המובנית שמאפשרת לארגון להשתפר כיחידה אחת."
           />
         </Reveal>

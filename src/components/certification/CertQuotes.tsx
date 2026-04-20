@@ -1,35 +1,32 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TIER_COLORS } from "@/components/courses/labels";
 
 type Quote = {
-  tier: string;
+  tier: "Ai01" | "Ai05" | "Ai10";
   text: string;
   name: string;
   role: string;
-  tagColor: string;
 };
 
 const quotes: Quote[] = [
   {
-    tier: "AI01",
-    text: "המכינה שינתה לי את הגישה. הפסקתי לפחד מ-AI והתחלתי לעבוד איתו. עכשיו אני יודע מה לשאול, ואני מבין מה אני מקבל.",
+    tier: "Ai01",
+    text: "המכינה שינתה לי את הגישה. הפסקתי לפחד מ-Ai והתחלתי לעבוד איתו. עכשיו אני יודע מה לשאול, ואני מבין מה אני מקבל.",
     name: "עמית כהן",
     role: "עו״ד, משרד בוטיק",
-    tagColor: "border-[color:var(--color-signal)]/30 bg-[color:var(--color-signal)]/10 text-[color:var(--color-signal)]",
   },
   {
-    tier: "AI05",
+    tier: "Ai05",
     text: "אחרי 10 מפגשים יש לי תהליכי עבודה חדשים שחוסכים לי 8 שעות בשבוע. הפרויקט הגמר שלי הפך לכלי שהמשרד כולו משתמש בו.",
     name: "מירב לוי",
     role: "רואת חשבון, פרילאנסרית",
-    tagColor: "border-[color:var(--color-bronze)]/30 bg-[color:var(--color-bronze)]/10 text-[color:var(--color-bronze-ink)]",
   },
   {
-    tier: "AI09",
-    text: "AI09 נתן לי את הכלים להוביל הטמעה ארגונית. תוך 3 חודשים הכשרתי 40 עובדים והצגתי להנהלה דו״ח ROI שהפתיע את כולם.",
+    tier: "Ai10",
+    text: "Ai10 נתן לי את הכלים להוביל הטמעה ארגונית. תוך 3 חודשים הכשרתי 40 עובדים והצגתי להנהלה דו״ח ROI שהפתיע את כולם.",
     name: "אריק ברנשטיין",
     role: "מנהל הדרכה, חברת ביטוח",
-    tagColor: "border-[color:var(--color-ink)]/20 bg-[color:var(--color-ink)]/8 text-[color:var(--color-ink)]",
   },
 ];
 
@@ -50,7 +47,7 @@ export function CertQuotes() {
             <Reveal key={q.name} delay={i * 0.1}>
               <article className="flex h-full flex-col gap-5 rounded-[24px] border border-[color:var(--color-ink)]/8 bg-white p-7">
                 <span
-                  className={`inline-flex w-fit items-center rounded-full border px-3 py-1 font-display text-[12px] font-medium tracking-[0.06em] ${q.tagColor}`}
+                  className={`inline-flex w-fit items-center rounded-full border px-2 py-0.5 font-display text-[12px] font-medium tracking-[0.06em] ${TIER_COLORS[q.tier].bg} ${TIER_COLORS[q.tier].border} ${TIER_COLORS[q.tier].text}`}
                 >
                   {q.tier}
                 </span>

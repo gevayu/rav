@@ -1,9 +1,10 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
+import { TIER_COLORS } from "@/components/courses/labels";
 
 type TierDetail = {
-  tier: string;
+  tier: "Ai01" | "Ai05" | "Ai10";
   name: string;
   tagline: string;
   description: string;
@@ -11,68 +12,56 @@ type TierDetail = {
   duration: string;
   prerequisite: string | null;
   outcomes: string[];
-  borderColor: string;
-  tagBg: string;
-  tagText: string;
 };
 
 const tiers: TierDetail[] = [
   {
-    tier: "AI01",
+    tier: "Ai01",
     name: "יסוד",
     tagline: "נקודת הכניסה",
     description:
-      "הכרות מעשית עם AI - מושגי בסיס, עקרונות עבודה, וכלים ראשוניים. מי שמסיים עם AI01 יודע לתקשר עם מודלים, לזהות מתי AI רלוונטי לעבודה שלו, ולהפעיל כלים בסיסיים.",
+      "הכרות מעשית עם Ai - מושגי בסיס, עקרונות עבודה, וכלים ראשוניים. מי שמסיים עם Ai01 יודע לתקשר עם מודלים, לזהות מתי Ai רלוונטי לעבודה שלו, ולהפעיל כלים בסיסיים.",
     format: "מכינה / קורס מבוא",
     duration: "6-10 שעות",
     prerequisite: null,
     outcomes: [
       "הבנת עקרונות עבודה עם מודלי שפה",
       "כתיבת פרומפטים ברורים ומבניים",
-      "שימוש בכלי AI נפוצים לצרכים יומיומיים",
+      "שימוש בכלי Ai נפוצים לצרכים יומיומיים",
       "הבחנה בין שימוש בסיסי לשימוש מקצועי",
     ],
-    borderColor: "border-[color:var(--color-signal)]/30",
-    tagBg: "bg-[color:var(--color-signal)]/10",
-    tagText: "text-[color:var(--color-signal)]",
   },
   {
-    tier: "AI05",
+    tier: "Ai05",
     name: "מקצועי",
     tagline: "התמחות סקטוריאלית",
     description:
-      "40 שעות של יישום AI בתחום המקצועי שלך. מי שמסיים עם AI05 יודע לשלב AI בתהליכי עבודה אמיתיים, לבנות אוטומציות, ולהציג תוצאות מדידות.",
+      "40 שעות של יישום Ai בתחום המקצועי שלך. מי שמסיים עם Ai05 יודע לשלב Ai בתהליכי עבודה אמיתיים, לבנות אוטומציות, ולהציג תוצאות מדידות.",
     format: "קורס סקטוריאלי מלא",
     duration: "40 שעות · 10 מפגשים",
-    prerequisite: "AI01",
+    prerequisite: "Ai01",
     outcomes: [
       "הנדסת פרומפטים מתקדמת בהקשר מקצועי",
-      "בניית תהליכי עבודה אוטומטיים עם AI",
-      "יישום AI במשימות סקטוריאליות ספציפיות",
+      "בניית תהליכי עבודה אוטומטיים עם Ai",
+      "יישום Ai במשימות סקטוריאליות ספציפיות",
       "מדידת ROI ותיעוד חיסכון בזמן",
     ],
-    borderColor: "border-[color:var(--color-bronze)]/30",
-    tagBg: "bg-[color:var(--color-bronze)]/10",
-    tagText: "text-[color:var(--color-bronze-ink)]",
   },
   {
-    tier: "AI09",
+    tier: "Ai10",
     name: "מאסטר",
     tagline: "הובלה והטמעה",
     description:
-      "לבוגרי AI05 שרוצים להוביל שינוי. מי שמסיים עם AI09 יודע לתכנן אסטרטגיית AI לארגון, להכשיר צוותים, ולנהל פרויקטי הטמעה מקצה לקצה.",
+      "לבוגרי Ai05 שרוצים להוביל שינוי. מי שמסיים עם Ai10 יודע לתכנן אסטרטגיית Ai לארגון, להכשיר צוותים, ולנהל פרויקטי הטמעה מקצה לקצה.",
     format: "קורס המשך מתקדם",
     duration: "30-40 שעות",
-    prerequisite: "AI05",
+    prerequisite: "Ai05",
     outcomes: [
-      "תכנון אסטרטגיית AI ארגונית",
+      "תכנון אסטרטגיית Ai ארגונית",
       "הכשרה והדרכה של צוותים",
-      "ניהול פרויקטי הטמעת AI",
+      "ניהול פרויקטי הטמעת Ai",
       "מדידת השפעה ברמה ארגונית",
     ],
-    borderColor: "border-[color:var(--color-ink)]/20",
-    tagBg: "bg-[color:var(--color-ink)]/8",
-    tagText: "text-[color:var(--color-ink)]",
   },
 ];
 
@@ -93,11 +82,11 @@ export function CertTiers() {
           {tiers.map((t, i) => (
             <Reveal key={t.tier} delay={i * 0.1}>
               <article
-                className={`flex h-full flex-col gap-6 rounded-[24px] border ${t.borderColor} bg-white p-8 transition-colors hover:border-[color:var(--color-bronze)]/35`}
+                className={`flex h-full flex-col gap-6 rounded-[24px] border ${TIER_COLORS[t.tier].border} bg-white p-8 transition-colors hover:border-[color:var(--color-bronze)]/35`}
               >
                 <div className="flex items-center justify-between">
                   <span
-                    className={`inline-flex items-center rounded-full border px-4 py-1.5 font-display text-[14px] font-medium tracking-[0.06em] ${t.borderColor} ${t.tagBg} ${t.tagText}`}
+                    className={`inline-flex items-center rounded-full border px-2.5 py-1 font-display text-[14px] font-medium tracking-[0.06em] ${TIER_COLORS[t.tier].bg} ${TIER_COLORS[t.tier].border} ${TIER_COLORS[t.tier].text}`}
                   >
                     {t.tier}
                   </span>

@@ -20,14 +20,14 @@ export function SectorsGrid() {
             eyebrow="11 תחומים מקצועיים"
             title={
               <>
-                AI שמדבר בשפה{" "}
+                Ai שמדבר בשפה{" "}
                 <span className="text-[color:var(--color-bronze-ink)]">
                   המקצועית
                 </span>{" "}
                 שלך.
               </>
             }
-            lede="לכל תחום - ראש תחום אחד, מומחה אמיתי מהשטח. אתה לומד איך ליישם AI דרך דוגמאות מהיומיום המקצועי שלך, לא דרך case studies גנריים."
+            lede="לכל תחום - ראש תחום אחד, מומחה אמיתי מהשטח. אתה לומד איך ליישם Ai דרך דוגמאות מהיומיום המקצועי שלך, לא דרך case studies גנריים."
           />
         </Reveal>
 
@@ -52,7 +52,7 @@ export function SectorsGrid() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-display text-lg font-medium leading-tight text-[color:var(--color-ink)]">
-                        AI ל{sector.displayName}
+                        Ai ל{sector.displayName}
                       </h3>
                       <p className="mt-1 text-[12px] text-[color:var(--color-ink-muted)]">
                         {sector.guideName}

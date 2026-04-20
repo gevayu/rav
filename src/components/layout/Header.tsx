@@ -49,12 +49,12 @@ export function Header() {
           }
         >
           <a href="/" className="flex items-center gap-3 rounded-full py-1 pr-1">
-            <Logo tone="bronze" />
-            <span className="hidden flex-col leading-tight sm:flex">
+            <span className="inline-block scale-[1.92] translate-x-[-5px]"><Logo tone="bronze" size="sm" /></span>
+            <span className="hidden flex-col leading-[1.5] sm:flex">
               <span className="font-display text-[15px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
                 המרכז הרב-תחומי
               </span>
-              <span className="text-[10px] uppercase tracking-[0.24em] text-[color:var(--color-bronze)]">
+              <span className="font-display text-[15px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
                 להכשרות Ai
               </span>
             </span>
@@ -68,7 +68,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-[13px] font-medium text-[color:var(--color-paper-soft)]/85 transition-colors hover:bg-white/5 hover:text-[color:var(--color-paper-soft)]"
+                className="rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 transition-colors hover:bg-white/5 hover:text-[color:var(--color-paper-soft)]"
               >
                 {item.label}
               </a>

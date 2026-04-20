@@ -24,12 +24,33 @@ export const CERTIFICATION_TIERS: Record<
   CertificationTier,
   { label: string; name: string }
 > = {
-  AI01: { label: "AI01", name: "יסוד" },
-  AI05: { label: "AI05", name: "מקצועי" },
-  AI09: { label: "AI09", name: "מאסטר" },
+  Ai01: { label: "Ai01", name: "יסוד" },
+  Ai05: { label: "Ai05", name: "מקצועי" },
+  Ai10: { label: "Ai10", name: "מאסטר" },
 };
 
-export const CERTIFICATION_ORDER: CertificationTier[] = ["AI01", "AI05", "AI09"];
+export const CERTIFICATION_ORDER: CertificationTier[] = ["Ai01", "Ai05", "Ai10"];
+
+export const TIER_COLORS: Record<
+  CertificationTier,
+  { bg: string; border: string; text: string }
+> = {
+  Ai01: {
+    bg: "bg-[color:var(--color-tier-01-bg)]",
+    border: "border-[color:var(--color-tier-01-border)]",
+    text: "text-[color:var(--color-tier-01-ink)]",
+  },
+  Ai05: {
+    bg: "bg-[color:var(--color-tier-05-bg)]",
+    border: "border-[color:var(--color-tier-05-border)]",
+    text: "text-[color:var(--color-tier-05-ink)]",
+  },
+  Ai10: {
+    bg: "bg-[color:var(--color-tier-09-bg)]",
+    border: "border-[color:var(--color-tier-09-border)]",
+    text: "text-[color:var(--color-tier-09-ink)]",
+  },
+};
 
 type CertificationPath = {
   entry: CertificationTier | null;
@@ -40,10 +61,10 @@ export function getCertificationPath(course: Course): CertificationPath {
   if (course.certification) return course.certification;
   switch (course.level) {
     case "foundation":
-      return { entry: null, exit: "AI01" };
+      return { entry: null, exit: "Ai01" };
     case "advanced":
-      return { entry: "AI01", exit: "AI05" };
+      return { entry: "Ai01", exit: "Ai05" };
     case "mastery":
-      return { entry: "AI05", exit: "AI09" };
+      return { entry: "Ai05", exit: "Ai10" };
   }
 }
