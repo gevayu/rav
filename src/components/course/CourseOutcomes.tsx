@@ -59,7 +59,7 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
 
         <div className="relative mt-6 h-[280px] w-full overflow-hidden rounded-[24px] sm:h-[340px]">
           <Image
-            src="/images/org/Office Meeting Scene.png"
+            src="/images/org/Focused Professional in a Green-Themed Modern Office.png"
             alt=""
             fill
             sizes="(max-width: 1240px) 100vw, 1240px"
