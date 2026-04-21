@@ -30,7 +30,7 @@ const sizePx = { sm: "48px", md: "64px", lg: "96px" };
 
 export function Logo({ className, showWordmark = false, tone = "bronze", size = "lg" }: LogoProps) {
   return (
-    <div className={`flex items-center gap-3 ${className ?? ""}`.trim()}>
+    <div className={`flex items-center gap-0 ${className ?? ""}`.trim()}>
       <div
         className={`relative ${sizeClass[size]} shrink-0`}
         style={{ filter: toneFilter[tone] }}
@@ -48,13 +48,13 @@ export function Logo({ className, showWordmark = false, tone = "bronze", size = 
       {showWordmark ? (
         <div className="flex flex-col leading-[1.5]">
           <span
-            className="font-display text-lg font-medium tracking-tight"
+            className="font-display text-sm font-medium tracking-tight"
             style={{ color: wordmarkColor[tone] }}
           >
             המרכז הרב-תחומי
           </span>
           <span
-            className="font-display text-lg font-medium tracking-tight"
+            className="font-display text-sm font-medium tracking-tight"
             style={{ color: wordmarkColor[tone] }}
           >
             להכשרות Ai

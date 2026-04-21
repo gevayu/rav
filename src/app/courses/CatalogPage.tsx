@@ -22,8 +22,9 @@ const DEFAULT_FILTERS: Filters = {
   format: "all",
 };
 
-const flagship = allCourses.find((c) => c.isFlagship) ?? allCourses[0];
-const gridCourses = allCourses.filter((c) => c.id !== flagship.id);
+const flagshipCourses = allCourses.filter((c) => c.level === "advanced").slice(0, 5);
+const flagshipIds = new Set(flagshipCourses.map((c) => c.id));
+const gridCourses = allCourses.filter((c) => !flagshipIds.has(c.id));
 
 function CatalogPageInner() {
   const params = useSearchParams();
@@ -55,7 +56,7 @@ function CatalogPageInner() {
       />
 
       <Reveal>
-        <FlagshipBanner course={flagship} />
+        <FlagshipBanner courses={flagshipCourses} />
       </Reveal>
 
       <section className="relative bg-[color:var(--color-paper-soft)] pt-12 pb-28 sm:pt-16 sm:pb-36">

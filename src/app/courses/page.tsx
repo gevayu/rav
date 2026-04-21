@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function CoursesRoutePage() {
   return (
     <>
-      <Header />
+      <Header forceDark />
       <CatalogPage />
       <Footer />
     </>

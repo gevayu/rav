@@ -47,7 +47,7 @@ export function Footer() {
       <div className="relative mx-auto w-full max-w-[1180px] px-6 pt-24 pb-12 sm:px-10">
         <div className="grid gap-16 lg:grid-cols-[1.25fr_1fr_1fr_1.1fr]">
           <div className="flex flex-col gap-6">
-            <Logo tone="bronze" showWordmark className="scale-[0.85] translate-x-[10px] origin-right" />
+            <Logo tone="bronze" showWordmark className="scale-[1.275] translate-x-[10px] origin-right" />
             <p className="text-[11px] text-[color:var(--color-paper-soft)]/45">
               מקבוצת אנליזה - המרכז הישראלי להכשרות הייטק
             </p>

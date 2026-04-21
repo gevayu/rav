@@ -6,14 +6,14 @@ import type {
 } from "@/data/courses";
 
 export const LEVEL_LABELS: Record<CourseLevel, string> = {
-  foundation: "מבוא",
-  advanced: "מתקדם",
-  mastery: "מאסטר",
+  foundation: "Ai01",
+  advanced: "Ai05",
+  mastery: "Ai10",
 };
 
 export const FORMAT_LABELS: Record<CourseFormat, string> = {
   live: "לייב",
-  hybrid: "היברידי",
+  hybrid: "משולב",
   "self-paced": "בקצב עצמי",
 };
 

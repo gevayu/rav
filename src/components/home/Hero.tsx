@@ -145,7 +145,7 @@ export function Hero() {
             const delay = (col + row) * 0.04;
             return (
               <motion.div
-                key={cell.id}
+                key={cell.idx}
                 initial={reduce ? undefined : { opacity: 0, scale: 0.85, filter: "blur(12px)" }}
                 animate={
                   reduce
@@ -199,7 +199,7 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Logo className="mb-2 scale-[1.625]" />
+          <Logo className="mb-2 scale-[2.4]" />
         </motion.div>
 
         <motion.div

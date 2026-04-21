@@ -23,6 +23,7 @@ export function ChampionsCarousel() {
       id="champions"
       className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-28 sm:py-36"
     >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/grunge-bg.png')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.3 }} />
       <div
         aria-hidden="true"
         className="absolute -top-32 left-1/4 h-[520px] w-[520px] rounded-full bg-[color:var(--color-bronze)]/10 blur-[160px]"
@@ -35,7 +36,7 @@ export function ChampionsCarousel() {
               eyebrow="הכירו את המדריכים"
               title={
                 <>
-                  +40 מדריכים{" "}
+                  40 מדריכים{" "}
                   <span className="text-[color:var(--color-bronze)]">
                     מהתעשייה.
                   </span>
@@ -43,7 +44,7 @@ export function ChampionsCarousel() {
                   כל תחום והמומחה שלו.
                 </>
               }
-              lede="אנשי מקצוע פעילים שעדיין עובדים בתחום שלהם. מכירים כל דפוס של יום עבודה אמיתי, כי הם חיים אותו."
+              lede="אנשי מקצוע מהתחום. מכירים כל דפוס של יום עבודה אמיתי, כי הם חיים אותו."
             />
           </Reveal>
 
@@ -72,7 +73,7 @@ export function ChampionsCarousel() {
         <Reveal delay={0.1}>
           <div
             ref={scrollRef}
-            className="mask-fade-edges mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6"
+            className="mask-fade-left mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6"
             style={{ scrollbarWidth: "none" }}
           >
             {champions.map((person) => (
@@ -88,6 +89,11 @@ export function ChampionsCarousel() {
                       fill
                       sizes="(max-width: 640px) 144px, 176px"
                       className="object-cover"
+                      style={
+                        person.portraitPosition
+                          ? { objectPosition: person.portraitPosition }
+                          : undefined
+                      }
                       unoptimized
                     />
                   </div>

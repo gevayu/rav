@@ -11,19 +11,19 @@ type Benefit = {
 
 const benefits: Benefit[] = [
   {
-    image: "/images/benefit-sectorial.jpg",
+    image: "/images/feel/Typing on a Laptop.png",
     title: "מקצועיות סקטוריאלית",
     body: "לא הכשרת Ai גנרית. הכשרה מותאמת בדיוק לתחום המקצועי שלך - תהליכים, כלים ואתגרים ספציפיים.",
     stat: "11 תחומים",
   },
   {
-    image: "/images/benefit-experts.jpg",
+    image: "/images/lect/Man Presenting on Stage.png",
     title: "מומחים אמיתיים",
     body: "ראשי תחומים שהם אנשי מקצוע פעילים מהשטח, לא מדריכי Ai גנריים שלמדו את התחום מסרטון יוטיוב.",
     stat: "+40 מדריכים",
   },
   {
-    image: "/images/benefit-roi.jpg",
+    image: "/images/feel/Focused Work.png",
     title: "ROI מיידי",
     body: "תהליכי עבודה, סוכנים ואוטומציות שעובדים מהיום הראשון של הקורס - לא רק תיאוריה.",
     stat: "מהיום הראשון",

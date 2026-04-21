@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="topo" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="turbulence" baseFrequency="0.012 0.014" numOctaves="5" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="130" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="810" fill="#18181b"/>
+
+  <!-- Group A: right-center peak (~1080,250) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="1080" cy="250" r="18" opacity="0.95"/>
+    <circle cx="1080" cy="250" r="38" opacity="0.94"/>
+    <circle cx="1080" cy="250" r="60" opacity="0.93"/>
+    <circle cx="1080" cy="250" r="84" opacity="0.92"/>
+    <circle cx="1080" cy="250" r="110" opacity="0.91"/>
+    <circle cx="1080" cy="250" r="138" opacity="0.9"/>
+    <circle cx="1080" cy="250" r="168" opacity="0.89"/>
+    <circle cx="1080" cy="250" r="200" opacity="0.88"/>
+    <circle cx="1080" cy="250" r="234" opacity="0.87"/>
+    <circle cx="1080" cy="250" r="270" opacity="0.86"/>
+    <circle cx="1080" cy="250" r="308" opacity="0.85"/>
+    <circle cx="1080" cy="250" r="348" opacity="0.84"/>
+    <circle cx="1080" cy="250" r="390" opacity="0.83"/>
+    <circle cx="1080" cy="250" r="434" opacity="0.82"/>
+    <circle cx="1080" cy="250" r="480" opacity="0.81"/>
+  </g>
+
+  <!-- Group B: left-center peak (~220,420) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="220" cy="420" r="16" opacity="0.95"/>
+    <circle cx="220" cy="420" r="35" opacity="0.94"/>
+    <circle cx="220" cy="420" r="56" opacity="0.93"/>
+    <circle cx="220" cy="420" r="79" opacity="0.92"/>
+    <circle cx="220" cy="420" r="104" opacity="0.91"/>
+    <circle cx="220" cy="420" r="131" opacity="0.9"/>
+    <circle cx="220" cy="420" r="160" opacity="0.89"/>
+    <circle cx="220" cy="420" r="191" opacity="0.88"/>
+    <circle cx="220" cy="420" r="224" opacity="0.87"/>
+    <circle cx="220" cy="420" r="259" opacity="0.86"/>
+    <circle cx="220" cy="420" r="296" opacity="0.85"/>
+    <circle cx="220" cy="420" r="335" opacity="0.84"/>
+    <circle cx="220" cy="420" r="376" opacity="0.83"/>
+  </g>
+
+  <!-- Group C: bottom-right (~1250,650) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="1250" cy="650" r="14" opacity="0.95"/>
+    <circle cx="1250" cy="650" r="32" opacity="0.94"/>
+    <circle cx="1250" cy="650" r="52" opacity="0.93"/>
+    <circle cx="1250" cy="650" r="74" opacity="0.92"/>
+    <circle cx="1250" cy="650" r="98" opacity="0.91"/>
+    <circle cx="1250" cy="650" r="124" opacity="0.9"/>
+    <circle cx="1250" cy="650" r="152" opacity="0.89"/>
+    <circle cx="1250" cy="650" r="182" opacity="0.88"/>
+    <circle cx="1250" cy="650" r="214" opacity="0.87"/>
+    <circle cx="1250" cy="650" r="248" opacity="0.86"/>
+  </g>
+
+  <!-- Group D: top-left (~130,110) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="130" cy="110" r="20" opacity="0.9"/>
+    <circle cx="130" cy="110" r="44" opacity="0.89"/>
+    <circle cx="130" cy="110" r="72" opacity="0.88"/>
+    <circle cx="130" cy="110" r="104" opacity="0.87"/>
+    <circle cx="130" cy="110" r="140" opacity="0.86"/>
+    <circle cx="130" cy="110" r="180" opacity="0.85"/>
+    <circle cx="130" cy="110" r="224" opacity="0.84"/>
+    <circle cx="130" cy="110" r="272" opacity="0.83"/>
+  </g>
+
+  <!-- Group E: center (~680,480) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="680" cy="480" r="14" opacity="0.9"/>
+    <circle cx="680" cy="480" r="32" opacity="0.89"/>
+    <circle cx="680" cy="480" r="52" opacity="0.88"/>
+    <circle cx="680" cy="480" r="74" opacity="0.87"/>
+    <circle cx="680" cy="480" r="98" opacity="0.86"/>
+    <circle cx="680" cy="480" r="124" opacity="0.85"/>
+    <circle cx="680" cy="480" r="152" opacity="0.84"/>
+    <circle cx="680" cy="480" r="182" opacity="0.83"/>
+  </g>
+
+  <!-- Group F: top-right (~970,60) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="970" cy="60" r="16" opacity="0.88"/>
+    <circle cx="970" cy="60" r="36" opacity="0.87"/>
+    <circle cx="970" cy="60" r="58" opacity="0.86"/>
+    <circle cx="970" cy="60" r="82" opacity="0.85"/>
+    <circle cx="970" cy="60" r="108" opacity="0.84"/>
+    <circle cx="970" cy="60" r="136" opacity="0.83"/>
+    <circle cx="970" cy="60" r="166" opacity="0.82"/>
+    <circle cx="970" cy="60" r="198" opacity="0.81"/>
+    <circle cx="970" cy="60" r="232" opacity="0.8"/>
+  </g>
+
+  <!-- Group G: bottom-left (~280,720) -->
+  <g filter="url(#topo)" fill="none" stroke="#3d3d42" stroke-width="0.95">
+    <circle cx="280" cy="720" r="18" opacity="0.88"/>
+    <circle cx="280" cy="720" r="40" opacity="0.87"/>
+    <circle cx="280" cy="720" r="64" opacity="0.86"/>
+    <circle cx="280" cy="720" r="90" opacity="0.85"/>
+    <circle cx="280" cy="720" r="118" opacity="0.84"/>
+    <circle cx="280" cy="720" r="148" opacity="0.83"/>
+    <circle cx="280" cy="720" r="180" opacity="0.82"/>
+    <circle cx="280" cy="720" r="214" opacity="0.81"/>
+  </g>
+</svg>

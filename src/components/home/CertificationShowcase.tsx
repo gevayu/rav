@@ -16,7 +16,8 @@ const tierDescriptions: Record<string, string> = {
 
 export function CertificationShowcase() {
   return (
-    <section className="relative bg-[color:var(--color-paper-soft)] py-28 sm:py-36">
+    <section className="relative bg-[color:var(--color-paper-soft)] py-28 sm:py-36 overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/wave-lines.svg')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.55 }} />
       <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
         <Reveal>
           <SectionHeading
@@ -60,34 +61,14 @@ export function CertificationShowcase() {
           })}
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <Reveal delay={0.3}>
-            <div className="flex items-center gap-2 sm:gap-4" aria-hidden="true">
-              {CERTIFICATION_ORDER.map((tier, idx) => (
-                <div key={tier} className="flex items-center gap-2 sm:gap-4">
-                  <span
-                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-medium tracking-wider ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].text}`}
-                  >
-                    {tier}
-                  </span>
-                  {idx < CERTIFICATION_ORDER.length - 1 && (
-                    <span className="h-px w-8 bg-gradient-to-l from-[color:var(--color-bronze)]/50 to-[color:var(--color-bronze)]/15 sm:w-12" />
-                  )}
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-
         <Reveal delay={0.35}>
           <div className="mt-10 flex flex-col items-center gap-4 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-bronze)]/30 bg-[color:var(--color-bronze)]/5 px-4 py-2 text-[12px] font-medium text-[color:var(--color-bronze-ink)]">
-              <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.6} />
-              מוכר על ידי מכללה מפוקחת משרד העבודה, הביטחון והחינוך
-            </div>
-            <Button as="a" href="/certification" variant="secondary" size="md">
+            <a
+              href="/certification"
+              className="inline-flex h-12 items-center gap-3 rounded-full border border-[color:var(--color-ink)]/12 bg-[#F5F2ED] px-6 text-sm font-medium text-[color:var(--color-ink)] transition-colors hover:bg-[#e8ded0]"
+            >
               על מדרג ההסמכה
-            </Button>
+            </a>
           </div>
         </Reveal>
       </div>

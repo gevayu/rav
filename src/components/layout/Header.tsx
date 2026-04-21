@@ -14,7 +14,7 @@ const navItems = [
   { label: "בלוג", href: "/#free" },
 ];
 
-export function Header() {
+export function Header({ forceDark = false }: { forceDark?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,13 +43,13 @@ export function Header() {
         <div
           className={
             "pointer-events-auto flex w-full max-w-[1180px] items-center justify-between gap-6 rounded-full border px-4 py-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:px-5 " +
-            (scrolled
+            (scrolled || forceDark
               ? "border-[color:var(--color-bronze)]/25 bg-[color:var(--color-ink)]/85 backdrop-blur-xl shadow-[0_18px_40px_-24px_rgba(0,0,0,0.6)]"
               : "border-white/10 bg-white/5 backdrop-blur-md")
           }
         >
           <a href="/" className="flex items-center gap-3 rounded-full py-1 pr-1">
-            <span className="inline-block scale-[1.92] translate-x-[-5px]"><Logo tone="bronze" size="sm" /></span>
+            <span className="inline-block scale-[2.4] translate-x-[-5px]"><Logo tone="bronze" size="sm" /></span>
             <span className="hidden flex-col leading-[1.5] sm:flex">
               <span className="font-display text-[15px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
                 המרכז הרב-תחומי
@@ -78,7 +78,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <a
               href="#lead"
-              className="hidden h-10 items-center gap-2 rounded-full border border-[color:var(--color-bronze)]/55 px-5 text-[13px] font-medium text-[color:var(--color-bronze)] transition-all duration-300 hover:border-[color:var(--color-bronze)] hover:bg-[color:var(--color-bronze)]/10 md:inline-flex"
+              className="hidden h-10 items-center gap-2 rounded-full border border-[color:var(--color-bronze)] bg-[color:var(--color-bronze)]/10 px-5 text-[13px] font-medium text-[color:var(--color-bronze)] transition-all duration-300 hover:bg-[color:var(--color-bronze)]/18 md:inline-flex"
             >
               תיאום ייעוץ
             </a>

@@ -30,7 +30,7 @@ export function CertificationLegend() {
             return (
               <div key={tier} className="flex items-center gap-2 sm:gap-3" role="listitem">
                 <div className="flex flex-col items-center gap-1">
-                  <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[12px] font-medium tracking-[0.06em] ${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`}>
+                  <span className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] ${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`}>
                     {label}
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-muted)]/80">

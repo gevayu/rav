@@ -6,10 +6,8 @@ export type Sector = {
   guideYears: string;
   oneLine: string;
   portraitUrl: string;
+  gradient: string;
 };
-
-const p = (gender: "men" | "women", id: number) =>
-  `https://randomuser.me/api/portraits/${gender}/${id}.jpg`;
 
 export const sectors: Sector[] = [
   {
@@ -19,7 +17,8 @@ export const sectors: Sector[] = [
     guideTitle: "מומחית לליטיגציה מסחרית",
     guideYears: "15 שנה בפירמות בוטיק",
     oneLine: "סריקת חוזים, מחקר משפטי וטיוטות בזמן של שעה במקום יום.",
-    portraitUrl: p("women", 44),
+    portraitUrl: "/images/lect/Professional Portrait - 2.png",
+    gradient: "from-[#1e40af] to-[#1e3a8a]",
   },
   {
     slug: "accounting",
@@ -28,7 +27,8 @@ export const sectors: Sector[] = [
     guideTitle: "שותף ב-Big 4",
     guideYears: "18 שנה בביקורת חברות ציבוריות",
     oneLine: "אוטומציה של סגירות חודשיות, זיהוי אנומליות ודוחות חכמים.",
-    portraitUrl: p("men", 32),
+    portraitUrl: "/images/lect/Man Speaking in Professional Setting.png",
+    gradient: "from-[#7c3aed] to-[#4c1d95]",
   },
   {
     slug: "medicine",
@@ -37,7 +37,8 @@ export const sectors: Sector[] = [
     guideTitle: "מומחית ברפואת משפחה",
     guideYears: "12 שנה במרפאות קופ״ח",
     oneLine: "תיעוד קליני, סיכומי ביקור ותמיכת החלטות שלא פוגעת בקשר עם המטופל.",
-    portraitUrl: p("women", 68),
+    portraitUrl: "/images/lect/Smiling Woman with Glasses.png",
+    gradient: "from-[#0891b2] to-[#164e63]",
   },
   {
     slug: "realestate",
@@ -46,7 +47,8 @@ export const sectors: Sector[] = [
     guideTitle: "סוכן יזמות וקרקעות",
     guideYears: "11 שנה בפרויקטים למגורים",
     oneLine: "מחקר שוק, אנליזת עסקאות ושיווק נכסים בזמן אמת.",
-    portraitUrl: p("men", 45),
+    portraitUrl: "/images/lect/Man Presenting on Stage.png",
+    gradient: "from-[#d97706] to-[#92400e]",
   },
   {
     slug: "engineering",
@@ -55,7 +57,8 @@ export const sectors: Sector[] = [
     guideTitle: "מנהל פרויקטים ב-Skyline",
     guideYears: "14 שנה בתכנון מגדלים",
     oneLine: "אופטימיזציית תכנון, ניתוח סטטי חכם וניהול שטחי עבודה.",
-    portraitUrl: p("men", 11),
+    portraitUrl: "/images/lect/Professional Presentation.png",
+    gradient: "from-[#475569] to-[#1e293b]",
   },
   {
     slug: "content",
@@ -64,7 +67,8 @@ export const sectors: Sector[] = [
     guideTitle: "ראש תוכן ב-Medialab",
     guideYears: "9 שנה בעריכת וידאו וטקסט",
     oneLine: "קריאייטיב, עריכה ופוסט-פרודקשן שמכפילים פי 4 את קצב היצור.",
-    portraitUrl: p("women", 22),
+    portraitUrl: "/images/lect/Cheerful Woman in Library.png",
+    gradient: "from-[#db2777] to-[#831843]",
   },
   {
     slug: "sales",
@@ -73,7 +77,8 @@ export const sectors: Sector[] = [
     guideTitle: "VP Sales בחברת SaaS",
     guideYears: "13 שנה בצוותי מכירות B2B",
     oneLine: "מחקר ליד, תסריטי שיחה דינמיים וחיזוי סגירות מדויק.",
-    portraitUrl: p("men", 76),
+    portraitUrl: "/images/lect/Speaker on Stage.png",
+    gradient: "from-[#ea580c] to-[#7c2d12]",
   },
   {
     slug: "engineering-soft",
@@ -82,7 +87,8 @@ export const sectors: Sector[] = [
     guideTitle: "Staff Engineer ב-Wix",
     guideYears: "16 שנה בפיתוח full-stack",
     oneLine: "Code review, רפקטורינג ויצירת סוכנים שמשחררים מהתחזוקה הטכנית.",
-    portraitUrl: p("men", 85),
+    portraitUrl: "/images/lect/Person in Online Meeting.png",
+    gradient: "from-[#0284c7] to-[#0c4a6e]",
   },
   {
     slug: "data",
@@ -91,7 +97,8 @@ export const sectors: Sector[] = [
     guideTitle: "Head of Data ב-Fintech",
     guideYears: "10 שנה בפלטפורמות BI",
     oneLine: "מודלים של ניבוי, הגנה על נתונים ודוחות שנכתבים בשפה טבעית.",
-    portraitUrl: p("women", 60),
+    portraitUrl: "/images/lect/Professional Portrait.png",
+    gradient: "from-[#0d9488] to-[#134e4a]",
   },
   {
     slug: "cyber",
@@ -100,7 +107,8 @@ export const sectors: Sector[] = [
     guideTitle: "CISO בחברת סייבר",
     guideYears: "19 שנה ב-Red Team ו-SOC",
     oneLine: "זיהוי איומים, ניתוח לוגים וכתיבת playbooks שעובדים במציאות.",
-    portraitUrl: p("men", 64),
+    portraitUrl: "/images/lect/Speaker on Stage (1).png",
+    gradient: "from-[#dc2626] to-[#7f1d1d]",
   },
   {
     slug: "devops",
@@ -109,6 +117,7 @@ export const sectors: Sector[] = [
     guideTitle: "Principal DevOps Architect",
     guideYears: "12 שנה ב-cloud infrastructure",
     oneLine: "אוטומציה של pipelines, observability חכם וניהול עלויות ענן.",
-    portraitUrl: p("men", 51),
+    portraitUrl: "/images/lect/Man Speaking in Professional Setting.png",
+    gradient: "from-[#16a34a] to-[#14532d]",
   },
 ];

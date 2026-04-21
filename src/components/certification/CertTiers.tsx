@@ -86,7 +86,7 @@ export function CertTiers() {
               >
                 <div className="flex items-center justify-between">
                   <span
-                    className={`inline-flex items-center rounded-full border px-2.5 py-1 font-display text-[14px] font-medium tracking-[0.06em] ${TIER_COLORS[t.tier].bg} ${TIER_COLORS[t.tier].border} ${TIER_COLORS[t.tier].text}`}
+                    className={`inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] ${TIER_COLORS[t.tier].bg} ${TIER_COLORS[t.tier].border} ${TIER_COLORS[t.tier].text}`}
                   >
                     {t.tier}
                   </span>

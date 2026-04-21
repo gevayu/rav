@@ -34,10 +34,10 @@ export function CoursePricing({ course }: CoursePricingProps) {
               id="pricing-title"
               className="font-display text-[clamp(2.6rem,6vw,4.2rem)] font-medium leading-[1] text-[color:var(--color-bronze)]"
             >
-              {formatPrice(course.priceMin, course.priceMax)}
+              <span dir="ltr">{formatPrice(course.priceMin, course.priceMax)}</span>
             </h2>
             <p className="text-[12px] tracking-wide text-[color:var(--color-paper-soft)]/55">
-              ללא התחייבות · ניתן לבטל עד 14 יום
+              ללא התחייבות · ניתן לבטל עד 14 יום לפני תחילת הקורס
             </p>
           </div>
 

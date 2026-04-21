@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 const cards = [
   {
     tag: "לעצמאיים",
-    image: "/images/audience-solo.jpg",
+    image: "/images/freelance/Man Working at Computer with Comic Book-Style Shirt.png",
     title: "עובד לבד. מתחרה מול גדולים.",
     subtitle:
       "Ai הוא היתרון שיאפשר לך להציע שירות ברמה של משרד עם 30 עובדים, בלי להפסיק להיות עצמאי.",
@@ -14,12 +14,14 @@ const cards = [
       "מסלולי תשלומים גמישים ואפשרות מענק ממשרד העבודה",
       "כל השיעורים מוקלטים, למד בקצב שלך - בלי לבטל פגישות",
     ],
-    cta: "לעמוד לפרילאנסרים",
+    cta: "לפרילאנסרים",
     href: "/solo",
+    ctaClass: "border-[#059669] bg-[#059669] hover:bg-[#064e3b] hover:border-[#064e3b] hover:shadow-[0_12px_32px_-12px_rgba(5,150,105,0.5)]",
+    cardBg: "bg-[#1a2220]",
   },
   {
     tag: "לארגונים",
-    image: "/images/audience-business.jpg",
+    image: "/images/org/Office Discussion Scene.png",
     title: "צריך שהצוות שלך יהיה שם, ולא יישאר מאחור.",
     subtitle:
       "הכשרה מובנית לצוותים שלמים, בשפה המקצועית של התחום, עם מדידה שתוכל להציג להנהלה.",
@@ -28,8 +30,10 @@ const cards = [
       "דוחות התקדמות, מדידת ROI, ותעודות סיום לעובדים",
       "יועץ הדרכה שמלווה את התהליך מול ההנהלה ומול הצוות",
     ],
-    cta: "לעמוד לארגונים",
+    cta: "לארגונים",
     href: "/business",
+    ctaClass: "border-[#2563eb] bg-[#2563eb] hover:bg-[#1e3a8a] hover:border-[#1e3a8a] hover:shadow-[0_12px_32px_-12px_rgba(37,99,235,0.5)]",
+    cardBg: "bg-[#1a1d26]",
   },
 ];
 
@@ -39,6 +43,7 @@ export function AudienceRouter() {
       className="relative bg-[color:var(--color-ink)] py-24 sm:py-28"
       aria-labelledby="audience-title"
     >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/topo-bg.png')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.5 }} />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[color:var(--color-bronze)]/25 to-transparent"
@@ -48,7 +53,7 @@ export function AudienceRouter() {
         <Reveal className="mb-14 flex flex-col items-center gap-4 text-center">
           <h2
             id="audience-title"
-            className="max-w-2xl font-display text-[clamp(1.75rem,3.6vw,2.6rem)] font-medium leading-[1.1] text-[color:var(--color-paper-soft)]"
+            className="max-w-2xl font-display text-[clamp(2rem,4.2vw,3.25rem)] font-medium leading-[1.1] text-[color:var(--color-paper-soft)]"
           >
             עצמאים או חברה גדולה?<br />יש לנו פתרונות לכולם
           </h2>
@@ -63,7 +68,7 @@ export function AudienceRouter() {
             <Reveal key={card.tag} delay={i * 0.1}>
               <a
                 href={card.href}
-                className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[color:var(--color-bronze)]/15 bg-[#26262A] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-[color:var(--color-bronze)]/45 hover:bg-[#2a2a2e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-bronze)]"
+                className={`group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[color:var(--color-bronze)]/15 ${card.cardBg} transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-[color:var(--color-bronze)]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-bronze)]`}
               >
                 <div className="relative aspect-[16/9] w-full bg-[color:var(--color-ink)]">
                   <Image
@@ -107,7 +112,7 @@ export function AudienceRouter() {
                   </ul>
 
                   <div className="mt-auto pt-4">
-                    <span className="inline-flex h-12 items-center justify-center gap-3 rounded-full border border-[#2563eb] bg-[#2563eb] px-6 text-[14px] font-medium text-white transition-all duration-300 group-hover:bg-[#1e3a8a] group-hover:border-[#1e3a8a] group-hover:shadow-[0_12px_32px_-12px_rgba(37,99,235,0.5)]">
+                    <span className={`inline-flex h-12 items-center justify-center gap-3 rounded-full border px-6 text-[14px] font-medium text-white transition-all duration-300 ${card.ctaClass}`}>
                       {card.cta}
                     </span>
                   </div>

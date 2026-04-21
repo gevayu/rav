@@ -33,7 +33,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
           <div className="flex flex-col gap-4">
             <span className="inline-flex items-center gap-2 self-start text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.8} aria-hidden="true" />
-              מדרג ההסמכה
+              סטנדרט חדש בתעשייה
             </span>
             <h2
               id="cert-path-title"
@@ -49,7 +49,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
           </div>
 
           <div
-            className="flex items-center justify-between gap-3 sm:gap-6"
+            className="flex items-center"
             role="list"
             aria-label="שלושת דרגות ההסמכה"
           >
@@ -58,19 +58,13 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
               const exit = isExit(tier);
               const { label, name } = CERTIFICATION_TIERS[tier];
               return (
-                <div
-                  key={tier}
-                  className="flex flex-1 items-center"
-                  role="listitem"
-                >
-                  <div className="flex flex-1 flex-col items-center gap-3">
+                <div key={tier} className="flex flex-1 items-center">
+                  <div className="flex flex-1 flex-col items-center gap-3" role="listitem">
                     <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
                       <span
                         className={
-                          "inline-flex items-center rounded-full border px-2.5 py-1 font-display text-[15px] font-medium tracking-[0.06em] transition-colors sm:px-3 sm:py-1.5 sm:text-[17px] " +
-                          (active
-                            ? `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
-                            : "border-white/15 bg-white/[0.03] text-[color:var(--color-paper-soft)]/35")
+                          "inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] " +
+                          `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
                         }
                       >
                         {label}
@@ -78,9 +72,9 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                       {exit && (
                         <span
                           aria-hidden="true"
-                          className="absolute -top-2 -right-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)]"
+                          className="absolute -top-3.5 -right-3.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)]"
                         >
-                          <ShieldCheck className="h-3 w-3" strokeWidth={2.2} />
+                          <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
                         </span>
                       )}
                     </div>
@@ -104,7 +98,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                     <span
                       aria-hidden="true"
                       className={
-                        "mx-2 h-px flex-1 sm:mx-4 " +
+                        "shrink-0 h-px w-12 sm:w-20 " +
                         (isActive(tier) && isActive(CERTIFICATION_ORDER[idx + 1])
                           ? "bg-gradient-to-l from-[color:var(--color-bronze)]/15 via-[color:var(--color-bronze)]/60 to-[color:var(--color-bronze)]/15"
                           : "bg-white/10")

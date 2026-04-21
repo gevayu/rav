@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BadgeCheck, Sparkles } from "lucide-react";
 import type { Course } from "@/data/courses";
 import { getCertificationPath } from "@/components/courses/labels";
@@ -95,6 +96,19 @@ export function CourseAudience({ course }: CourseAudienceProps) {
             )}
           </div>
         ) : null}
+
+
+        <div className="relative mt-6 h-[280px] w-full overflow-hidden rounded-[24px] sm:h-[340px]">
+          <Image
+            src="/images/org/Contemporary Co-working Office Space.png"
+            alt=""
+            fill
+            sizes="(max-width: 1240px) 100vw, 1240px"
+            className="object-cover object-center"
+            unoptimized
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </section>
   );

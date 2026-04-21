@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Quote } from "lucide-react";
 import type { Course } from "@/data/courses";
 import { sectors } from "@/data/sectors";
 
@@ -60,12 +59,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
             </div>
 
             {quote && (
-              <figure className="relative my-2 border-r-2 border-[color:var(--color-bronze)]/60 pr-6">
-                <Quote
-                  className="absolute -right-4 top-0 h-4 w-4 rotate-180 text-[color:var(--color-bronze)]/60"
-                  strokeWidth={1.8}
-                  aria-hidden="true"
-                />
+              <figure className="my-2 border-r-2 border-[color:var(--color-bronze)]/60 pr-6">
                 <blockquote className="font-display text-[20px] font-medium leading-[1.35] text-[color:var(--color-paper-soft)]/90">
                   {quote}.
                 </blockquote>

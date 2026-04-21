@@ -2,9 +2,9 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const stats = [
   { number: "+4,500", label: "בוגרים בחמש שנים" },
-  { number: "+40", label: "מדריכים פעילים בתעשייה" },
+  { number: "+40",    label: "מדריכים פעילים בתעשייה" },
   { number: "+3,000", label: "שעות הדרכה בחודש" },
-  { number: "11", label: "תחומים מקצועיים" },
+  { number: "11",     label: "תחומים מקצועיים" },
 ];
 
 export function SocialProofBar() {
@@ -22,8 +22,8 @@ export function SocialProofBar() {
           <span className="text-[11px] uppercase tracking-[0.24em] text-[color:var(--color-bronze-ink)]">
             העוצמה במספרים
           </span>
-          <h2 className="max-w-2xl font-display text-[clamp(1.75rem,3.4vw,2.5rem)] font-medium leading-[1.1] text-[color:var(--color-ink)]">
-            חמש שנים. 4,500 בוגרים.<br />תוצאות מדידות.
+          <h2 className="max-w-2xl font-display text-[clamp(2rem,4.2vw,3.25rem)] font-medium leading-[1.1] text-[color:var(--color-ink)]">
+            חמש שנים. 4,500 בוגרים.<br /><span className="text-[color:var(--color-bronze-ink)]">תוצאות מדידות.</span>
           </h2>
         </Reveal>
 
@@ -32,7 +32,12 @@ export function SocialProofBar() {
             <Reveal key={stat.label} delay={i * 0.08}>
               <div className="flex flex-col items-center text-center sm:items-start sm:text-start">
                 <span className="tabular font-display text-[clamp(2.75rem,5.6vw,4.5rem)] font-medium leading-none tracking-tight text-[color:var(--color-ink)]">
-                  {stat.number}
+                  {stat.number.startsWith("+") ? (
+                    <>
+                      <sup className="text-[0.6em] font-medium">+</sup>
+                      {stat.number.slice(1)}
+                    </>
+                  ) : stat.number}
                 </span>
                 <span className="mt-3 h-px w-10 bg-[color:var(--color-bronze)]" aria-hidden="true" />
                 <span className="mt-3 text-sm leading-snug text-[color:var(--color-ink-muted)]">

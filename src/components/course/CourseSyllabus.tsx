@@ -24,7 +24,7 @@ function buildItems(course: Course): SyllabusItem[] {
     items.push(preCourseItem(course.preCourse));
   }
   course.modules?.forEach((mod, idx) => {
-    items.push(moduleItem(mod, idx, course.sampleVideoModuleId));
+    items.push(moduleItem(mod, idx, course.sampleVideoModuleIds));
   });
   return items;
 }
@@ -40,12 +40,12 @@ function preCourseItem(pre: PreCourseBlock): SyllabusItem {
   };
 }
 
-function moduleItem(mod: CourseModule, idx: number, sampleVideoModuleId?: string): SyllabusItem {
+function moduleItem(mod: CourseModule, idx: number, sampleVideoModuleIds?: string[]): SyllabusItem {
   return {
     key: mod.id,
     badge: `מפגש ${idx + 1}`,
     isPreCourse: false,
-    hasVideo: mod.id === sampleVideoModuleId,
+    hasVideo: sampleVideoModuleIds?.includes(mod.id) ?? false,
     title: mod.title,
     durationHours: mod.durationHours,
     topics: mod.topics,
@@ -118,6 +118,13 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
                     <span className="flex-1 font-display text-[17px] font-medium leading-tight text-[color:var(--color-ink)] sm:text-[19px]">
                       {item.title}
                     </span>
+
+                    {item.hasVideo && (
+                      <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-[color:var(--color-bronze)]/12 px-3 py-1 text-[11px] font-medium tracking-[0.06em] text-[color:var(--color-bronze-ink)] sm:inline-flex">
+                        <Play className="h-2.5 w-2.5" fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                        שיעור לדוגמה
+                      </span>
+                    )}
 
                     {item.durationHours && (
                       <span className="hidden shrink-0 text-[12px] text-[color:var(--color-ink-muted)] sm:inline">

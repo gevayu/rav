@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, GraduationCap, ShieldCheck, Video } from "lucide-react";
 import type { Course } from "@/data/courses";
-import { LEVEL_LABELS, FORMAT_LABELS, getCertificationPath } from "./labels";
+import { LEVEL_LABELS, FORMAT_LABELS, getCertificationPath, TIER_COLORS } from "./labels";
 
 type CourseCardProps = {
   course: Course;
@@ -37,8 +37,7 @@ export function CourseCard({ course }: CourseCardProps) {
         </div>
 
         <div className="mt-6 flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-bronze)]/40 bg-[color:var(--color-bronze)]/10 px-2.5 py-1 text-[11px] font-medium tracking-[0.08em] text-[color:var(--color-bronze-ink)]">
-            <ShieldCheck className="h-3 w-3" strokeWidth={1.8} aria-hidden="true" />
+          <span className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] ${TIER_COLORS[cert.exit].bg} ${TIER_COLORS[cert.exit].border} ${TIER_COLORS[cert.exit].text}`}>
             {cert.exit}
           </span>
           {cert.entry && (
@@ -83,7 +82,7 @@ export function CourseCard({ course }: CourseCardProps) {
             <span className="text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)]/80">
               טווח השקעה
             </span>
-            <span className="tabular mt-1 font-display text-[18px] font-medium text-[color:var(--color-bronze-ink)]">
+            <span dir="ltr" className="tabular mt-1 font-display text-[18px] font-medium text-[color:var(--color-bronze-ink)]">
               {formatPrice(course.priceMin, course.priceMax)}
             </span>
           </div>

@@ -121,7 +121,7 @@ function QuickFactsCard({ course }: { course: Course }) {
           <p className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-paper-soft)]/50">
             טווח השקעה
           </p>
-          <p className="mt-2 font-display text-[clamp(2rem,4vw,2.6rem)] font-medium leading-none text-[color:var(--color-bronze)]">
+          <p dir="ltr" className="mt-2 font-display text-[clamp(2rem,4vw,2.6rem)] font-medium leading-none text-[color:var(--color-bronze)]">
             {formatPrice(course.priceMin, course.priceMax)}
           </p>
         </div>
@@ -146,7 +146,7 @@ function QuickFactsCard({ course }: { course: Course }) {
         </div>
 
         <p className="mt-4 text-center text-[11px] text-[color:var(--color-paper-soft)]/40">
-          ללא התחייבות · ניתן לבטל עד 14 יום
+          ללא התחייבות · ניתן לבטל עד 14 יום לפני תחילת הקורס
         </p>
       </div>
     </div>

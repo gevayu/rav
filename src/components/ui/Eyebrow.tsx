@@ -14,7 +14,7 @@ export function Eyebrow({ children, tone = "bronze", className }: EyebrowProps) 
 
   return (
     <span
-      className={`inline-flex items-center text-[20px] font-medium uppercase tracking-[0.22em] ${toneClass} ${className ?? ""}`.trim()}
+      className={`inline-flex items-center text-[16px] font-medium uppercase tracking-[0.22em] ${toneClass} ${className ?? ""}`.trim()}
     >
       {children}
     </span>

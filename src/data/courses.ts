@@ -55,7 +55,7 @@ export type Course = {
   // Extended fields for course detail page
   overview?: string;
   whatYouLearn?: CourseOutcome[];
-  sampleVideoModuleId?: string;
+  sampleVideoModuleIds?: string[];
   targetAudience?: string[];
   prerequisites?: string[];
   tools?: string[];
@@ -94,17 +94,17 @@ export const courses: Course[] = [
     nextCohort: "מחזור הבא: יוני 2026",
     instructorName: "עו״ד שרה צרפתי כהן",
     instructorTitle: "מומחית בדיני בינה מלאכותית ומשפט, יזמת ומשפיעה בתחום",
-    instructorPortraitUrl: "/images/instructor-sarah-tsarfati.jpg",
+    instructorPortraitUrl: "/images/lect/Professional Portrait - 2.png",
     highlights: [
       "10 מפגשי לייב בהעברת עו״ד שרה צרפתי כהן",
       "מכינה (Pre-Course) כלולה - למי שאין רקע ב-Ai",
-      "4 צירי עבודה: מחקר, חוזים, ליטיגציה וניהול ידע",
+      "3 צירי עבודה: מחקר, חוזים, ליטיגציה וניהול ידע",
       "פרויקט מסכם אישי + הצגה בפני הכיתה",
     ],
     isFlagship: true,
     overview:
       "המקצוע המשפטי עובר שינוי עומק - כלי Ai מאפשרים היום לעורכת דין לצמצם שעות מחקר, לנסח חוזים בגרסה ראשונה תוך דקות, להכין תיקי ליטיגציה עם ניתוח תרחישים רב-שכבתי ולנהל ידע ארגוני באופן חכם. הקורס הזה הוא לא מבוא כללי ל-Ai - אלא מסלול יישומי בן 10 מפגשים שבסופו תצאי עם מתודולוגיית עבודה מבוססת, תבניות מוכנות לשימוש ואסטרטגיית הטמעה למשרד שלך. הקורס פתוח לעורכי דין מכל רמות הניסיון. מי שלא עבד עם כלי Ai בעבר מקבל מכינה (Pre-Course) שמיישרת את הבסיס לפני המפגש הראשון.",
-    sampleVideoModuleId: "mod-7",
+    sampleVideoModuleIds: ["mod-4", "mod-7"],
     whatYouLearn: [
       { text: "הנדסת פרומפטים משפטיים מתקדמים לעבודה עם מסמכים מורכבים", saving: "~3 שעות/שבוע" },
       { text: "בניית תהליך מחקר משפטי חכם - פסיקה, חקיקה והשוואת מקורות", saving: "~5 שעות/תיק" },
@@ -324,7 +324,7 @@ export const courses: Course[] = [
     priceMax: 4600,
     nextCohort: "מחזור הבא: מאי 2026",
     instructorName: nameFor("law"),
-    instructorPortraitUrl: "/images/instructor-sarah-tsarfati.jpg",
+    instructorPortraitUrl: "/images/lect/Professional Portrait - 2.png",
     highlights: [
       "טכניקות prompt engineering למחקר משפטי",
       "בדיקת מקורות וצמצום הזיות מודל",

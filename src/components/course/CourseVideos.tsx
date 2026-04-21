@@ -11,11 +11,6 @@ const videos = [
     label: "סרטון היכרות",
     caption: (name: string) => `${name} מספרת על הקורס, למי הוא מיועד ומה תקבלו ממנו.`,
   },
-  {
-    id: "sample",
-    label: "שיעור לדוגמה",
-    caption: () => "טעימה ממפגש מתקדם - צפו בקטע מתוך שיעור אמיתי מהקורס.",
-  },
 ];
 
 export function CourseVideos({ course }: CourseVideosProps) {
@@ -42,7 +37,7 @@ export function CourseVideos({ course }: CourseVideosProps) {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-1 max-w-2xl">
           {videos.map((v) => (
             <article
               key={v.id}

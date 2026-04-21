@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import type { Course } from "@/data/courses";
 
@@ -16,7 +17,7 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
       <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
         <div className="mb-14 flex flex-col gap-4">
           <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
-            יציאה מהקורס
+            בסיום הקורס
           </span>
           <h2
             id="outcomes-title"
@@ -55,6 +56,18 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
             </li>
           ))}
         </ul>
+
+        <div className="relative mt-6 h-[280px] w-full overflow-hidden rounded-[24px] sm:h-[340px]">
+          <Image
+            src="/images/org/Office Meeting Scene.png"
+            alt=""
+            fill
+            sizes="(max-width: 1240px) 100vw, 1240px"
+            className="object-cover object-center"
+            unoptimized
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </section>
   );
