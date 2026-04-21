@@ -14,7 +14,7 @@ const cards = [
       "מסלולי תשלומים גמישים ואפשרות מענק ממשרד העבודה",
       "כל השיעורים מוקלטים, למד בקצב שלך - בלי לבטל פגישות",
     ],
-    cta: "לפרילאנסרים",
+    cta: "לעצמאים",
     href: "/solo",
     ctaClass: "border-[#059669] bg-[#059669] hover:bg-[#064e3b] hover:border-[#064e3b] hover:shadow-[0_12px_32px_-12px_rgba(5,150,105,0.5)]",
     cardBg: "bg-[#1a2220]",
@@ -66,9 +66,8 @@ export function AudienceRouter() {
         <div className="grid gap-5 md:grid-cols-2">
           {cards.map((card, i) => (
             <Reveal key={card.tag} delay={i * 0.1}>
-              <a
-                href={card.href}
-                className={`group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[color:var(--color-bronze)]/15 ${card.cardBg} transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:border-[color:var(--color-bronze)]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-bronze)]`}
+              <div
+                className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--color-bronze)]/15 ${card.cardBg}`}
               >
                 <div className="relative aspect-[16/9] w-full bg-[color:var(--color-ink)]">
                   <Image
@@ -117,7 +116,7 @@ export function AudienceRouter() {
                     </span>
                   </div>
                 </div>
-              </a>
+              </div>
             </Reveal>
           ))}
         </div>

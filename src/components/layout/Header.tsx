@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/Button";
 
 const navItems = [
   { label: "קורסים", href: "/courses" },
-  { label: "מדרג ההסמכה", href: "/certification" },
-  { label: "לעצמאיים", href: "/solo" },
-  { label: "לארגונים", href: "/business" },
+  { label: "מדרג ההסמכה", href: "/certification", disabled: true },
+  { label: "לעצמאים", href: "/solo", disabled: true },
+  { label: "לארגונים", href: "/business", disabled: true },
   { label: "המומחים", href: "/#champions" },
-  { label: "בלוג", href: "/#free" },
+  { label: "תוכן מקצועי", href: "/#free" },
 ];
 
 export function Header({ forceDark = false }: { forceDark?: boolean }) {
@@ -64,15 +64,24 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
             aria-label="ניווט ראשי"
             className="hidden items-center gap-1 lg:flex"
           >
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 transition-colors hover:bg-white/5 hover:text-[color:var(--color-paper-soft)]"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.disabled ? (
+                <span
+                  key={item.href}
+                  className="rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 cursor-default"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 transition-colors hover:bg-white/5 hover:text-[color:var(--color-paper-soft)]"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -107,19 +116,31 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
         >
           <div className="flex flex-col gap-6 px-8 pb-24 pt-28">
             <nav className="flex flex-col divide-y divide-white/10">
-              {navItems.map((item, idx) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] transition-colors hover:text-[color:var(--color-bronze)]"
-                  style={{
-                    animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both`,
-                  }}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item, idx) =>
+                item.disabled ? (
+                  <span
+                    key={item.href}
+                    className="py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] cursor-default"
+                    style={{
+                      animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both`,
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                ) : (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] transition-colors hover:text-[color:var(--color-bronze)]"
+                    style={{
+                      animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both`,
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                )
+              )}
             </nav>
             <Button as="a" href="#lead" variant="primary" size="lg">
               לתיאום ייעוץ

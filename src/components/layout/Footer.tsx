@@ -1,7 +1,7 @@
 import { Logo } from "@/components/brand/Logo";
 import { ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
 
-type FooterLink = { label: string; href: string };
+type FooterLink = { label: string; href: string; disabled?: boolean };
 
 const columns: { title: string; links: FooterLink[] }[] = [
   {
@@ -22,9 +22,9 @@ const columns: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "דף הבית", href: "/" },
       { label: "קורסים", href: "/courses" },
-      { label: "מדרג ההסמכה", href: "/certification" },
-      { label: "למסלול פרילאנסרים", href: "/solo" },
-      { label: "למסלול ארגוני", href: "/business" },
+      { label: "מדרג ההסמכה", href: "/certification", disabled: true },
+      { label: "לעצמאים", href: "/solo", disabled: true },
+      { label: "למסלול ארגוני", href: "/business", disabled: true },
       { label: "המומחים", href: "/#champions" },
       { label: "בלוג", href: "/#free" },
       { label: "צור קשר", href: "/#lead" },
@@ -69,12 +69,18 @@ export function Footer() {
               <ul className="flex flex-col gap-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-[13px] text-[color:var(--color-paper-soft)]/65 transition-colors hover:text-[color:var(--color-paper-soft)]"
-                    >
-                      {link.label}
-                    </a>
+                    {link.disabled ? (
+                      <span className="text-[13px] text-[color:var(--color-paper-soft)]/25 cursor-default">
+                        {link.label}
+                      </span>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-[13px] text-[color:var(--color-paper-soft)]/65 transition-colors hover:text-[color:var(--color-paper-soft)]"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
