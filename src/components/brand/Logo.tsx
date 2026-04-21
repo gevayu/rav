@@ -46,15 +46,15 @@ export function Logo({ className, showWordmark = false, tone = "bronze", size = 
         />
       </div>
       {showWordmark ? (
-        <div className="flex flex-col leading-[1.5]">
+        <div className="flex flex-col leading-[1.2] translate-x-[-5px] translate-y-[5px]">
           <span
-            className="font-display text-sm font-medium tracking-tight"
+            className="font-display text-[14px] font-medium tracking-tight"
             style={{ color: wordmarkColor[tone] }}
           >
             המרכז הרב-תחומי
           </span>
           <span
-            className="font-display text-sm font-medium tracking-tight"
+            className="font-display text-[14px] font-medium tracking-tight"
             style={{ color: wordmarkColor[tone] }}
           >
             להכשרות Ai

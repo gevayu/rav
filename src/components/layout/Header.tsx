@@ -48,13 +48,13 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
               : "border-white/10 bg-white/5 backdrop-blur-md")
           }
         >
-          <a href="/" className="flex items-center gap-3 rounded-full py-1 pr-1">
-            <span className="inline-block scale-[2.4] translate-x-[-5px]"><Logo tone="bronze" size="sm" /></span>
-            <span className="hidden flex-col leading-[1.5] sm:flex">
-              <span className="font-display text-[15px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
+          <a href="/" className="flex items-end gap-3 rounded-full py-1 pr-1">
+            <span className="inline-block scale-[2.76] translate-x-[-5px]"><Logo tone="bronze" size="sm" /></span>
+            <span className="hidden flex-col leading-[1.2] sm:flex translate-x-[-5px] translate-y-[5px]">
+              <span className="font-display text-[14px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
                 המרכז הרב-תחומי
               </span>
-              <span className="font-display text-[15px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
+              <span className="font-display text-[14px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
                 להכשרות Ai
               </span>
             </span>
