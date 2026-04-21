@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TIER_COLORS } from "@/components/courses/labels";
@@ -7,6 +8,7 @@ type Quote = {
   text: string;
   name: string;
   role: string;
+  avatar: string;
 };
 
 const quotes: Quote[] = [
@@ -15,18 +17,21 @@ const quotes: Quote[] = [
     text: "המכינה שינתה לי את הגישה. הפסקתי לפחד מ-Ai והתחלתי לעבוד איתו. עכשיו אני יודע מה לשאול, ואני מבין מה אני מקבל.",
     name: "עמית כהן",
     role: "עו״ד, משרד בוטיק",
+    avatar: "/images/lect/Professional Portrait - 2.png",
   },
   {
     tier: "Ai05",
     text: "אחרי 10 מפגשים יש לי תהליכי עבודה חדשים שחוסכים לי 8 שעות בשבוע. הפרויקט הגמר שלי הפך לכלי שהמשרד כולו משתמש בו.",
     name: "מירב לוי",
     role: "רואת חשבון, פרילאנסרית",
+    avatar: "/images/lect/Smiling Woman with Glasses.png",
   },
   {
     tier: "Ai10",
     text: "Ai10 נתן לי את הכלים להוביל הטמעה ארגונית. תוך 3 חודשים הכשרתי 40 עובדים והצגתי להנהלה דו״ח ROI שהפתיע את כולם.",
     name: "אריק ברנשטיין",
     role: "מנהל הדרכה, חברת ביטוח",
+    avatar: "/images/lect/Man Presenting on Stage.png",
   },
 ];
 
@@ -38,7 +43,7 @@ export function CertQuotes() {
           <SectionHeading
             align="center"
             eyebrow="בוגרים מספרים"
-            title="ציטוט אחד מכל דרגה"
+            title="המלצות מהבוגרים שלנו"
           />
         </Reveal>
 
@@ -56,7 +61,16 @@ export function CertQuotes() {
                   ״{q.text}״
                 </blockquote>
 
-                <footer className="border-t border-[color:var(--color-ink)]/5 pt-4">
+                <footer className="flex items-center gap-3 border-t border-[color:var(--color-ink)]/5 pt-4">
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-[color:var(--color-bronze)]/30">
+                    <Image
+                      src={q.avatar}
+                      alt={q.name}
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                    />
+                  </div>
                   <cite className="not-italic">
                     <span className="block text-[14px] font-medium text-[color:var(--color-ink)]">
                       {q.name}

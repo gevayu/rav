@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Briefcase, TrendingUp, GraduationCap } from "lucide-react";
@@ -60,6 +61,17 @@ export function CertValue() {
               </Reveal>
             );
           })}
+        </div>
+
+        <div className="relative mt-6 h-[280px] w-full overflow-hidden rounded-[24px] sm:h-[340px]">
+          <Image
+            src="/images/org/Professional Meeting Scene.png"
+            alt=""
+            fill
+            sizes="(max-width: 1080px) 100vw, 1080px"
+            className="object-cover object-center"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>

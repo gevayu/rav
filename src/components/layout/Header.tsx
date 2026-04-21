@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 const navItems = [
   { label: "קורסים", href: "/courses" },
-  { label: "מדרג ההסמכה", href: "/certification", disabled: true },
+  { label: "מדרג ההסמכה", href: "/certification" },
   { label: "לעצמאים", href: "/solo", disabled: true },
   { label: "לארגונים", href: "/business", disabled: true },
   { label: "המומחים", href: "/#champions" },
