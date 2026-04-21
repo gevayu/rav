@@ -48,7 +48,7 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
               : "border-white/10 bg-white/5 backdrop-blur-md")
           }
         >
-          <a href="/" className="flex items-end gap-3 rounded-full py-1 pr-1">
+          <a href="/" className="flex items-end gap-3 rounded-full py-1 pr-1 -translate-y-[9px]">
             <span className="inline-block scale-[2.76] translate-x-[-5px]"><Logo tone="bronze" size="sm" /></span>
             <span className="hidden flex-col leading-[1.2] sm:flex translate-x-[-5px] translate-y-[5px]">
               <span className="font-display text-[14px] font-medium tracking-tight text-[color:var(--color-paper-soft)]">
