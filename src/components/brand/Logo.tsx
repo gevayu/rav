@@ -42,7 +42,7 @@ export function Logo({ className, showWordmark = false, tone = "bronze", size = 
           sizes={sizePx[size]}
           className="object-contain"
           priority
-          unoptimized
+
         />
       </div>
       {showWordmark ? (

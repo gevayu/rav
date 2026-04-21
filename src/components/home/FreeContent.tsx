@@ -155,7 +155,7 @@ export function FreeContent() {
                       fill
                       sizes="350px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      unoptimized
+
                     />
                   </div>
                   <div className="relative flex h-full flex-col rounded-b-[calc(28px-0.375rem)] bg-[color:var(--color-paper-soft)] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">

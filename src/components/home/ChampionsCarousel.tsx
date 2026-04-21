@@ -94,7 +94,7 @@ export function ChampionsCarousel() {
                           ? { objectPosition: person.portraitPosition }
                           : undefined
                       }
-                      unoptimized
+
                     />
                   </div>
 

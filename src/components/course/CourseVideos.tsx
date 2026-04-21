@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Play } from "lucide-react";
 import type { Course } from "@/data/courses";
 
@@ -44,6 +45,15 @@ export function CourseVideos({ course }: CourseVideosProps) {
               className="group flex flex-col gap-5 overflow-hidden rounded-[24px] border border-[color:var(--color-bronze)]/15 bg-[#26262A] transition-colors hover:border-[color:var(--color-bronze)]/45"
             >
               <div className="relative aspect-video w-full bg-[color:var(--color-ink)] cursor-pointer">
+                <Image
+                  src="/images/feel/Speaker on Stage.png"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 672px"
+                  className="object-cover object-center"
+
+                  aria-hidden="true"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-signal)] shadow-[0_8px_32px_-8px_rgba(6,78,59,0.6)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110">

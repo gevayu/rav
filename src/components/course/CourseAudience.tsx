@@ -105,7 +105,7 @@ export function CourseAudience({ course }: CourseAudienceProps) {
             fill
             sizes="(max-width: 1240px) 100vw, 1240px"
             className="object-cover object-center"
-            unoptimized
+
             aria-hidden="true"
           />
         </div>

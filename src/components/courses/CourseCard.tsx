@@ -23,7 +23,7 @@ export function CourseCard({ course }: CourseCardProps) {
               fill
               sizes="56px"
               className="object-cover"
-              unoptimized
+
             />
           </div>
           <div className="min-w-0 flex-1">

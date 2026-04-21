@@ -166,7 +166,7 @@ export function Hero() {
                   fill
                   sizes="(max-width: 768px) 60px, 100px"
                   className="object-cover grayscale-[30%] contrast-[0.9]"
-                  unoptimized
+
                 />
                 <div
                   className="absolute inset-0"

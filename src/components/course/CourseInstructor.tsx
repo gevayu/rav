@@ -34,7 +34,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
                 fill
                 sizes="(min-width: 1024px) 300px, (min-width: 768px) 260px, 220px"
                 className="object-cover"
-                unoptimized
+
               />
             </div>
           </div>
