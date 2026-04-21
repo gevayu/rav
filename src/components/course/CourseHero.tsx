@@ -14,7 +14,7 @@ type CourseHeroProps = {
 };
 
 const formatPrice = (min: number, max: number) =>
-  `₪${min.toLocaleString("he-IL")}–${max.toLocaleString("he-IL")}`;
+  `₪${Math.round((min + max) / 2).toLocaleString("he-IL")}`;
 
 export function CourseHero({ course }: CourseHeroProps) {
   const sector = sectors.find((s) => s.slug === course.sectorSlug);
@@ -111,7 +111,7 @@ export function CourseHero({ course }: CourseHeroProps) {
 
 function QuickFactsCard({ course }: { course: Course }) {
   const formatPrice = (min: number, max: number) =>
-    `₪${min.toLocaleString("he-IL")}–${max.toLocaleString("he-IL")}`;
+    `₪${Math.round((min + max) / 2).toLocaleString("he-IL")}`;
 
   return (
     <div className="relative overflow-hidden rounded-[28px] bg-white/[0.04] p-1.5 ring-1 ring-[color:var(--color-bronze)]/30">

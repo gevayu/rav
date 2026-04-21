@@ -12,7 +12,7 @@ type FlagshipBannerProps = {
 };
 
 const formatPrice = (min: number, max: number) =>
-  `₪${min.toLocaleString("he-IL")}–${max.toLocaleString("he-IL")}`;
+  `₪${Math.round((min + max) / 2).toLocaleString("he-IL")}`;
 
 export function FlagshipBanner({ courses }: FlagshipBannerProps) {
   const [index, setIndex] = useState(0);

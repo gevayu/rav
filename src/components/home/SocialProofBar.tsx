@@ -30,7 +30,7 @@ export function SocialProofBar() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 sm:gap-6">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
-              <div className="flex flex-col items-center text-center sm:items-start sm:text-start">
+              <div className="flex flex-col items-center text-center">
                 <span className="tabular font-display text-[clamp(2.75rem,5.6vw,4.5rem)] font-medium leading-none tracking-tight text-[color:var(--color-ink)]">
                   {stat.number.startsWith("+") ? (
                     <>

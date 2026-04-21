@@ -60,8 +60,8 @@ export function Footer() {
               מקבוצת אנליזה - המרכז הישראלי להכשרות הייטק
             </p>
             <p className="max-w-sm text-sm leading-relaxed text-[color:var(--color-paper-soft)]/70">
-              לא מלמדים Ai. מלמדים איך ליישם את ה-Ai בתחום המקצועי שלך.
-              הכשרות סקטוריאליות ברמה הגבוהה בישראל.
+              ברב תחומי מלמדים איך ליישם Ai מהמומחים בתחום שלך.
+              הכשרות סקטוריאליות מהמומחים ברמה הכי גבוהה בישראל.
             </p>
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/5 px-4 py-2 text-[11px] font-medium text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.6} />
