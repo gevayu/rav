@@ -8,6 +8,7 @@ type SectionHeadingProps = {
   align?: "start" | "center";
   tone?: "ink" | "paper";
   className?: string;
+  ledeClassName?: string;
 };
 
 export function SectionHeading({
@@ -17,6 +18,7 @@ export function SectionHeading({
   align = "start",
   tone = "ink",
   className,
+  ledeClassName,
 }: SectionHeadingProps) {
   const alignment =
     align === "center" ? "items-center text-center mx-auto" : "items-start text-start";
@@ -39,7 +41,7 @@ export function SectionHeading({
         {title}
       </h2>
       {lede ? (
-        <p className={`max-w-2xl text-lg leading-relaxed ${ledeTone}`}>{lede}</p>
+        <p className={`max-w-2xl text-lg leading-relaxed ${ledeTone} ${ledeClassName ?? ""}`.trim()}>{lede}</p>
       ) : null}
       <span
         aria-hidden="true"

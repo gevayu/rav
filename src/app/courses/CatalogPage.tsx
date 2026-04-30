@@ -14,6 +14,7 @@ import { CatalogGrid } from "@/components/courses/CatalogGrid";
 import { CertificationLegend } from "@/components/courses/CertificationLegend";
 import { EmptyState } from "@/components/courses/EmptyState";
 import { CatalogCtaBand } from "@/components/courses/CatalogCtaBand";
+import { CatalogVideoStrip } from "@/components/courses/CatalogVideoStrip";
 import { Reveal } from "@/components/ui/Reveal";
 
 const DEFAULT_FILTERS: Filters = {
@@ -22,9 +23,8 @@ const DEFAULT_FILTERS: Filters = {
   format: "all",
 };
 
-const flagshipCourses = allCourses.filter((c) => c.level === "advanced").slice(0, 5);
-const flagshipIds = new Set(flagshipCourses.map((c) => c.id));
-const gridCourses = allCourses.filter((c) => !flagshipIds.has(c.id));
+const flagshipCourses = allCourses;
+const gridCourses = allCourses;
 
 function CatalogPageInner() {
   const params = useSearchParams();
@@ -38,7 +38,7 @@ function CatalogPageInner() {
   }, [params]);
 
   const filteredCourses = useMemo(() => {
-    return gridCourses.filter((c) => {
+    return allCourses.filter((c) => {
       if (filters.sector !== "all" && c.sectorSlug !== filters.sector) return false;
       if (filters.level !== "all" && c.level !== filters.level) return false;
       if (filters.format !== "all" && c.format !== filters.format) return false;
@@ -54,6 +54,8 @@ function CatalogPageInner() {
         totalCourses={allCourses.length}
         totalSectors={sectors.length}
       />
+
+      <CatalogVideoStrip />
 
       <Reveal>
         <FlagshipBanner courses={flagshipCourses} />

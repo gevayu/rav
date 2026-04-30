@@ -6,47 +6,44 @@ type Benefit = {
   image: string;
   title: string;
   body: string;
-  stat: string;
 };
 
 const benefits: Benefit[] = [
   {
     image: "/images/feel/Typing on a Laptop.png",
-    title: "מקצועיות סקטוריאלית",
-    body: "לא הכשרת Ai גנרית. הכשרה מותאמת בדיוק לתחום המקצועי שלך - תהליכים, כלים ואתגרים ספציפיים.",
-    stat: "11 תחומים",
+    title: "למידה אג'ילית",
+    body: "הכשרות מדוייקות וממוקדות, חיכוך עם מקרי בוחן אמיתיים, דגש על פרקטיקה ועבודה יישומית עצמאית. מינימום תיאוריה ומקסימום אפקט על העשייה העסקית שלך.",
+  },
+  {
+    image: "/images/feel/Focused Work.png",
+    title: "דגש על תהליכים עסקיים",
+    body: "אנחנו מתמקדים בפעולות העסקיות והתהליכים המקצועיים הרלוונטים בתחום שלך. ההכשרה לא רק תציג את הטכנולוגיה החדישה, אלא איך היא פוגשת אותך ביום-יום.",
   },
   {
     image: "/images/lect/Man Presenting on Stage.png",
     title: "מומחים אמיתיים",
-    body: "ראשי תחומים שהם אנשי מקצוע פעילים מהשטח, לא מדריכי Ai גנריים שלמדו את התחום מסרטון יוטיוב.",
-    stat: "+40 מדריכים",
-  },
-  {
-    image: "/images/feel/Focused Work.png",
-    title: "ROI מיידי",
-    body: "תהליכי עבודה, סוכנים ואוטומציות שעובדים מהיום הראשון של הקורס - לא רק תיאוריה.",
-    stat: "מהיום הראשון",
+    body: "אנשי ההדרכה כולם אנשי מקצוע המשלבים ניסיון עסקי משמעותי, מקצוענות הדרכתית והבנה עמוקה בטכנולוגיה וכלי בינה מלאכותית. אצלנו לומדים מהמומחים בתחומך, ולא רק ממקצועני Ai.",
   },
 ];
 
 export function BenefitsTriad() {
   return (
     <section
-      className="relative bg-[color:var(--color-paper)] py-28 sm:py-36"
+      className="relative bg-[color:var(--color-paper)] py-14 sm:py-18"
       id="benefits"
     >
       <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
         <Reveal>
           <SectionHeading
-            eyebrow="למה אנחנו"
-            title={
+            title="למה אנחנו?"
+            lede={
               <>
-                שלושה דברים ש<span className="text-[color:var(--color-bronze-ink)]">באמת</span> משנים
-                את איך שאתה עובד.
+                זו לא שאלה של 'האם', אלא 'מתי' תצטרפו למהפכה. אנחנו מאמינים שעדיף כמה שיותר מוקדם, וכדאי ללמוד מאנשי המקצוע הטובים ביותר בתחומך.
+                <br />
+                <br />
+                המרכז הרב תחומי להכשרות Ai הוא חלק מקבוצת 'אנליזה', המרכז הישראלי להכשרות טכנולוגיות. אנחנו נמצאים בליבת ההכשרות הטכנולוגיות מאז 2021 ונשמח לעזור גם לך לעמוד בחזית הטכנולוגיה העסקית.
               </>
             }
-            lede="המרכז הרב-תחומי הוקם כהסתעפות של אנליזה, המרכז הישראלי להכשרות הייטק. חמש שנים של תוצאות, עכשיו עם מיקוד מקצועי לכל סקטור."
           />
         </Reveal>
 
@@ -69,14 +66,9 @@ export function BenefitsTriad() {
                     </div>
 
                     <div className="p-8">
-                      <div className="flex items-start justify-between gap-4">
-                        <h3 className="font-display text-2xl font-medium leading-tight text-[color:var(--color-ink)]">
-                          {benefit.title}
-                        </h3>
-                        <span className="tabular mt-1 shrink-0 font-display text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--color-bronze-ink)]">
-                          {benefit.stat}
-                        </span>
-                      </div>
+                      <h3 className="font-display text-2xl font-medium leading-tight text-[color:var(--color-ink)]">
+                        {benefit.title}
+                      </h3>
                       <p className="mt-4 text-base leading-relaxed text-[color:var(--color-ink-muted)]">
                         {benefit.body}
                       </p>

@@ -1,0 +1,155 @@
+import { Reveal } from "@/components-v1/ui/Reveal";
+import { SectionHeading } from "@/components-v1/ui/SectionHeading";
+import { Button } from "@/components-v1/ui/Button";
+import { TIER_COLORS } from "@/components-v1/courses/labels";
+
+type TierDetail = {
+  tier: "Ai01" | "Ai05" | "Ai10";
+  name: string;
+  tagline: string;
+  description: string;
+  format: string;
+  duration: string;
+  prerequisite: string | null;
+  outcomes: string[];
+};
+
+const tiers: TierDetail[] = [
+  {
+    tier: "Ai01",
+    name: "יסוד",
+    tagline: "נקודת הכניסה",
+    description:
+      "הכרות מעשית עם Ai - מושגי בסיס, עקרונות עבודה, וכלים ראשוניים. מי שמסיים עם Ai01 יודע לתקשר עם מודלים, לזהות מתי Ai רלוונטי לעבודה שלו, ולהפעיל כלים בסיסיים.",
+    format: "מכינה / קורס מבוא",
+    duration: "6-10 שעות",
+    prerequisite: null,
+    outcomes: [
+      "הבנת עקרונות עבודה עם מודלי שפה",
+      "כתיבת פרומפטים ברורים ומבניים",
+      "שימוש בכלי Ai נפוצים לצרכים יומיומיים",
+      "הבחנה בין שימוש בסיסי לשימוש מקצועי",
+    ],
+  },
+  {
+    tier: "Ai05",
+    name: "מקצועי",
+    tagline: "התמחות סקטוריאלית",
+    description:
+      "40 שעות של יישום Ai בתחום המקצועי שלך. מי שמסיים עם Ai05 יודע לשלב Ai בתהליכי עבודה אמיתיים, לבנות אוטומציות, ולהציג תוצאות מדידות.",
+    format: "קורס סקטוריאלי מלא",
+    duration: "40 שעות · 10 מפגשים",
+    prerequisite: "Ai01",
+    outcomes: [
+      "הנדסת פרומפטים מתקדמת בהקשר מקצועי",
+      "בניית תהליכי עבודה אוטומטיים עם Ai",
+      "יישום Ai במשימות סקטוריאליות ספציפיות",
+      "מדידת ROI ותיעוד חיסכון בזמן",
+    ],
+  },
+  {
+    tier: "Ai10",
+    name: "מאסטר",
+    tagline: "הובלה והטמעה",
+    description:
+      "לבוגרי Ai05 שרוצים להוביל שינוי. מי שמסיים עם Ai10 יודע לתכנן אסטרטגיית Ai לארגון, להכשיר צוותים, ולנהל פרויקטים הדורשים הטמעה מקצה לקצה.",
+    format: "קורס המשך מתקדם",
+    duration: "30-40 שעות",
+    prerequisite: "Ai05",
+    outcomes: [
+      "תכנון אסטרטגיית Ai ארגונית",
+      "הכשרה והדרכה של צוותים",
+      "ניהול פרויקטי הטמעת Ai",
+      "מדידת השפעה ברמה ארגונית",
+    ],
+  },
+];
+
+export function CertTiers() {
+  return (
+    <section className="relative bg-[color:var(--color-paper)] py-24 sm:py-28">
+      <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
+        <Reveal>
+          <SectionHeading
+            align="center"
+            eyebrow="שלוש דרגות הסמכה"
+            title="כל דרגה מסמנת יכולות ספציפיות"
+            lede="מדרג ההסמכה בנוי כמדרג מקצועי. כל דרגה דורשת את הקודמת, ומוסיפה שכבה של עומק ויישום."
+          />
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          {tiers.map((t, i) => (
+            <Reveal key={t.tier} delay={i * 0.1}>
+              <article
+                className={`flex h-full flex-col gap-6 rounded-[24px] border ${TIER_COLORS[t.tier].border} bg-white p-8 transition-colors hover:border-[color:var(--color-bronze)]/35`}
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] ${TIER_COLORS[t.tier].bg} ${TIER_COLORS[t.tier].border} ${TIER_COLORS[t.tier].text}`}
+                  >
+                    {t.tier}
+                  </span>
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[color:var(--color-ink-muted)]">
+                    {t.tagline}
+                  </span>
+                </div>
+
+                <h3 className="font-display text-2xl font-medium text-[color:var(--color-ink)]">
+                  {t.name}
+                </h3>
+
+                <p className="text-[14px] leading-relaxed text-[color:var(--color-ink-muted)]">
+                  {t.description}
+                </p>
+
+                <div className="flex flex-col gap-2 rounded-xl border border-[color:var(--color-ink)]/8 bg-[color:var(--color-paper-soft)] p-4 text-[13px]">
+                  <div className="flex justify-between">
+                    <span className="text-[color:var(--color-ink-muted)]">פורמט</span>
+                    <span className="font-medium text-[color:var(--color-ink)]">{t.format}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-[color:var(--color-ink-muted)]">משך</span>
+                    <span className="font-medium text-[color:var(--color-ink)]">{t.duration}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-[color:var(--color-ink-muted)]">דרישת קדם</span>
+                    <span className="font-medium text-[color:var(--color-ink)]">
+                      {t.prerequisite ?? "ללא"}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[color:var(--color-bronze-ink)]">
+                    מה תדעו לעשות
+                  </span>
+                  <ul className="flex flex-col gap-1.5">
+                    {t.outcomes.map((o) => (
+                      <li
+                        key={o}
+                        className="flex items-start gap-2 text-[13px] leading-relaxed text-[color:var(--color-ink-soft)]"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[color:var(--color-bronze)]"
+                        />
+                        {o}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto pt-2">
+                  <Button as="a" href="/courses" variant="secondary" size="md">
+                    לקורסים בדרגה {t.tier}
+                  </Button>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

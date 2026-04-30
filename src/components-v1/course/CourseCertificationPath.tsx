@@ -1,0 +1,133 @@
+import { Fragment } from "react";
+import { ShieldCheck } from "lucide-react";
+import type { Course } from "@/data/courses";
+import {
+  CERTIFICATION_ORDER,
+  CERTIFICATION_TIERS,
+  TIER_COLORS,
+  getCertificationPath,
+} from "@/components-v1/courses/labels";
+
+type CourseCertificationPathProps = {
+  course: Course;
+};
+
+export function CourseCertificationPath({ course }: CourseCertificationPathProps) {
+  const cert = getCertificationPath(course);
+
+  const isActive = (tier: (typeof CERTIFICATION_ORDER)[number]) =>
+    tier === cert.entry || tier === cert.exit;
+  const isExit = (tier: (typeof CERTIFICATION_ORDER)[number]) => tier === cert.exit;
+
+  return (
+    <section
+      aria-labelledby="cert-path-title"
+      className="relative overflow-hidden bg-[color:var(--color-ink)] py-20 sm:py-24"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full bg-[color:var(--color-bronze)]/8 blur-[140px]"
+      />
+
+      <div className="relative mx-auto max-w-[1240px] px-6 sm:px-10">
+        <div className="grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center lg:gap-16">
+          <div className="flex flex-col gap-4">
+            <span className="inline-flex items-center gap-2 self-start text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
+              <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.8} aria-hidden="true" />
+              סטנדרט חדש בתעשייה
+            </span>
+            <h2
+              id="cert-path-title"
+              className="font-display text-[clamp(2rem,4vw,2.8rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]"
+            >
+              מסלול ההסמכה שלך
+            </h2>
+            <p className="max-w-md text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/70">
+              {cert.entry
+                ? `מגיעים עם ${cert.entry} ויוצאים עם ${cert.exit}. קורסי ההמשך שלנו זמינים לבוגרים שלנו אחרי הסיום.`
+                : `קורס זה הוא נקודת הכניסה לעולם ה-Ai. מסיימים עם ${cert.exit} ויכולים להמשיך לקורסי Ai05.`}
+            </p>
+          </div>
+
+          <div role="list" aria-label="שלוש דרגות הסמכה" className="flex flex-col gap-3">
+            {/* CSS grid: 5 explicit columns (badge · connector · badge · connector · badge) in one row — align-items:center pins the line to badge midpoint */}
+            <div
+              className="grid items-center"
+              style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
+            >
+              {CERTIFICATION_ORDER.map((tier, idx) => {
+                const exit = isExit(tier);
+                const { label } = CERTIFICATION_TIERS[tier];
+                return (
+                  <Fragment key={tier}>
+                    <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
+                      <span
+                        className={
+                          "inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] " +
+                          `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
+                        }
+                      >
+                        {label}
+                      </span>
+                      {exit && (
+                        <span
+                          aria-hidden="true"
+                          className="absolute -top-3.5 -right-3.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)]"
+                        >
+                          <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
+                        </span>
+                      )}
+                    </div>
+                    {idx < CERTIFICATION_ORDER.length - 1 && (
+                      <span
+                        aria-hidden="true"
+                        className={
+                          "h-px mx-4 " +
+                          (isActive(tier) && isActive(CERTIFICATION_ORDER[idx + 1])
+                            ? "bg-gradient-to-l from-[color:var(--color-bronze)]/15 via-[color:var(--color-bronze)]/60 to-[color:var(--color-bronze)]/15"
+                            : "bg-white/10")
+                        }
+                      />
+                    )}
+                  </Fragment>
+                );
+              })}
+            </div>
+
+            {/* Label row — same 5-column grid so labels sit directly under badges */}
+            <div
+              className="grid"
+              style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
+            >
+              {CERTIFICATION_ORDER.map((tier, idx) => {
+                const active = isActive(tier);
+                const exit = isExit(tier);
+                const { name } = CERTIFICATION_TIERS[tier];
+                return (
+                  <Fragment key={tier}>
+                    <div role="listitem" className="flex flex-col items-center gap-0.5">
+                      <span
+                        className={
+                          "text-[13px] font-medium " +
+                          (active
+                            ? "text-[color:var(--color-paper-soft)]"
+                            : "text-[color:var(--color-paper-soft)]/40")
+                        }
+                      >
+                        {name}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-paper-soft)]/35">
+                        {exit ? "יעד הקורס" : tier === cert.entry ? "דרישת קדם" : "קורסי המשך"}
+                      </span>
+                    </div>
+                    {idx < CERTIFICATION_ORDER.length - 1 && <span aria-hidden="true" />}
+                  </Fragment>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

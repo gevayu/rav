@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Calendar, Check, ChevronLeft, ChevronRight, Clock, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import type { Course } from "@/data/courses";
-import { FORMAT_LABELS } from "./labels";
+import { FORMAT_LABELS, TIER_COLORS } from "./labels";
 
 type FlagshipBannerProps = {
   courses: Course[];
@@ -119,32 +119,87 @@ export function FlagshipBanner({ courses }: FlagshipBannerProps) {
               </div>
 
               <div className="flex flex-col gap-4 lg:justify-end">
-                <div
-                  className="relative w-full overflow-hidden rounded-[32px] ring-2 ring-[color:var(--color-bronze)]/60 ring-offset-4 ring-offset-[color:var(--color-ink)]"
-                  style={{ aspectRatio: "1" }}
-                >
-                  <Image
-                    src={course.instructorPortraitUrl}
-                    alt={course.instructorName}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 420px"
-                    className="object-cover"
-
-                    priority
-                  />
+                {course.coInstructorName ? (
+                  <div className="grid grid-cols-2 gap-3">
+                    <div
+                      className="relative w-full overflow-hidden rounded-[24px] ring-2 ring-[color:var(--color-bronze)]/60 ring-offset-2 ring-offset-[color:var(--color-ink)]"
+                      style={{ aspectRatio: "1" }}
+                    >
+                      <Image
+                        src={course.instructorPortraitUrl}
+                        alt={course.instructorName}
+                        fill
+                        sizes="210px"
+                        className="object-cover"
+                        priority
+                      />
+                      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-tl from-[color:var(--color-ink)]/55 via-transparent to-[color:var(--color-bronze)]/15" />
+                    </div>
+                    <div
+                      className="relative w-full overflow-hidden rounded-[24px] ring-2 ring-[color:var(--color-bronze)]/60 ring-offset-2 ring-offset-[color:var(--color-ink)]"
+                      style={{ aspectRatio: "1" }}
+                    >
+                      <Image
+                        src={course.coInstructorPortraitUrl!}
+                        alt={course.coInstructorName}
+                        fill
+                        sizes="210px"
+                        className="object-cover"
+                        priority
+                      />
+                      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-tl from-[color:var(--color-ink)]/55 via-transparent to-[color:var(--color-bronze)]/15" />
+                    </div>
+                  </div>
+                ) : (
                   <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-tl from-[color:var(--color-ink)]/55 via-transparent to-[color:var(--color-bronze)]/15"
-                  />
-                </div>
-                <div className="flex items-center gap-4 rounded-2xl border border-[color:var(--color-bronze)]/40 bg-[color:var(--color-ink)]/90 px-5 py-3 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] backdrop-blur-sm">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-bronze)]">
-                    ראש התחום
-                  </p>
-                  <div className="h-4 w-px bg-white/20" />
-                  <p className="font-display text-[17px] font-medium text-[color:var(--color-paper-soft)]">
-                    {course.instructorName}
-                  </p>
+                    className="relative w-full overflow-hidden rounded-[32px] ring-2 ring-[color:var(--color-bronze)]/60 ring-offset-4 ring-offset-[color:var(--color-ink)]"
+                    style={{ aspectRatio: "1" }}
+                  >
+                    <Image
+                      src={course.instructorPortraitUrl}
+                      alt={course.instructorName}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 420px"
+                      className="object-cover"
+                      priority
+                    />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-tl from-[color:var(--color-ink)]/55 via-transparent to-[color:var(--color-bronze)]/15" />
+                  </div>
+                )}
+                <div className={`grid gap-3 ${course.coInstructorName ? "grid-cols-2" : "grid-cols-1"}`}>
+                  <div className="flex flex-col gap-1.5 rounded-2xl border border-[color:var(--color-bronze)]/40 bg-[color:var(--color-ink)]/90 px-4 py-3 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] backdrop-blur-sm">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-bronze)]">
+                      ראש התחום
+                    </p>
+                    <p className="font-display text-[15px] font-medium text-[color:var(--color-paper-soft)]">
+                      {course.instructorName}
+                    </p>
+                    {course.instructorTitle && (
+                      <p className="text-[11px] text-[color:var(--color-paper-soft)]/60">
+                        {course.instructorTitle}
+                      </p>
+                    )}
+                    {course.instructorBio && !course.coInstructorName && (
+                      <p className="mt-1 text-[12px] leading-relaxed text-[color:var(--color-paper-soft)]/55">
+                        {course.instructorBio}
+                      </p>
+                    )}
+                  </div>
+                  {course.coInstructorName && (
+                    <div className="flex flex-col gap-1.5 rounded-2xl border border-[color:var(--color-bronze)]/40 bg-[color:var(--color-ink)]/90 px-4 py-3 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] backdrop-blur-sm">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-[color:var(--color-bronze)]">
+                        ראש התחום
+                      </p>
+                      <p className="font-display text-[15px] font-medium text-[color:var(--color-paper-soft)]">
+                        {course.coInstructorName}
+                      </p>
+                      {course.coInstructorTitle && (
+                        <p className="text-[11px] text-[color:var(--color-paper-soft)]/60">
+                          {course.coInstructorTitle}
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -184,9 +239,14 @@ export function FlagshipBanner({ courses }: FlagshipBannerProps) {
                   {course.nextCohort.replace("מחזור הבא: ", "")}
                 </span>
               </div>
-              <span className="inline-flex items-center rounded-full border-2 border-[color:var(--color-tier-05-border)] bg-[color:var(--color-tier-05-bg)] px-4 py-2 font-display text-xl font-medium tracking-[0.06em] text-[color:var(--color-tier-05-ink)]">
-                Ai05
-              </span>
+              {course.certification && (() => {
+                const t = TIER_COLORS[course.certification.exit];
+                return (
+                  <span className={`inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] ${t.bg} ${t.border} ${t.text}`}>
+                    {course.certification.exit}
+                  </span>
+                );
+              })()}
             </div>
           </div>
         </div>

@@ -1,16 +1,15 @@
 import { Reveal } from "@/components/ui/Reveal";
 
 const stats = [
-  { number: "+4,500", label: "בוגרים בחמש שנים" },
-  { number: "+40",    label: "מדריכים פעילים בתעשייה" },
+  { number: "+4,500", label: "בוגרים מאז 2021" },
   { number: "+3,000", label: "שעות הדרכה בחודש" },
-  { number: "11",     label: "תחומים מקצועיים" },
+  { number: "8",      label: "תחומים מקצועיים" },
 ];
 
 export function SocialProofBar() {
   return (
     <section
-      className="relative isolate overflow-hidden bg-[color:var(--color-cream)] py-20 sm:py-28"
+      className="relative isolate overflow-hidden bg-[color:var(--color-cream)] pt-10 pb-5 sm:pt-14 sm:pb-6"
       aria-label="מספרים"
     >
       <div
@@ -20,14 +19,14 @@ export function SocialProofBar() {
       <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
         <Reveal className="mb-14 flex flex-col items-center gap-4 text-center">
           <span className="text-[11px] uppercase tracking-[0.24em] text-[color:var(--color-bronze-ink)]">
-            העוצמה במספרים
+            תוצאות מדידות
           </span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4.2vw,3.25rem)] font-medium leading-[1.1] text-[color:var(--color-ink)]">
-            חמש שנים. 4,500 בוגרים.<br /><span className="text-[color:var(--color-bronze-ink)]">תוצאות מדידות.</span>
+            מדריכים טכנולוגיה מקצועית מאז 2021.
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 sm:gap-6">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-6">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
               <div className="flex flex-col items-center text-center">

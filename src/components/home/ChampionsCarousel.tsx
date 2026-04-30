@@ -21,7 +21,7 @@ export function ChampionsCarousel() {
   return (
     <section
       id="champions"
-      className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-28 sm:py-36"
+      className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-14 sm:py-18"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/grunge-bg.png')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.3 }} />
       <div
@@ -34,9 +34,10 @@ export function ChampionsCarousel() {
             <SectionHeading
               tone="paper"
               eyebrow="הכירו את המדריכים"
+              ledeClassName="max-w-xs"
               title={
                 <>
-                  40 מדריכים{" "}
+                  מדריכים{" "}
                   <span className="text-[color:var(--color-bronze)]">
                     מהתעשייה.
                   </span>
@@ -44,7 +45,7 @@ export function ChampionsCarousel() {
                   כל תחום והמומחה שלו.
                 </>
               }
-              lede="אנשי מקצוע מהתחום. מכירים כל דפוס של יום עבודה אמיתי, כי הם חיים אותו."
+              lede="אנשי מקצוע מהתחום שלך, בעלי ניסיון עשיר בהדרכה ושימוש עסקי אמיתי בכלי בינה מלאכותית."
             />
           </Reveal>
 
@@ -81,7 +82,7 @@ export function ChampionsCarousel() {
                 key={person.id}
                 className="group relative flex w-[300px] shrink-0 snap-start flex-col overflow-hidden rounded-[32px] bg-white/[0.03] p-1.5 ring-1 ring-white/10 backdrop-blur-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:ring-[color:var(--color-bronze)]/50 sm:w-[340px]"
               >
-                <div className="relative flex flex-col rounded-[calc(32px-0.375rem)] bg-[color:var(--color-ink)]/95 p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                <div className="relative flex h-full flex-col rounded-[calc(32px-0.375rem)] bg-[color:var(--color-ink)]/95 p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
                   <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full ring-2 ring-[color:var(--color-bronze)]/70 ring-offset-4 ring-offset-[color:var(--color-ink)] sm:h-44 sm:w-44">
                     <Image
                       src={person.portraitUrl}
@@ -114,7 +115,7 @@ export function ChampionsCarousel() {
                     {person.experience}
                   </p>
 
-                  <div className="mt-6 flex items-center justify-center gap-2 text-[12px] font-medium text-[color:var(--color-bronze)]">
+                  <div className="mt-auto pt-6 flex items-center justify-center gap-2 text-[12px] font-medium text-[color:var(--color-bronze)]">
                     <span>לפרופיל המלא</span>
                     <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" strokeWidth={1.8} />
                   </div>

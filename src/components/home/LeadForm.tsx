@@ -14,7 +14,7 @@ export function LeadForm() {
   return (
     <section
       id="lead"
-      className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-28 sm:py-36"
+      className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-14 sm:py-18"
     >
       <div
         aria-hidden="true"
@@ -31,7 +31,7 @@ export function LeadForm() {
             <div className="flex flex-col gap-6">
               <Eyebrow tone="paper">תיאום שיחה</Eyebrow>
               <h2 className="font-display text-[clamp(2rem,4.6vw,3.4rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]">
-                לשיחה עם יועץ הדרכה
+                לשיחה עם יועץ בתחום
               </h2>
               <p className="max-w-md text-lg leading-relaxed text-[color:var(--color-paper-soft)]/70">
                 שיחה קצרה של 15 דקות בה נסביר איפה Ai יכול לעזור בתחום המקצועי
@@ -41,7 +41,7 @@ export function LeadForm() {
 
               <ul className="mt-2 flex flex-col gap-3 text-[13px] text-[color:var(--color-paper-soft)]/75">
                 {[
-                  "חזרה תוך יום עסקים",
+                  "הצעד הראשון לשדרוג המקצועי שלך",
                   "ללא התחייבות",
                   "שיחה עם יועץ שמכיר את התחום המקצועי שלך",
                 ].map((item) => (
@@ -99,17 +99,18 @@ export function LeadForm() {
                             id="sector"
                             name="sector"
                             required
-                            className="h-12 w-full appearance-none rounded-2xl border border-white/10 bg-white/5 px-4 text-[14px] text-[color:var(--color-paper-soft)] transition-colors focus:border-[color:var(--color-bronze)]/60 focus:outline-none"
-                            style={{ colorScheme: "dark" }}
+                            className="h-12 w-full appearance-none rounded-2xl border border-white/10 px-4 text-[14px] transition-colors focus:border-[color:var(--color-bronze)]/60 focus:outline-none"
+                            style={{ backgroundColor: "#1c1c1e", color: "#f5f2ed" }}
                           >
-                            <option value="" disabled>
+                            <option value="" disabled style={{ background: "#1c1c1e", color: "#f5f2ed" }}>
                               בחר תחום
                             </option>
                             {sectors.map((s) => (
-                              <option key={s.slug} value={s.slug}>
+                              <option key={s.slug} value={s.slug} style={{ background: "#1c1c1e", color: "#f5f2ed" }}>
                                 {s.displayName}
                               </option>
                             ))}
+                            <option value="other" style={{ background: "#1c1c1e", color: "#f5f2ed" }}>אחר</option>
                           </select>
                         </div>
                       </div>
@@ -134,18 +135,6 @@ export function LeadForm() {
                       <Button type="submit" variant="primary" size="lg" loading={loading}>
                         לתיאום ייעוץ
                       </Button>
-                      <a
-                        href="#free"
-                        className="group inline-flex items-center gap-2 text-[13px] font-medium text-[color:var(--color-bronze)] transition-colors hover:text-[color:var(--color-bronze-deep)]"
-                      >
-                        לא מוכן עדיין? צפה בשיעור ניסיון חינם
-                        <span
-                          aria-hidden="true"
-                          className="inline-block transition-transform duration-300 group-hover:-translate-x-0.5"
-                        >
-                          ←
-                        </span>
-                      </a>
                     </div>
                   </>
                 )}

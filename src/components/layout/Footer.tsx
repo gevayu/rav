@@ -11,10 +11,10 @@ const columns: { title: string; links: FooterLink[] }[] = [
       "ראיית חשבון",
       "רפואה",
       "נדל״ן",
-      "הנדסת בניין",
+      "הנדסה אזרחית",
       "יצירת תוכן",
       "מכירות",
-      "פיתוח תוכנה",
+      "מקצועות ההייטק",
     ].map((s) => ({ label: s, href: "#" })),
   },
   {
@@ -57,11 +57,10 @@ export function Footer() {
               </span>
             </div>
             <p className="text-[11px] text-[color:var(--color-paper-soft)]/45">
-              מקבוצת אנליזה - המרכז הישראלי להכשרות הייטק
+              מקבוצת אנליזה - המרכז הישראלי להכשרות טכנולוגיות
             </p>
             <p className="max-w-sm text-sm leading-relaxed text-[color:var(--color-paper-soft)]/70">
-              ברב תחומי מלמדים איך ליישם Ai מהמומחים בתחום שלך.
-              הכשרות סקטוריאליות מהמומחים ברמה הכי גבוהה בישראל.
+              במרכז הרב-תחומי להכשרות Ai לומדים מהמומחים בתחומך, איך ליישם את חזית הטכנולוגיה לצרכים העסקיים הספציפיים שלך. ההכשרות מתבצעות על ידי המומחים המקצועיים ביותר בתחום העיסוק שלך.
             </p>
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/5 px-4 py-2 text-[11px] font-medium text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.6} />
@@ -102,45 +101,17 @@ export function Footer() {
             <ul className="flex flex-col gap-3 text-[13px] text-[color:var(--color-paper-soft)]/75">
               <li className="flex items-center gap-3">
                 <Phone className="h-3.5 w-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.6} />
-                054-7700634
+                09-3069322
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-3.5 w-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.6} />
-                info@analiza-college.co.il
+                info@ravthumi.ai
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-3.5 w-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.6} />
-                הרצליה, ישראל
+                מנחם בגין 152, מגדל WeTLV, תל אביב, ישראל
               </li>
             </ul>
-            <div className="mt-2 flex flex-col gap-2">
-              <label className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-paper-soft)]/50">
-                ניוזלטר מקצועי
-              </label>
-              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1 pr-4">
-                <input
-                  type="email"
-                  placeholder="האימייל שלך"
-                  spellCheck={false}
-                  className="flex-1 bg-transparent text-[13px] text-[color:var(--color-paper-soft)] placeholder:text-[color:var(--color-paper-soft)]/40 focus:outline-none"
-                />
-                <button
-                  type="button"
-                  className="rounded-full bg-[color:var(--color-bronze)] px-4 py-2 text-[12px] font-medium text-[color:var(--color-ink)] transition-colors hover:bg-[color:var(--color-bronze-deep)]"
-                >
-                  הרשמה
-                </button>
-              </div>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="h-3.5 w-3.5 accent-[color:var(--color-bronze)] cursor-pointer"
-                />
-                <span className="text-[11px] text-[color:var(--color-paper-soft)]/50">
-                  מוסכם עלי לקבל מהאתר דיוור פרסומי
-                </span>
-              </label>
-            </div>
           </div>
         </div>
 

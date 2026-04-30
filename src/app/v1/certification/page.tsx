@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+import { Header } from "@/components-v1/layout/Header";
+import { Footer } from "@/components-v1/layout/Footer";
+import { CertHero } from "@/components-v1/certification/CertHero";
+import { CertTiers } from "@/components-v1/certification/CertTiers";
+import { CertMovementPath } from "@/components-v1/certification/CertMovementPath";
+import { CertValue } from "@/components-v1/certification/CertValue";
+import { CertValidity } from "@/components-v1/certification/CertValidity";
+import { CertQuotes } from "@/components-v1/certification/CertQuotes";
+import { CertOrganizations } from "@/components-v1/certification/CertOrganizations";
+import { CertFaq } from "@/components-v1/certification/CertFaq";
+
+export const metadata: Metadata = {
+  title: "מדרג ההסמכה Ai01 / Ai05 / Ai10 | המרכז הרב-תחומי להכשרות Ai",
+  description:
+    "שלוש דרגות מדרג ההסמכה ממכללה מפוקחת - Ai01 יסוד, Ai05 מקצועי, Ai10 מאסטר. תעודות שמסמנות יכולות אמיתיות בשוק העבודה.",
+  openGraph: {
+    title: "מדרג ההסמכה | המרכז הרב-תחומי להכשרות Ai",
+    description:
+      "שלוש דרגות מדרג ההסמכה - Ai01, Ai05, Ai10. תעודות ממכללה מפוקחת עם תוכנית חידוש שנתית.",
+    locale: "he_IL",
+    type: "website",
+  },
+};
+
+export default function CertificationPage() {
+  return (
+    <>
+      <Header />
+      <main className="flex flex-col">
+        <CertHero />
+        <CertTiers />
+        <CertMovementPath />
+        <CertValue />
+        <CertValidity />
+        <CertQuotes />
+        <CertOrganizations />
+        <CertFaq />
+      </main>
+      <Footer />
+    </>
+  );
+}

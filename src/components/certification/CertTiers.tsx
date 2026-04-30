@@ -72,7 +72,7 @@ export function CertTiers() {
         <Reveal>
           <SectionHeading
             align="center"
-            eyebrow="שלוש דרגות"
+            eyebrow="שלוש דרגות הסמכה"
             title="כל דרגה מסמנת יכולות ספציפיות"
             lede="מדרג ההסמכה בנוי כמדרג מקצועי. כל דרגה דורשת את הקודמת, ומוסיפה שכבה של עומק ויישום."
           />

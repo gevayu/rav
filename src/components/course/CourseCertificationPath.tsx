@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { ShieldCheck } from "lucide-react";
 import type { Course } from "@/data/courses";
 import {
@@ -48,18 +49,17 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
             </p>
           </div>
 
-          <div
-            className="flex items-center"
-            role="list"
-            aria-label="שלושת דרגות ההסמכה"
-          >
-            {CERTIFICATION_ORDER.map((tier, idx) => {
-              const active = isActive(tier);
-              const exit = isExit(tier);
-              const { label, name } = CERTIFICATION_TIERS[tier];
-              return (
-                <div key={tier} className="flex flex-1 items-center">
-                  <div className="flex flex-1 flex-col items-center gap-3" role="listitem">
+          <div role="list" aria-label="שלוש דרגות הסמכה" className="flex flex-col gap-3">
+            {/* CSS grid: 5 explicit columns (badge · connector · badge · connector · badge) in one row — align-items:center pins the line to badge midpoint */}
+            <div
+              className="grid items-center"
+              style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
+            >
+              {CERTIFICATION_ORDER.map((tier, idx) => {
+                const exit = isExit(tier);
+                const { label } = CERTIFICATION_TIERS[tier];
+                return (
+                  <Fragment key={tier}>
                     <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
                       <span
                         className={
@@ -78,7 +78,34 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                         </span>
                       )}
                     </div>
-                    <div className="flex flex-col items-center gap-0.5">
+                    {idx < CERTIFICATION_ORDER.length - 1 && (
+                      <span
+                        aria-hidden="true"
+                        className={
+                          "h-px mx-4 " +
+                          (isActive(tier) && isActive(CERTIFICATION_ORDER[idx + 1])
+                            ? "bg-gradient-to-l from-[color:var(--color-bronze)]/15 via-[color:var(--color-bronze)]/60 to-[color:var(--color-bronze)]/15"
+                            : "bg-white/10")
+                        }
+                      />
+                    )}
+                  </Fragment>
+                );
+              })}
+            </div>
+
+            {/* Label row — same 5-column grid so labels sit directly under badges */}
+            <div
+              className="grid"
+              style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
+            >
+              {CERTIFICATION_ORDER.map((tier, idx) => {
+                const active = isActive(tier);
+                const exit = isExit(tier);
+                const { name } = CERTIFICATION_TIERS[tier];
+                return (
+                  <Fragment key={tier}>
+                    <div role="listitem" className="flex flex-col items-center gap-0.5">
                       <span
                         className={
                           "text-[13px] font-medium " +
@@ -93,21 +120,11 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                         {exit ? "יעד הקורס" : tier === cert.entry ? "דרישת קדם" : "קורסי המשך"}
                       </span>
                     </div>
-                  </div>
-                  {idx < CERTIFICATION_ORDER.length - 1 && (
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "shrink-0 h-px w-12 sm:w-20 " +
-                        (isActive(tier) && isActive(CERTIFICATION_ORDER[idx + 1])
-                          ? "bg-gradient-to-l from-[color:var(--color-bronze)]/15 via-[color:var(--color-bronze)]/60 to-[color:var(--color-bronze)]/15"
-                          : "bg-white/10")
-                      }
-                    />
-                  )}
-                </div>
-              );
-            })}
+                    {idx < CERTIFICATION_ORDER.length - 1 && <span aria-hidden="true" />}
+                  </Fragment>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

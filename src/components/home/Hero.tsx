@@ -9,15 +9,13 @@ import { heroGridInstructors } from "@/data/instructors";
 import { ShieldCheck } from "lucide-react";
 import { useState, useEffect } from "react";
 
-type Phrase = { line1: string; line2Pre: string; line2Typed: string; line2Suf: string };
+type Phrase = { plural: string; singular: string };
 type Phase = "typing" | "pause" | "deleting";
 
 const PHRASES: Phrase[] = [
-  { line1: "לפיננסים",  line2Pre: "",               line2Typed: "לומדים ממומחה ל", line2Suf: "פיננסים" },
-  { line1: "למשפטים",  line2Pre: "לומדים ממומחה ", line2Typed: "למשפטים",          line2Suf: "" },
-  { line1: "לרפואה",   line2Pre: "",               line2Typed: "לומדים מ",          line2Suf: "רופאה" },
-  { line1: 'לנדל"ן',  line2Pre: "",               line2Typed: 'לומדים ממומחה ל',   line2Suf: 'נדל"ן' },
-  { line1: "למכירות", line2Pre: "",               line2Typed: "לומדים ממומחה ל",   line2Suf: "מכירות" },
+  { plural: "Lawyers",     singular: "Lawyer" },
+  { plural: "Accountants", singular: "Accountant" },
+  { plural: "Doctors",     singular: "Doctor" },
 ];
 
 function TypewriterCycle() {
@@ -29,9 +27,8 @@ function TypewriterCycle() {
 
   const phrase = PHRASES[idx];
 
-  // Line 1 typing / deleting
   useEffect(() => {
-    if (phase === "typing" && chars1 < phrase.line1.length) {
+    if (phase === "typing" && chars1 < phrase.plural.length) {
       const t = setTimeout(() => setChars1(c => c + 1), 80);
       return () => clearTimeout(t);
     }
@@ -39,11 +36,10 @@ function TypewriterCycle() {
       const t = setTimeout(() => setChars1(c => c - 1), 38);
       return () => clearTimeout(t);
     }
-  }, [phase, chars1, phrase.line1]);
+  }, [phase, chars1, phrase.plural]);
 
-  // Line 2 typing / deleting
   useEffect(() => {
-    if (phase === "typing" && chars2 < phrase.line2Typed.length) {
+    if (phase === "typing" && chars2 < phrase.singular.length) {
       const t = setTimeout(() => setChars2(c => c + 1), 80);
       return () => clearTimeout(t);
     }
@@ -51,11 +47,10 @@ function TypewriterCycle() {
       const t = setTimeout(() => setChars2(c => c - 1), 38);
       return () => clearTimeout(t);
     }
-  }, [phase, chars2, phrase.line2Typed]);
+  }, [phase, chars2, phrase.singular]);
 
-  // Phase transitions
   useEffect(() => {
-    if (phase === "typing" && chars1 >= phrase.line1.length && chars2 >= phrase.line2Typed.length) {
+    if (phase === "typing" && chars1 >= phrase.plural.length && chars2 >= phrase.singular.length) {
       const t = setTimeout(() => setPhase("pause"), 2200);
       return () => clearTimeout(t);
     }
@@ -80,23 +75,23 @@ function TypewriterCycle() {
 
   const cursor1 = phase === "typing" || (phase === "deleting" && chars1 > 0);
   const cursor2 = phase === "typing" || (phase === "deleting" && chars2 > 0);
-  const showLine2Suf = chars2 === phrase.line2Typed.length && phase !== "deleting";
-  const showLine2 = phase === "typing" || phase === "deleting";
 
   return (
-    <span className="flex flex-col gap-1">
-      <span className="text-[color:var(--color-bronze)]">
-        Ai {phrase.line1.slice(0, chars1)}
-        {cursor1 && <Cursor />}
+    <span dir="ltr" className="flex flex-col gap-1 items-center">
+      <span className="text-[color:var(--color-paper-soft)]">
+        Ai for{" "}
+        <span className="text-[color:var(--color-bronze)]">
+          {phrase.plural.slice(0, chars1)}
+          {cursor1 && <Cursor />}
+        </span>
       </span>
-      {showLine2 && (
-        <span className="text-[color:var(--color-paper-soft)]">
-          {phrase.line2Pre}
-          {phrase.line2Typed.slice(0, chars2)}
-          {showLine2Suf && phrase.line2Suf}
+      <span className="text-[color:var(--color-paper-soft)]">
+        by{" "}
+        <span className="text-[color:var(--color-bronze)]">
+          {phrase.singular.slice(0, chars2)}
           {cursor2 && <Cursor />}
         </span>
-      )}
+      </span>
     </span>
   );
 }
@@ -199,15 +194,7 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Logo className="mb-2 scale-[2.4]" />
-        </motion.div>
-
-        <motion.div
-          initial={reduce ? undefined : { opacity: 0, y: 12 }}
-          animate={reduce ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-        >
-          <span className="inline-flex items-center text-[20px] font-medium tracking-[0.22em] text-[color:var(--color-bronze)]" style={{ textTransform: "none" }}>השלב הבא ב-Ai</span>
+          <Logo className="mb-2 scale-[2.76]" />
         </motion.div>
 
         <motion.h1
@@ -225,9 +212,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.7 }}
           className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/75 sm:text-xl"
         >
-          לא עוד הכשרת Ai כללית. אנחנו מלמדים איך ליישם Ai
-          <br />
-          בתחום שלך עם מדריך מהתחום שלך.
+          הכשרת AI כללי זה כל כך 2025 - אם כבר יש לך ידע בסיסי, הגיע הזמן להתמחות בתחום העיסוק הספציפי שלך.
         </motion.p>
 
         <motion.div
@@ -248,15 +233,33 @@ export function Hero() {
           initial={reduce ? undefined : { opacity: 0 }}
           animate={reduce ? undefined : { opacity: 1 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="mt-10 inline-flex items-center gap-3 rounded-full border border-[color:var(--color-bronze)]/30 bg-[color:var(--color-ink)]/60 px-5 py-2.5 backdrop-blur-sm"
+          className="mt-10 flex flex-col items-center gap-3"
         >
-          <ShieldCheck
-            className="h-4 w-4 text-[color:var(--color-bronze)]"
-            strokeWidth={1.6}
-          />
-          <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-paper-soft)]/80">
-            מכללה מפוקחת · משרד העבודה, הביטחון והחינוך
+          <span className="text-center text-[12px] font-medium leading-relaxed tracking-wide text-[color:var(--color-paper-soft)]/70">
+            מבית אנליזה - גוף הכשרה מפוקח של האגף להכשרה מקצועית במשרד העבודה
           </span>
+          <div className="flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-bronze)]/30 bg-[color:var(--color-ink)]/60 px-6 py-4 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2">
+              <ShieldCheck
+                className="h-4 w-4 text-[color:var(--color-bronze)]"
+                strokeWidth={1.6}
+              />
+              <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-paper-soft)]/80">
+                מכללה מפוקחת · משרד העבודה, הביטחון והחינוך
+              </span>
+            </div>
+            <div className="flex items-center gap-6">
+              <div className="relative h-10 w-24">
+                <Image src="/images/ministries/labor.png" alt="משרד העבודה" fill className="object-contain" />
+              </div>
+              <div className="relative h-10 w-24">
+                <Image src="/images/ministries/defense.svg" alt="משרד הביטחון" fill className="object-contain" />
+              </div>
+              <div className="relative h-10 w-24">
+                <Image src="/images/ministries/education.png" alt="משרד החינוך" fill className="object-contain" />
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 

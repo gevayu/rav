@@ -25,11 +25,12 @@ export const CERTIFICATION_TIERS: Record<
   { label: string; name: string }
 > = {
   Ai01: { label: "Ai01", name: "יסוד" },
+  Ai03: { label: "Ai03", name: "התמחות מקצועית" },
   Ai05: { label: "Ai05", name: "מקצועי" },
   Ai10: { label: "Ai10", name: "מאסטר" },
 };
 
-export const CERTIFICATION_ORDER: CertificationTier[] = ["Ai01", "Ai05", "Ai10"];
+export const CERTIFICATION_ORDER: CertificationTier[] = ["Ai01", "Ai03", "Ai05", "Ai10"];
 
 export const TIER_COLORS: Record<
   CertificationTier,
@@ -39,6 +40,11 @@ export const TIER_COLORS: Record<
     bg: "bg-[color:var(--color-tier-01-bg)]",
     border: "border-[color:var(--color-tier-01-border)]",
     text: "text-[color:var(--color-tier-01-ink)]",
+  },
+  Ai03: {
+    bg: "bg-[#17823D]",
+    border: "border-[#0f5c2a]",
+    text: "text-[#f0fdf4]",
   },
   Ai05: {
     bg: "bg-[color:var(--color-tier-05-bg)]",

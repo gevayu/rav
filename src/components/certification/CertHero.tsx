@@ -13,6 +13,11 @@ export function CertHero() {
         aria-hidden="true"
         className="absolute left-1/2 top-1/3 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--color-bronze)]/8 blur-[180px]"
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        style={{ backgroundImage: "url('/images/wave-lines.svg')", backgroundSize: "cover", backgroundPosition: "right center", opacity: 0.38 }}
+      />
 
       <div className="relative mx-auto max-w-[1080px] px-6 text-center sm:px-10">
         <Reveal>

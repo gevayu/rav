@@ -91,7 +91,7 @@ export function FreeContent() {
   return (
     <section
       id="free"
-      className="relative bg-[color:var(--color-paper)] py-28 sm:py-36"
+      className="relative bg-[color:var(--color-paper)] py-14 sm:py-18"
     >
       <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">

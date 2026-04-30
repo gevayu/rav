@@ -4,33 +4,33 @@ import { Check } from "lucide-react";
 
 const cards = [
   {
-    tag: "לעצמאיים",
+    tag: "לעצמאים ולקוחות פרטיים",
     image: "/images/freelance/Man Working at Computer with Comic Book-Style Shirt.png",
-    title: "עובד לבד. מתחרה מול גדולים.",
+    title: "AI הוא הכלי שהופך מומחיות אישית למנוע צמיחה דרמטי.",
     subtitle:
-      "Ai הוא היתרון שיאפשר לך להציע שירות ברמה של משרד עם 30 עובדים, בלי להפסיק להיות עצמאי.",
+      "יותר איכות, יותר הישגים, יותר תוצאות מדויקות - בפחות זמן ומשאבים.",
     benefits: [
-      "קורסים שמעבירים עצמאיים ושותפים-בכירים מהתחום שלך",
+      "אוטומציה ושימוש בכלים טכנולוגיים כדי לייצר שיפור אדיר באפקטיביות ופרודוקטיביות",
+      "יתרון תחרותי ובידול מקצועי בשוק שמשתולל טכנולוגית",
       "מסלולי תשלומים גמישים ואפשרות מענק ממשרד העבודה",
-      "כל השיעורים מוקלטים, למד בקצב שלך - בלי לבטל פגישות",
     ],
-    cta: "לעצמאים",
+    cta: "לעצמאים ולקוחות פרטיים",
     href: "/solo",
     ctaClass: "border-[#059669] bg-[#059669] hover:bg-[#064e3b] hover:border-[#064e3b] hover:shadow-[0_12px_32px_-12px_rgba(5,150,105,0.5)]",
     cardBg: "bg-[#1a2220]",
   },
   {
-    tag: "לארגונים",
+    tag: "לארגונים ומוסדות",
     image: "/images/org/Office Discussion Scene.png",
-    title: "צריך שהצוות שלך יהיה שם, ולא יישאר מאחור.",
+    title: "AI הוא מנוע התייעלות וצמיחה עסקית שיזניק את הארגון קדימה.",
     subtitle:
-      "הכשרה מובנית לצוותים שלמים, בשפה המקצועית של התחום, עם מדידה שתוכל להציג להנהלה.",
+      "ייעול תהליכים והפחתת עלויות – העצמת צוותי העבודה, שיפור ביצועים וחיסכון במשאבים.",
     benefits: [
+      "יתרון תחרותי ותו תקן ארגוני - יצירת ארגון לומד ויעיל שפועל בסטנדרט הטכנולוגי הגבוה ביותר, מגיב מהר ומוביל את השוק",
+      "הבנת האתגרים והסכנות הנלוות, שמירה על הנהלים והרגולציה כדי למנוע תקלות ולהתנהל באופן אחראי",
       "חבילות קבוצתיות או הכשרה פרטית, מותאמת לסקטור של הארגון",
-      "דוחות התקדמות, מדידת ROI, ותעודות סיום לעובדים",
-      "יועץ הדרכה שמלווה את התהליך מול ההנהלה ומול הצוות",
     ],
-    cta: "לארגונים",
+    cta: "לארגונים ומוסדות",
     href: "/business",
     ctaClass: "border-[#2563eb] bg-[#2563eb] hover:bg-[#1e3a8a] hover:border-[#1e3a8a] hover:shadow-[0_12px_32px_-12px_rgba(37,99,235,0.5)]",
     cardBg: "bg-[#1a1d26]",
@@ -40,7 +40,7 @@ const cards = [
 export function AudienceRouter() {
   return (
     <section
-      className="relative bg-[color:var(--color-ink)] py-24 sm:py-28"
+      className="relative bg-[color:var(--color-ink)] py-12 sm:py-14"
       aria-labelledby="audience-title"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/topo-bg.png')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.5 }} />
@@ -53,13 +53,12 @@ export function AudienceRouter() {
         <Reveal className="mb-14 flex flex-col items-center gap-4 text-center">
           <h2
             id="audience-title"
-            className="max-w-2xl font-display text-[clamp(2rem,4.2vw,3.25rem)] font-medium leading-[1.1] text-[color:var(--color-paper-soft)]"
+            className="max-w-3xl font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-medium leading-[1.2] text-[color:var(--color-paper-soft)]"
           >
-            עצמאים או חברה גדולה?<br />יש לנו פתרונות לכולם
+            בין אם בינה מלאכותית היא הזדמנות או איום מבחינתך – דבר אחד בטוח: חייבים להבין מה קורה שם.
           </h2>
-          <p className="max-w-xl text-base leading-relaxed text-[color:var(--color-paper-soft)]/65">
-            פרילאנסר ומנהל ארגון מחפשים דברים שונים. בחר את המסלול שלך ונראה לך
-            בדיוק מה יש לנו בשבילך.
+          <p className="max-w-2xl text-lg leading-relaxed text-[color:var(--color-paper-soft)]/75">
+            מהפכת ה-AI כבר בעיצומה, זה הזמן להצטרף ולהיות חלק ממנה.
           </p>
         </Reveal>
 
