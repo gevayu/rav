@@ -18,7 +18,7 @@ export function CatalogCtaBand() {
           <div className="flex max-w-2xl flex-col gap-5">
             <Eyebrow tone="bronze">לא בטוח איזה מסלול מתאים לך?</Eyebrow>
             <h2 className="font-display text-[clamp(2rem,4.4vw,3.2rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]">
-              לשיחה עם יועץ הדרכה
+              לשיחה עם יועץ מהתחום
             </h2>
             <p className="max-w-xl text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/70">
               ללא מכירות ובלי התחייבות - רק התאמה מדויקת בין מה שאתה צריך לבין
