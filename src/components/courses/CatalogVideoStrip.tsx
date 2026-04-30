@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Play } from "lucide-react";
 
 // TODO: Replace with actual video URL and subtitle text
@@ -30,19 +31,29 @@ export function CatalogVideoStrip() {
                   title="סרטון הסבר"
                 />
               ) : (
-                <button
-                  type="button"
-                  onClick={() => setPlaying(true)}
-                  className="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-colors hover:bg-white/5"
-                  aria-label="הפעל סרטון"
-                >
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)] shadow-[0_0_40px_rgba(229,184,155,0.3)] transition-transform duration-300 group-hover:scale-110">
-                    <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" strokeWidth={0} />
-                  </span>
-                  <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-paper-soft)]/60">
-                    לחץ להפעלה
-                  </span>
-                </button>
+                <>
+                  <Image
+                    src="/images/lect/Man Speaking in Professional Setting.png"
+                    alt="מרצה מול כיתה"
+                    fill
+                    className="object-cover opacity-60"
+                    sizes="(max-width: 1024px) 100vw, 650px"
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-ink)]/60 via-transparent to-transparent" />
+                  <button
+                    type="button"
+                    onClick={() => setPlaying(true)}
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-4 transition-colors hover:bg-white/5"
+                    aria-label="הפעל סרטון"
+                  >
+                    <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)] shadow-[0_0_40px_rgba(229,184,155,0.3)] transition-transform duration-300 group-hover:scale-110">
+                      <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" strokeWidth={0} />
+                    </span>
+                    <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-paper-soft)]/60">
+                      לחץ להפעלה
+                    </span>
+                  </button>
+                </>
               )}
             </div>
           </div>
