@@ -26,7 +26,7 @@ export type PreCourseBlock = {
   topics: string[];
 };
 
-export type CertificationTier = "Ai01" | "Ai03" | "Ai05" | "Ai10";
+export type CertificationTier = "Ai01" | "Ai03" | "Ai05";
 
 export type CourseAxes = {
   ai: string[];
@@ -515,7 +515,7 @@ export const courses: Course[] = [
     nextCohort: "מחזור הבא: יוני 2026",
     instructorName: "רו״ח טל ולנשטיין",
     instructorTitle: "רו״ח מנוסה, מרצה מובילה בתחום ומייסדת קהילת AI-Finance",
-    instructorPortraitUrl: "/images/lect/tal-valnstein.png",
+    instructorPortraitUrl: "/images/lect/tal-roi.jpg",
     coInstructorName: "רועי ולנשטיין",
     coInstructorTitle: "מומחה לשילוב כלי בינה מלאכותית בעבודה פיננסית, מייסד קהילת AI-Finance",
     coInstructorPortraitUrl: "/images/lect/roi-valnstein.png",
