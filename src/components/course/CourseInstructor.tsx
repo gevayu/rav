@@ -95,8 +95,8 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
               ))}
             </div>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

@@ -133,8 +133,8 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
               </div>
             );
           })()}
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

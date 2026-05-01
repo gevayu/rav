@@ -33,7 +33,7 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
           )}
         </Reveal>
 
-        <Reveal delay={0.15} as="ul" className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+        <Reveal delay={0.15} className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {course.whatYouLearn.map((item) => (
             <li
               key={item.text}
