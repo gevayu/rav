@@ -238,7 +238,7 @@ export function Hero() {
           <span className="text-center text-[12px] font-medium leading-relaxed tracking-wide text-[color:var(--color-paper-soft)]/70">
             מבית אנליזה - גוף הכשרה מפוקח של האגף להכשרה מקצועית במשרד העבודה
           </span>
-          <div className="flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-bronze)]/30 bg-white/20 px-6 py-4 backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-bronze)]/30 bg-white/35 px-6 py-4 backdrop-blur-sm">
             <div className="inline-flex items-center gap-2">
               <ShieldCheck
                 className="h-4 w-4 text-[color:var(--color-bronze)]"
@@ -249,13 +249,13 @@ export function Hero() {
               </span>
             </div>
             <div className="flex items-center gap-6">
-              <div className="relative h-10 w-24">
+              <div className="relative h-14 w-32">
                 <Image src="/images/ministries/labor.png" alt="משרד העבודה" fill className="object-contain" />
               </div>
-              <div className="relative h-10 w-24">
+              <div className="relative h-14 w-32">
                 <Image src="/images/ministries/defense.svg" alt="משרד הביטחון" fill className="object-contain" />
               </div>
-              <div className="relative h-10 w-24">
+              <div className="relative h-14 w-32">
                 <Image src="/images/ministries/education.png" alt="משרד החינוך" fill className="object-contain" />
               </div>
             </div>
