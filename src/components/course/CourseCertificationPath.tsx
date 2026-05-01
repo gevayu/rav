@@ -50,7 +50,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
           </div>
 
           {(() => {
-            const displayTiers = CERTIFICATION_ORDER.filter((t) => t !== "Ai10");
+            const displayTiers = CERTIFICATION_ORDER;
             const last = displayTiers.length - 1;
             return (
               <div role="list" aria-label="שלוש דרגות הסמכה" className="flex flex-col gap-3">

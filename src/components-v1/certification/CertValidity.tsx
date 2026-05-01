@@ -16,9 +16,9 @@ const rows = [
     cost: "מסובסד לבוגרים",
   },
   {
-    tier: "Ai10" as const,
+    tier: "Ai03" as const,
     validity: "שנתיים",
-    renewal: "קורס עדכון (8 שעות) + פרויקט",
+    renewal: "מבחן מקוון או קורס עדכון (4 שעות)",
     cost: "מסובסד לבוגרים",
   },
 ];

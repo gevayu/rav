@@ -8,7 +8,7 @@ import type {
 export const LEVEL_LABELS: Record<CourseLevel, string> = {
   foundation: "Ai01",
   advanced: "Ai05",
-  mastery: "Ai10",
+  mastery: "Ai05",
 };
 
 export const FORMAT_LABELS: Record<CourseFormat, string> = {
@@ -25,11 +25,11 @@ export const CERTIFICATION_TIERS: Record<
   { label: string; name: string }
 > = {
   Ai01: { label: "Ai01", name: "יסוד" },
+  Ai03: { label: "Ai03", name: "התמחות מקצועית" },
   Ai05: { label: "Ai05", name: "מקצועי" },
-  Ai10: { label: "Ai10", name: "מאסטר" },
 };
 
-export const CERTIFICATION_ORDER: CertificationTier[] = ["Ai01", "Ai05", "Ai10"];
+export const CERTIFICATION_ORDER: CertificationTier[] = ["Ai01", "Ai03", "Ai05"];
 
 export const TIER_COLORS: Record<
   CertificationTier,
@@ -40,15 +40,15 @@ export const TIER_COLORS: Record<
     border: "border-[color:var(--color-tier-01-border)]",
     text: "text-[color:var(--color-tier-01-ink)]",
   },
+  Ai03: {
+    bg: "bg-[#17823D]",
+    border: "border-[#0f5c2a]",
+    text: "text-[#f0fdf4]",
+  },
   Ai05: {
     bg: "bg-[color:var(--color-tier-05-bg)]",
     border: "border-[color:var(--color-tier-05-border)]",
     text: "text-[color:var(--color-tier-05-ink)]",
-  },
-  Ai10: {
-    bg: "bg-[color:var(--color-tier-09-bg)]",
-    border: "border-[color:var(--color-tier-09-border)]",
-    text: "text-[color:var(--color-tier-09-ink)]",
   },
 };
 
@@ -65,6 +65,6 @@ export function getCertificationPath(course: Course): CertificationPath {
     case "advanced":
       return { entry: "Ai01", exit: "Ai05" };
     case "mastery":
-      return { entry: "Ai05", exit: "Ai10" };
+      return { entry: "Ai03", exit: "Ai05" };
   }
 }

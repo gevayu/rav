@@ -12,15 +12,50 @@ const p = (gender: "men" | "women", id: number) =>
   `https://randomuser.me/api/portraits/${gender}/${id}.jpg`;
 
 // Hero grid - 40 instructor portraits, tiled and layered.
+// Real instructor photos are spread throughout; randomuser IDs are kept in the
+// European/Mediterranean range (< 60) to avoid East-Asian and very dark-skinned
+// photos that appear in the higher-numbered randomuser.me datasets.
 export const heroGridInstructors = [
-  ...Array.from({ length: 20 }, (_, i) => ({
-    id: `hero-m-${i}`,
-    url: p("men", (i * 3 + 5) % 99 || 1),
-  })),
-  ...Array.from({ length: 20 }, (_, i) => ({
-    id: `hero-w-${i}`,
-    url: p("women", (i * 3 + 2) % 99 || 1),
-  })),
+  { id: "real-sarah",  url: "/images/lect/sarah-cohen.jpeg" },
+  { id: "hero-m-1",   url: p("men",    8) },
+  { id: "hero-w-1",   url: p("women",  5) },
+  { id: "hero-m-2",   url: p("men",   14) },
+  { id: "hero-w-2",   url: p("women", 11) },
+  { id: "hero-m-3",   url: p("men",   20) },
+  { id: "real-esti",  url: "/images/lect/esti-tachover.jpeg" },
+  { id: "hero-w-3",   url: p("women", 17) },
+  { id: "hero-m-4",   url: p("men",   26) },
+  { id: "hero-w-4",   url: p("women", 23) },
+  { id: "hero-m-5",   url: p("men",   32) },
+  { id: "hero-w-5",   url: p("women", 29) },
+  { id: "hero-m-6",   url: p("men",   38) },
+  { id: "real-tal",   url: "/images/lect/tal-valnstein.png" },
+  { id: "hero-w-6",   url: p("women", 35) },
+  { id: "hero-m-7",   url: p("men",   44) },
+  { id: "hero-w-7",   url: p("women", 41) },
+  { id: "hero-m-8",   url: p("men",   50) },
+  { id: "hero-w-8",   url: p("women", 47) },
+  { id: "hero-m-9",   url: p("men",    5) },
+  { id: "real-roi",   url: "/images/lect/roi-valnstein.png" },
+  { id: "hero-w-9",   url: p("women",  2) },
+  { id: "hero-m-10",  url: p("men",   11) },
+  { id: "hero-w-10",  url: p("women",  8) },
+  { id: "hero-m-11",  url: p("men",   17) },
+  { id: "hero-w-11",  url: p("women", 14) },
+  { id: "hero-m-12",  url: p("men",   23) },
+  { id: "real-yulia", url: "/images/lect/yulia-chabia.jpeg" },
+  { id: "hero-w-12",  url: p("women", 20) },
+  { id: "hero-m-13",  url: p("men",   29) },
+  { id: "hero-w-13",  url: p("women", 26) },
+  { id: "hero-m-14",  url: p("men",   35) },
+  { id: "hero-w-14",  url: p("women", 32) },
+  { id: "hero-m-15",  url: p("men",   41) },
+  { id: "real-matan", url: "/images/lect/matan-makhluf.jpeg" },
+  { id: "hero-w-15",  url: p("women", 38) },
+  { id: "hero-m-16",  url: p("men",   47) },
+  { id: "hero-w-16",  url: p("women", 44) },
+  { id: "hero-m-17",  url: p("men",   53) },
+  { id: "hero-w-17",  url: p("women", 50) },
 ];
 
 

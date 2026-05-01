@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TIER_COLORS } from "@/components/courses/labels";
 
 type Quote = {
-  tier: "Ai01" | "Ai05" | "Ai10";
+  tier: "Ai01" | "Ai03" | "Ai05";
   text: string;
   name: string;
   role: string;
@@ -27,8 +27,8 @@ const quotes: Quote[] = [
     avatar: "/images/lect/Smiling Woman with Glasses.png",
   },
   {
-    tier: "Ai10",
-    text: "Ai10 נתן לי את הכלים להוביל הטמעה ארגונית. תוך 3 חודשים הכשרתי 40 עובדים והצגתי להנהלה דו״ח ROI שהפתיע את כולם.",
+    tier: "Ai05",
+    text: "הקורס נתן לי את הכלים להוביל הטמעת Ai בצוות שלי. תוך 3 חודשים הכשרתי 40 עובדים והצגתי להנהלה דו״ח ROI שהפתיע את כולם.",
     name: "אריק ברנשטיין",
     role: "מנהל הדרכה, חברת ביטוח",
     avatar: "/images/lect/Man Presenting on Stage.png",

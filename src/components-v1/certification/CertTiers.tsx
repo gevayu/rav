@@ -4,7 +4,7 @@ import { Button } from "@/components-v1/ui/Button";
 import { TIER_COLORS } from "@/components-v1/courses/labels";
 
 type TierDetail = {
-  tier: "Ai01" | "Ai05" | "Ai10";
+  tier: "Ai01" | "Ai03" | "Ai05";
   name: string;
   tagline: string;
   description: string;
@@ -48,19 +48,19 @@ const tiers: TierDetail[] = [
     ],
   },
   {
-    tier: "Ai10",
-    name: "מאסטר",
-    tagline: "הובלה והטמעה",
+    tier: "Ai03",
+    name: "התמחות מקצועית",
+    tagline: "יישום מעמיק",
     description:
-      "לבוגרי Ai05 שרוצים להוביל שינוי. מי שמסיים עם Ai10 יודע לתכנן אסטרטגיית Ai לארגון, להכשיר צוותים, ולנהל פרויקטים הדורשים הטמעה מקצה לקצה.",
-    format: "קורס המשך מתקדם",
-    duration: "30-40 שעות",
-    prerequisite: "Ai05",
+      "לבוגרי Ai01 שרוצים להעמיק. מי שמסיים עם Ai03 יודע ליישם Ai בתהליכים מקצועיים מורכבים, לבנות אוטומציות ולהוביל פרויקטי Ai בצוות.",
+    format: "קורס ביניים",
+    duration: "20-30 שעות",
+    prerequisite: "Ai01",
     outcomes: [
-      "תכנון אסטרטגיית Ai ארגונית",
-      "הכשרה והדרכה של צוותים",
-      "ניהול פרויקטי הטמעת Ai",
-      "מדידת השפעה ברמה ארגונית",
+      "יישום Ai בתהליכים מקצועיים מורכבים",
+      "בניית אוטומציות מותאמות לתחום",
+      "הובלת פרויקטי Ai בצוות",
+      "מדידת ROI ותיעוד תוצאות",
     ],
   },
 ];
