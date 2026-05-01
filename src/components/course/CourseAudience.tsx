@@ -46,8 +46,6 @@ export function CourseAudience({ course }: CourseAudienceProps) {
               </p>
             </article>
           ))}
-        </div>
-
         </Reveal>
 
         {(course.prerequisites && course.prerequisites.length > 0) || needsEntry ? (
