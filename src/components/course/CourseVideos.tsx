@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 
 type CourseVideosProps = {
@@ -26,7 +27,7 @@ export function CourseVideos({ course }: CourseVideosProps) {
       />
 
       <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
-        <div className="mb-14 flex flex-col gap-4">
+        <Reveal className="mb-14 flex flex-col gap-4">
           <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
             צפייה חופשית
           </span>
@@ -36,9 +37,9 @@ export function CourseVideos({ course }: CourseVideosProps) {
           >
             תראו לפני שתחליטו
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-1 max-w-2xl">
+        <Reveal delay={0.15} className="grid gap-6 md:grid-cols-1 max-w-2xl">
           {videos.map((v) => (
             <article
               key={v.id}
@@ -82,7 +83,7 @@ export function CourseVideos({ course }: CourseVideosProps) {
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 import { sectors } from "@/data/sectors";
 
@@ -25,7 +26,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
       />
 
       <div className="relative mx-auto max-w-[1240px] px-6 sm:px-10">
-        <div className="grid items-start gap-10 md:grid-cols-[260px_1fr] md:gap-14 lg:grid-cols-[300px_1fr] lg:gap-20">
+        <Reveal className="grid items-start gap-10 md:grid-cols-[260px_1fr] md:gap-14 lg:grid-cols-[300px_1fr] lg:gap-20">
           <div className="flex flex-col items-start gap-5">
             <div className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full ring-2 ring-[color:var(--color-bronze)]/55 ring-offset-4 ring-offset-[color:var(--color-ink)]">
               <Image
@@ -95,7 +96,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

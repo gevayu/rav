@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BadgeCheck, Sparkles } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 import { getCertificationPath } from "@/components/courses/labels";
 
@@ -19,7 +20,7 @@ export function CourseAudience({ course }: CourseAudienceProps) {
       className="relative bg-[color:var(--color-cream)] py-24 sm:py-28"
     >
       <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
-        <div className="mb-12 flex flex-col gap-4">
+        <Reveal className="mb-12 flex flex-col gap-4">
           <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
             קהל יעד
           </span>
@@ -29,9 +30,9 @@ export function CourseAudience({ course }: CourseAudienceProps) {
           >
             למי הקורס מיועד
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-2 md:gap-6">
+        <Reveal delay={0.15} className="grid gap-5 md:grid-cols-2 md:gap-6">
           {course.targetAudience.map((item, idx) => (
             <article
               key={item}
@@ -46,6 +47,8 @@ export function CourseAudience({ course }: CourseAudienceProps) {
             </article>
           ))}
         </div>
+
+        </Reveal>
 
         {(course.prerequisites && course.prerequisites.length > 0) || needsEntry ? (
           <div className="mt-10 grid gap-5 rounded-[24px] border border-[color:var(--color-ink)]/10 bg-white/70 p-6 sm:p-8 md:grid-cols-[1fr_auto] md:items-center">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useId, useState } from "react";
 import { ChevronDown, Play, Sparkles } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course, CourseModule, PreCourseBlock } from "@/data/courses";
 
 type CourseSyllabusProps = {
@@ -67,7 +68,7 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
       className="relative bg-[color:var(--color-paper-soft)] py-24 sm:py-28"
     >
       <div className="mx-auto max-w-[1040px] px-6 sm:px-10">
-        <div className="mb-12 flex flex-col gap-4">
+        <Reveal className="mb-12 flex flex-col gap-4">
           <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
             תוכן הקורס
           </span>
@@ -77,7 +78,7 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
           >
             סילבוס מפורט
           </h2>
-        </div>
+        </Reveal>
 
         <div className="flex flex-col gap-3">
           {items.map((item) => {

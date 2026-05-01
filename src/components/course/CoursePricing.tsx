@@ -1,5 +1,6 @@
 import { PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 
 type CoursePricingProps = {
@@ -25,7 +26,7 @@ export function CoursePricing({ course }: CoursePricingProps) {
       />
 
       <div className="relative mx-auto max-w-[720px] px-6 text-center sm:px-10">
-        <div className="flex flex-col items-center gap-8 rounded-[32px] border border-[color:var(--color-bronze)]/25 bg-white/[0.03] p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-14">
+        <Reveal className="flex flex-col items-center gap-8 rounded-[32px] border border-[color:var(--color-bronze)]/25 bg-white/[0.03] p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-14">
           <div className="flex flex-col items-center gap-3">
             <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
               ההשקעה שלך
@@ -63,7 +64,7 @@ export function CoursePricing({ course }: CoursePricingProps) {
             <PlayCircle className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
             לא בטוחים? צפו בשיעור ניסיון חינם
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

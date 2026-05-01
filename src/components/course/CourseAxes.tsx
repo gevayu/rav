@@ -1,4 +1,5 @@
 import { Briefcase, Cpu, Layers } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course, CourseAxes as CourseAxesType } from "@/data/courses";
 
 type CourseAxesProps = {
@@ -33,7 +34,7 @@ export function CourseAxes({ course }: CourseAxesProps) {
       />
 
       <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
-        <div className="mb-14 flex flex-col gap-4 text-center">
+        <Reveal className="mb-14 flex flex-col gap-4 text-center">
           <span className="self-center text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
             מתודולוגיה
           </span>
@@ -46,15 +47,13 @@ export function CourseAxes({ course }: CourseAxesProps) {
           <p className="mx-auto max-w-xl text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
             כל מפגש בקורס משלב שלושה מישורי עבודה שלא נפרדים אחד מהשני בעבודה היומיומית.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-5 md:grid-cols-3 md:gap-6">
-          {AXES.map(({ key, title, eyebrow, icon: Icon }) => {
+          {AXES.map(({ key, title, eyebrow, icon: Icon }, i) => {
             const items = axes[key];
             return (
-              <article
-                key={key}
-                className="flex flex-col gap-5 rounded-[24px] border border-white/10 bg-white/[0.03] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+              <Reveal key={key} delay={i * 0.1} as="article" className="flex flex-col gap-5 rounded-[24px] border border-white/10 bg-white/[0.03] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
               >
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--color-bronze)]/12 text-[color:var(--color-bronze)]">
@@ -84,7 +83,7 @@ export function CourseAxes({ course }: CourseAxesProps) {
                     </li>
                   ))}
                 </ul>
-              </article>
+              </Reveal>
             );
           })}
         </div>

@@ -57,13 +57,14 @@ export function PartnersCarousel() {
             "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
         }}
       >
-        <div className="flex w-max animate-partners-marquee [animation-play-state:running] group-hover:[animation-play-state:paused]">
-          <div className="flex shrink-0 items-center gap-6 pe-6">
+        {/* dir=ltr ensures LTR flex order so translateX(-50%) loops seamlessly */}
+        <div dir="ltr" className="flex w-max animate-partners-marquee [animation-play-state:running] group-hover:[animation-play-state:paused]">
+          <div className="flex shrink-0 items-center gap-6 pr-6">
             {partners.map((p) => (
               <LogoCard key={`a-${p.file}`} p={p} />
             ))}
           </div>
-          <div className="flex shrink-0 items-center gap-6 pe-6" aria-hidden="true">
+          <div className="flex shrink-0 items-center gap-6 pr-6" aria-hidden="true">
             {partners.map((p) => (
               <LogoCard key={`b-${p.file}`} p={p} />
             ))}

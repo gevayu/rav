@@ -1,4 +1,5 @@
 import { Award, BookOpen, Clock, LayoutGrid, Video } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 import { FORMAT_LABELS } from "@/components/courses/labels";
 
@@ -46,7 +47,7 @@ export function CourseStructure({ course }: CourseStructureProps) {
         <h2 id="structure-title" className="sr-only">
           מבנה הקורס
         </h2>
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[24px] border border-[color:var(--color-ink)]/10 bg-[color:var(--color-ink)]/10 sm:grid-cols-3 lg:grid-cols-5">
+        <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-[24px] border border-[color:var(--color-ink)]/10 bg-[color:var(--color-ink)]/10 sm:grid-cols-3 lg:grid-cols-5">
           {cells.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
@@ -67,7 +68,7 @@ export function CourseStructure({ course }: CourseStructureProps) {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

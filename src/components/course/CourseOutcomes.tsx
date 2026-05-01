@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 
 type CourseOutcomesProps = {
@@ -15,7 +16,7 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
       className="relative bg-[color:var(--color-paper-soft)] py-24 sm:py-28"
     >
       <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
-        <div className="mb-14 flex flex-col gap-4">
+        <Reveal className="mb-14 flex flex-col gap-4">
           <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
             בסיום הקורס
           </span>
@@ -30,9 +31,9 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
               {course.overview}
             </p>
           )}
-        </div>
+        </Reveal>
 
-        <ul className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+        <Reveal delay={0.15} as="ul" className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {course.whatYouLearn.map((item) => (
             <li
               key={item.text}
@@ -55,7 +56,7 @@ export function CourseOutcomes({ course }: CourseOutcomesProps) {
               )}
             </li>
           ))}
-        </ul>
+        </Reveal>
 
         <div className="relative mt-6 h-[280px] w-full overflow-hidden rounded-[24px] sm:h-[340px]">
           <Image

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowLeft, ArrowRight, BookOpen, Download, Video, Mic } from "lucide-react";
@@ -79,6 +80,7 @@ const GAP = 24;
 
 export function FreeContent() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
 
   const scroll = (dir: "prev" | "next") => {
     if (!scrollRef.current) return;
@@ -140,11 +142,15 @@ export function FreeContent() {
             style={{ direction: "rtl" }}
           >
 
-            {cards.map((card) => {
+            {cards.map((card, i) => {
               const Icon = card.icon;
               return (
-                <article
+                <motion.article
                   key={card.title}
+                  initial={reduce ? undefined : { opacity: 0, y: 40 }}
+                  whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+                  transition={{ duration: 0.65, delay: Math.min(i, 2) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                   className="group relative flex w-[350px] shrink-0 flex-col overflow-hidden rounded-[28px] bg-white p-1.5 ring-1 ring-[color:var(--color-ink)]/6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:ring-[color:var(--color-bronze)]/45 hover:shadow-[0_28px_60px_-32px_rgba(28,28,30,0.22)]"
                   style={{ direction: "rtl" }}
                 >
@@ -186,7 +192,7 @@ export function FreeContent() {
                       />
                     </div>
                   </div>
-                </article>
+                </motion.article>
               );
             })}
           </div>
