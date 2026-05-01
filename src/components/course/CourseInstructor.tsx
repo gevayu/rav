@@ -14,6 +14,9 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
   const bio = course.instructorBio ?? "";
   const paragraphs = bio.split("\n\n").filter(Boolean);
   const quote = paragraphs[0]?.split(".").slice(0, 2).join(".").trim();
+  const coTitleParts = (course.coInstructorTitle ?? "").split(", ");
+  const coTitle = coTitleParts[0];
+  const coSub = coTitleParts[1];
 
   return (
     <section
@@ -59,22 +62,19 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
               )}
             </div>
 
-            {course.coInstructorName && (() => {
-              const [coTitle, coSub] = (course.coInstructorTitle ?? "").split(", ");
-              return (
-                <div className="flex flex-col gap-1.5 border-t border-white/10 pt-5">
-                  <p className="font-display text-[clamp(2rem,4vw,2.8rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]">
-                    {course.coInstructorName}
-                  </p>
-                  {coTitle && (
-                    <p className="text-[15px] text-[color:var(--color-paper-soft)]/75">{coTitle}</p>
-                  )}
-                  {coSub && (
-                    <p className="text-[13px] text-[color:var(--color-paper-soft)]/50">{coSub}</p>
-                  )}
-                </div>
-              );
-            })()}
+            {course.coInstructorName && (
+              <div className="flex flex-col gap-1.5 border-t border-white/10 pt-5">
+                <p className="font-display text-[clamp(2rem,4vw,2.8rem)] font-medium leading-[1.05] text-[color:var(--color-paper-soft)]">
+                  {course.coInstructorName}
+                </p>
+                {coTitle && (
+                  <p className="text-[15px] text-[color:var(--color-paper-soft)]/75">{coTitle}</p>
+                )}
+                {coSub && (
+                  <p className="text-[13px] text-[color:var(--color-paper-soft)]/50">{coSub}</p>
+                )}
+              </div>
+            )}
 
             {quote && (
               <figure className="my-2 border-r-2 border-[color:var(--color-bronze)]/60 pr-6">

@@ -31,8 +31,8 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
       />
 
       <div className="relative mx-auto max-w-[1240px] px-6 sm:px-10">
-        <Reveal className="grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center lg:gap-16">
-          <div className="flex flex-col gap-4">
+        <div className="grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center lg:gap-16">
+          <Reveal className="flex flex-col gap-4">
             <span className="inline-flex items-center gap-2 self-start text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.8} aria-hidden="true" />
               סטנדרט חדש בתעשייה
@@ -48,7 +48,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                 ? `מגיעים עם ${cert.entry} ויוצאים עם ${cert.exit}. קורסי ההמשך שלנו זמינים לבוגרים שלנו אחרי הסיום.`
                 : `קורס זה הוא נקודת הכניסה לעולם ה-Ai. מסיימים עם ${cert.exit} ויכולים להמשיך לקורסי Ai05.`}
             </p>
-          </div>
+          </Reveal>
 
           {(() => {
             const displayTiers = CERTIFICATION_ORDER;
@@ -133,7 +133,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
               </div>
             );
           })()}
-        </Reveal>
+        </div>
       </div>
     </section>
   );
