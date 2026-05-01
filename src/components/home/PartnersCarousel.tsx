@@ -10,6 +10,12 @@ const partners: Partner[] = [
   { name: "המכללה האקדמית ספיר", file: "sapir-college.png" },
   { name: "משרד הביטחון", file: "mod.jpg" },
   { name: "Python Institute", file: "python-institute.png" },
+  { name: "המיזם הלאומי לשילוב חרדים בהייטק 2", file: "haredi-hitech.jpg", dark: true },
+  { name: "ג'וינט ישראל 2", file: "jdc.png" },
+  { name: "שירות התעסוקה הישראלי 2", file: "employment-service.jpg" },
+  { name: "המכללה האקדמית ספיר 2", file: "sapir-college.png" },
+  { name: "משרד הביטחון 2", file: "mod.jpg" },
+  { name: "Python Institute 2", file: "python-institute.png" },
 ];
 
 function LogoCard({ p }: { p: Partner }) {
