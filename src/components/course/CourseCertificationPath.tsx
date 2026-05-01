@@ -49,83 +49,89 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
             </p>
           </div>
 
-          <div role="list" aria-label="שלוש דרגות הסמכה" className="flex flex-col gap-3">
-            {/* CSS grid: 5 explicit columns (badge · connector · badge · connector · badge) in one row — align-items:center pins the line to badge midpoint */}
-            <div
-              className="grid items-center"
-              style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
-            >
-              {CERTIFICATION_ORDER.map((tier, idx) => {
-                const exit = isExit(tier);
-                const { label } = CERTIFICATION_TIERS[tier];
-                return (
-                  <Fragment key={tier}>
-                    <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
-                      <span
-                        className={
-                          "inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] " +
-                          `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
-                        }
-                      >
-                        {label}
-                      </span>
-                      {exit && (
-                        <span
-                          aria-hidden="true"
-                          className="absolute -top-3.5 -right-3.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)]"
-                        >
-                          <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
-                        </span>
-                      )}
-                    </div>
-                    {idx < CERTIFICATION_ORDER.length - 1 && (
-                      <span
-                        aria-hidden="true"
-                        className={
-                          "h-px mx-4 " +
-                          (isActive(tier) && isActive(CERTIFICATION_ORDER[idx + 1])
-                            ? "bg-gradient-to-l from-[color:var(--color-bronze)]/15 via-[color:var(--color-bronze)]/60 to-[color:var(--color-bronze)]/15"
-                            : "bg-white/10")
-                        }
-                      />
-                    )}
-                  </Fragment>
-                );
-              })}
-            </div>
+          {(() => {
+            const displayTiers = CERTIFICATION_ORDER.filter((t) => t !== "Ai10");
+            const last = displayTiers.length - 1;
+            return (
+              <div role="list" aria-label="שלוש דרגות הסמכה" className="flex flex-col gap-3">
+                {/* CSS grid: 5 explicit columns (badge · connector · badge · connector · badge) */}
+                <div
+                  className="grid items-center"
+                  style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
+                >
+                  {displayTiers.map((tier, idx) => {
+                    const exit = isExit(tier);
+                    const { label } = CERTIFICATION_TIERS[tier];
+                    return (
+                      <Fragment key={tier}>
+                        <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
+                          <span
+                            className={
+                              "inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] " +
+                              `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
+                            }
+                          >
+                            {label}
+                          </span>
+                          {exit && (
+                            <span
+                              aria-hidden="true"
+                              className="absolute -top-3.5 -right-3.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)]"
+                            >
+                              <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
+                            </span>
+                          )}
+                        </div>
+                        {idx < last && (
+                          <span
+                            aria-hidden="true"
+                            className={
+                              "h-px mx-4 " +
+                              (isActive(tier) && isActive(displayTiers[idx + 1])
+                                ? "bg-gradient-to-l from-[color:var(--color-bronze)]/15 via-[color:var(--color-bronze)]/60 to-[color:var(--color-bronze)]/15"
+                                : "bg-white/10")
+                            }
+                          />
+                        )}
+                      </Fragment>
+                    );
+                  })}
+                </div>
 
-            {/* Label row — same 5-column grid so labels sit directly under badges */}
-            <div
-              className="grid"
-              style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
-            >
-              {CERTIFICATION_ORDER.map((tier, idx) => {
-                const active = isActive(tier);
-                const exit = isExit(tier);
-                const { name } = CERTIFICATION_TIERS[tier];
-                return (
-                  <Fragment key={tier}>
-                    <div role="listitem" className="flex flex-col items-center gap-0.5">
-                      <span
-                        className={
-                          "text-[13px] font-medium " +
-                          (active
-                            ? "text-[color:var(--color-paper-soft)]"
-                            : "text-[color:var(--color-paper-soft)]/40")
-                        }
-                      >
-                        {name}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-paper-soft)]/35">
-                        {exit ? "יעד הקורס" : tier === cert.entry ? "דרישת קדם" : "קורסי המשך"}
-                      </span>
-                    </div>
-                    {idx < CERTIFICATION_ORDER.length - 1 && <span aria-hidden="true" />}
-                  </Fragment>
-                );
-              })}
-            </div>
-          </div>
+                {/* Label row */}
+                <div
+                  className="grid"
+                  style={{ gridTemplateColumns: "auto 1fr auto 1fr auto" }}
+                >
+                  {displayTiers.map((tier, idx) => {
+                    const active = isActive(tier);
+                    const exit = isExit(tier);
+                    const { name } = CERTIFICATION_TIERS[tier];
+                    return (
+                      <Fragment key={tier}>
+                        <div role="listitem" className="flex flex-col items-center gap-0.5">
+                          <span
+                            className={
+                              "text-[13px] font-medium " +
+                              (active
+                                ? "text-[color:var(--color-paper-soft)]"
+                                : "text-[color:var(--color-paper-soft)]/40")
+                            }
+                          >
+                            {name}
+                          </span>
+                          <span className="text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-paper-soft)]/35">
+                            {exit ? "יעד הקורס" : tier === cert.entry ? "דרישת קדם" : "קורסי המשך"}
+                          </span>
+                        </div>
+                        {idx < last && <span aria-hidden="true" />}
+                      </Fragment>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </section>

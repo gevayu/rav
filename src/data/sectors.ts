@@ -23,8 +23,8 @@ export const sectors: Sector[] = [
     stripImageUrl: "/images/sectors/law.jpg",
   },
   {
-    slug: "accounting",
-    displayName: "ראיית חשבון וכספים",
+    slug: "finance",
+    displayName: "פיננסים",
     guideName: "רו״ח אבי מזרחי",
     guideTitle: "שותף ב-Big 4",
     guideYears: "18 שנה בביקורת חברות ציבוריות",

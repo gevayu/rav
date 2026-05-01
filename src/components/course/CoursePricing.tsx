@@ -28,7 +28,7 @@ export function CoursePricing({ course }: CoursePricingProps) {
         <div className="flex flex-col items-center gap-8 rounded-[32px] border border-[color:var(--color-bronze)]/25 bg-white/[0.03] p-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-14">
           <div className="flex flex-col items-center gap-3">
             <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
-              טווח השקעה
+              ההשקעה שלך
             </span>
             <h2
               id="pricing-title"

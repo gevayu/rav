@@ -1,4 +1,4 @@
-import { Calendar, Clock, ShieldCheck, Video } from "lucide-react";
+import { Calendar, Clock, Video } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { sectors } from "@/data/sectors";
@@ -6,6 +6,7 @@ import type { Course } from "@/data/courses";
 import {
   FORMAT_LABELS,
   LEVEL_LABELS,
+  TIER_COLORS,
   getCertificationPath,
 } from "@/components/courses/labels";
 
@@ -44,10 +45,7 @@ export function CourseHero({ course }: CourseHeroProps) {
                 <Eyebrow tone="bronze">{sector.displayName}</Eyebrow>
               )}
               <span className="h-3 w-px bg-[color:var(--color-bronze)]/30" aria-hidden="true" />
-              <Eyebrow tone="paper">{LEVEL_LABELS[course.level]}</Eyebrow>
-              <span className="h-3 w-px bg-[color:var(--color-bronze)]/30" aria-hidden="true" />
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-bronze)]/50 bg-[color:var(--color-bronze)]/10 px-2.5 py-1 text-[11px] font-medium tracking-[0.08em] text-[color:var(--color-bronze)]">
-                <ShieldCheck className="h-3 w-3" strokeWidth={1.8} aria-hidden="true" />
+              <span className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] ${TIER_COLORS[cert.exit].bg} ${TIER_COLORS[cert.exit].border} ${TIER_COLORS[cert.exit].text}`}>
                 {cert.exit}
               </span>
             </div>
@@ -112,27 +110,17 @@ export function CourseHero({ course }: CourseHeroProps) {
 function QuickFactsCard({ course }: { course: Course }) {
   const formatPrice = (min: number, max: number) =>
     `₪${Math.round((min + max) / 2).toLocaleString("he-IL")}`;
+  const cert = getCertificationPath(course);
 
   return (
     <div className="relative overflow-hidden rounded-[28px] bg-white/[0.04] p-1.5 ring-1 ring-[color:var(--color-bronze)]/30">
       <div className="flex flex-col rounded-[calc(28px-0.375rem)] bg-[color:var(--color-ink)]/95 p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-        {/* Price */}
-        <div className="border-b border-white/10 pb-6">
-          <p className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-paper-soft)]/50">
-            טווח השקעה
-          </p>
-          <p dir="ltr" className="mt-2 font-display text-[clamp(2rem,4vw,2.6rem)] font-medium leading-none text-[color:var(--color-bronze)]">
-            {formatPrice(course.priceMin, course.priceMax)}
-          </p>
-        </div>
-
         {/* Meta rows */}
-        <dl className="mt-5 flex flex-col gap-3.5 text-[13px]">
+        <dl className="flex flex-col gap-3.5 text-[13px]">
           <FactRow label="מחזור הבא" value={course.nextCohort.replace("מחזור הבא: ", "")} />
           <FactRow label="שעות אקדמיות" value={`${course.totalHours} שעות`} />
-          <FactRow label="מפגשי לייב" value={`${course.liveSessions} מפגשים`} />
-          <FactRow label="פורמט" value={FORMAT_LABELS[course.format]} />
-          <FactRow label="רמה" value={LEVEL_LABELS[course.level]} />
+          <FactRow label="מס' מפגשים" value={`${course.liveSessions} מפגשים`} />
+          <FactRow label="רמה" value={cert.exit} />
         </dl>
 
         {/* CTAs */}

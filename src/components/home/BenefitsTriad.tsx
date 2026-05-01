@@ -65,11 +65,11 @@ export function BenefitsTriad() {
                       />
                     </div>
 
-                    <div className="p-8">
+                    <div className="flex h-full flex-col p-8">
                       <h3 className="font-display text-2xl font-medium leading-tight text-[color:var(--color-ink)]">
                         {benefit.title}
                       </h3>
-                      <p className="mt-4 text-base leading-relaxed text-[color:var(--color-ink-muted)]">
+                      <p className="mt-4 flex-1 text-base leading-relaxed text-[color:var(--color-ink-muted)]">
                         {benefit.body}
                       </p>
 

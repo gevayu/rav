@@ -39,7 +39,7 @@ export function SectorsGrid() {
                 className="group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-white pb-1.5 ring-1 ring-[color:var(--color-ink)]/8 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:ring-[color:var(--color-bronze)]/50 hover:shadow-[0_30px_60px_-30px_rgba(28,28,30,0.25)]"
               >
                 {sector.stripImageUrl ? (
-                  <div className="relative h-16 w-full overflow-hidden">
+                  <div className="relative h-20 w-full overflow-hidden">
                     <Image
                       src={sector.stripImageUrl}
                       alt=""

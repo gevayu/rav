@@ -32,7 +32,7 @@ export const champions: Instructor[] = [
     title: "מומחית בדיני בינה מלאכותית ומשפט",
     sector: "Ai לעריכת דין",
     experience: "מומחית בדיני בינה מלאכותית ומשפט, יזמת ומשפיענית בתחום הבינה המלאכותית למשפטנים.",
-    portraitUrl: "/images/lect/Professional Portrait - 2.png",
+    portraitUrl: "/images/lect/sarah-cohen.jpeg",
     portraitPosition: "center 25%",
   },
   {
@@ -41,7 +41,7 @@ export const champions: Instructor[] = [
     title: "מנהלת תחום גידולי מערכת העיכול, אסותא רמת החייל",
     sector: "Ai לרפואה",
     experience: "מנהלת תחום גידולי מערכת העיכול באסותא רמת החייל ומרצה מובילה בשימוש ב-AI לצוותי רפואה.",
-    portraitUrl: "/images/lect/Smiling Woman with Glasses.png",
+    portraitUrl: "/images/lect/esti-tachover.jpeg",
   },
   {
     id: "c3",
@@ -49,7 +49,7 @@ export const champions: Instructor[] = [
     title: "בוגרת Big 4, ממייסדי קהילת Ai-Finance",
     sector: "Ai לראיית חשבון",
     experience: "בוגרת Big 4, מרצה מובילה בתחום וממייסדי קהילת Ai-Finance.",
-    portraitUrl: "/images/lect/Professional Portrait.png",
+    portraitUrl: "/images/lect/tal-valnstein.png",
   },
   {
     id: "c4",
@@ -57,7 +57,7 @@ export const champions: Instructor[] = [
     title: "מייסד מועדון ה-Ai לסטודנטים, אוניברסיטת רייכמן",
     sector: "Ai לראיית חשבון",
     experience: "מייסד מועדון ה-Ai לסטודנטים פיננסים באוניברסיטת רייכמן, מרצה טכנולוגי מוביל לצוותים פיננסיים וממייסדי קהילת Ai-Finance.",
-    portraitUrl: "/images/lect/Man Speaking in Professional Setting.png",
+    portraitUrl: "/images/lect/roi-valnstein.png",
   },
   {
     id: "c5",
@@ -65,7 +65,7 @@ export const champions: Instructor[] = [
     title: "מייסדת Happy Homes US",
     sector: "Ai לנדל״ן",
     experience: "מייסדת חברת השקעות נדל״ן Happy Homes US ומרצה מובילה בשילוב טכנולוגיה ובינה מלאכותית בתחומי השקעות נדל״ן.",
-    portraitUrl: "/images/lect/Cheerful Woman in Library.png",
+    portraitUrl: "/images/lect/yulia-chabia.jpeg",
   },
   {
     id: "c6",
@@ -73,7 +73,7 @@ export const champions: Instructor[] = [
     title: "מהנדס, ניהול פרויקטי בנייה גדולים",
     sector: "Ai להנדסה אזרחית",
     experience: "מהנדס מנוסה בניהול פרויקטי בנייה גדולים, עתיר ידע וניסיון בשילוב טכנולוגיה ובינה מלאכותית בפרויקטים אזרחיים.",
-    portraitUrl: "/images/lect/Professional Presentation.png",
+    portraitUrl: "/images/lect/matan-makhluf.jpeg",
   },
   {
     id: "c7",
