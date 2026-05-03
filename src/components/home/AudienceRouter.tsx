@@ -86,12 +86,6 @@ export function AudienceRouter() {
                     {card.title}
                   </h3>
 
-                  {card.subtitle && (
-                    <p className="text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
-                      {card.subtitle}
-                    </p>
-                  )}
-
                   <ul className="flex flex-col gap-3">
                     {card.benefits.map((b) => (
                       <li
