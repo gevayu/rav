@@ -33,7 +33,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
           <div className="flex flex-col items-start gap-5">
             <div className="relative aspect-square w-full max-w-[300px] overflow-hidden rounded-full ring-2 ring-[color:var(--color-bronze)]/55 ring-offset-4 ring-offset-[color:var(--color-ink)]">
               <Image
-                src={course.instructorPortraitUrl}
+                src={course.instructorsTogetherImageUrl ?? course.instructorPortraitUrl}
                 alt={course.instructorName}
                 fill
                 sizes="(min-width: 1024px) 300px, (min-width: 768px) 260px, 220px"
@@ -96,6 +96,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
             </div>
           </div>
         </Reveal>
+
       </div>
     </section>
   );

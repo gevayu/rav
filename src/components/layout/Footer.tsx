@@ -22,11 +22,8 @@ const columns: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "דף הבית", href: "/" },
       { label: "קורסים", href: "/courses" },
-      { label: "מדרג ההסמכה", href: "/certification", disabled: true },
-      { label: "לעצמאים", href: "/solo", disabled: true },
-      { label: "למסלול ארגוני", href: "/business", disabled: true },
-      { label: "המומחים", href: "/#champions" },
-      { label: "בלוג", href: "/#free" },
+      { label: "אודות", href: "/about" },
+      { label: "מדרג ההסמכה", href: "/#certification" },
       { label: "צור קשר", href: "/#lead" },
     ],
   },
@@ -118,13 +115,13 @@ export function Footer() {
         <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-[11px] text-[color:var(--color-paper-soft)]/45 sm:flex-row sm:items-center">
           <span>© 2026 המרכז הרב-תחומי להכשרות Ai. כל הזכויות שמורות.</span>
           <div className="flex items-center gap-5">
-            <a href="#" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
+            <a href="/privacy" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
               מדיניות פרטיות
             </a>
-            <a href="#" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
+            <a href="/accessibility" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
               הצהרת נגישות
             </a>
-            <a href="#" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
+            <a href="/terms" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
               תנאי שימוש
             </a>
           </div>

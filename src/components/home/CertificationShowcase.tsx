@@ -22,7 +22,7 @@ const homeTiers: HomeTier[] = [
     name: "התמחות מקצועית",
     description:
       "יישום פרקטי של עקרונות וכלי Ai מתקדמים בתחומך המקצועי הספציפי.",
-    badgeClass: "bg-[#17823D] border-[#0f5c2a] text-[#f0fdf4]",
+    badgeClass: "bg-[#22c55e] border-[#16a34a] text-[#052e16]",
   },
   {
     label: "Ai05",
@@ -36,7 +36,7 @@ const homeTiers: HomeTier[] = [
 
 export function CertificationShowcase() {
   return (
-    <section className="relative bg-[color:var(--color-paper-soft)] py-14 sm:py-18 overflow-hidden">
+    <section id="certification" className="relative bg-[color:var(--color-paper-soft)] py-14 sm:py-18 overflow-hidden scroll-mt-28">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/wave-lines.svg')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.55 }} />
       <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
         <Reveal>
@@ -145,16 +145,6 @@ export function CertificationShowcase() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.4}>
-          <div className="mt-10 flex flex-col items-center gap-4 text-center">
-            <a
-              href="/certification"
-              className="inline-flex h-12 items-center gap-3 rounded-full border border-[color:var(--color-ink)]/12 bg-[#F5F2ED] px-6 text-sm font-medium text-[color:var(--color-ink)] transition-colors hover:bg-[#e8ded0]"
-            >
-              על מדרג ההסמכה
-            </a>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

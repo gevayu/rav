@@ -66,13 +66,13 @@ export function PartnersCarousel() {
         {/* dir=ltr ensures LTR flex order so translateX(-50%) loops seamlessly */}
         <div dir="ltr" className="flex w-max animate-partners-marquee [animation-play-state:running] group-hover:[animation-play-state:paused]">
           <div className="flex shrink-0 items-center gap-6 pr-6">
-            {partners.map((p) => (
-              <LogoCard key={`a-${p.file}`} p={p} />
+            {partners.map((p, i) => (
+              <LogoCard key={`a-${i}-${p.file}`} p={p} />
             ))}
           </div>
           <div className="flex shrink-0 items-center gap-6 pr-6" aria-hidden="true">
-            {partners.map((p) => (
-              <LogoCard key={`b-${p.file}`} p={p} />
+            {partners.map((p, i) => (
+              <LogoCard key={`b-${i}-${p.file}`} p={p} />
             ))}
           </div>
         </div>

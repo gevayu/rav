@@ -100,7 +100,7 @@ export function LeadForm() {
                             name="sector"
                             required
                             className="h-12 w-full appearance-none rounded-2xl border border-white/10 px-4 text-[14px] transition-colors focus:border-[color:var(--color-bronze)]/60 focus:outline-none"
-                            style={{ backgroundColor: "#1c1c1e", color: "#f5f2ed" }}
+                            style={{ backgroundColor: "#1c1c1e", color: "#f5f2ed", accentColor: "#059669" }}
                           >
                             <option value="" disabled style={{ background: "#1c1c1e", color: "#f5f2ed" }}>
                               בחר תחום

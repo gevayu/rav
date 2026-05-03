@@ -65,6 +65,7 @@ export type Course = {
   coInstructorTitle?: string;
   coInstructorPortraitUrl?: string;
   coInstructorBio?: string;
+  instructorsTogetherImageUrl?: string;
   preCourse?: PreCourseBlock;
   axes?: CourseAxes;
   certification?: {
@@ -515,10 +516,11 @@ export const courses: Course[] = [
     nextCohort: "מחזור הבא: יוני 2026",
     instructorName: "רו״ח טל ולנשטיין",
     instructorTitle: "רו״ח מנוסה, מרצה מובילה בתחום ומייסדת קהילת AI-Finance",
-    instructorPortraitUrl: "/images/lect/tal-roi.jpg",
+    instructorPortraitUrl: "/images/lect/tal-valnstein.png",
     coInstructorName: "רועי ולנשטיין",
     coInstructorTitle: "מומחה לשילוב כלי בינה מלאכותית בעבודה פיננסית, מייסד קהילת AI-Finance",
     coInstructorPortraitUrl: "/images/lect/roi-valnstein.png",
+    instructorsTogetherImageUrl: "/images/lect/tal-roi.jpg",
     highlights: [
       "10 מפגשים בהובלת רו״ח טל ולנשטיין ורועי ולנשטיין",
       "לצרכי יישור קו - הכניסה מותנית במעבר מכינת קדם הכשרה להיכרות בסיס עם עולם ה-AI",

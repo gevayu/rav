@@ -8,7 +8,7 @@ export function SectorsGrid() {
   return (
     <section
       id="sectors"
-      className="relative bg-[color:var(--color-paper-soft)] py-14 sm:py-18"
+      className="relative bg-[color:var(--color-paper-soft)] py-14 sm:py-18 scroll-mt-28"
     >
       <div
         aria-hidden="true"

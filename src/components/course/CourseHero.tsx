@@ -1,11 +1,10 @@
+import Image from "next/image";
 import { Calendar, Clock, Video } from "lucide-react";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Button } from "@/components/ui/Button";
 import { sectors } from "@/data/sectors";
 import type { Course } from "@/data/courses";
 import {
   FORMAT_LABELS,
-  LEVEL_LABELS,
   TIER_COLORS,
   getCertificationPath,
 } from "@/components/courses/labels";
@@ -13,9 +12,6 @@ import {
 type CourseHeroProps = {
   course: Course;
 };
-
-const formatPrice = (min: number, max: number) =>
-  `₪${Math.round((min + max) / 2).toLocaleString("he-IL")}`;
 
 export function CourseHero({ course }: CourseHeroProps) {
   const sector = sectors.find((s) => s.slug === course.sectorSlug);
@@ -89,16 +85,16 @@ export function CourseHero({ course }: CourseHeroProps) {
               </span>
             </div>
 
-            {/* Mobile QuickFacts (below content on small screens) */}
+            {/* Mobile portrait (below content on small screens) */}
             <div className="lg:hidden">
-              <QuickFactsCard course={course} />
+              <InstructorPortraitCard course={course} />
             </div>
           </div>
 
-          {/* Right: sticky QuickFacts on desktop */}
+          {/* Right: sticky instructor portrait on desktop */}
           <div className="hidden lg:block">
             <div className="sticky top-28 pb-16">
-              <QuickFactsCard course={course} />
+              <InstructorPortraitCard course={course} />
             </div>
           </div>
         </div>
@@ -107,45 +103,83 @@ export function CourseHero({ course }: CourseHeroProps) {
   );
 }
 
-function QuickFactsCard({ course }: { course: Course }) {
-  const formatPrice = (min: number, max: number) =>
-    `₪${Math.round((min + max) / 2).toLocaleString("he-IL")}`;
-  const cert = getCertificationPath(course);
-
+function InstructorPortraitCard({ course }: { course: Course }) {
+  const hasCo = Boolean(course.coInstructorName && course.coInstructorPortraitUrl);
   return (
     <div className="relative overflow-hidden rounded-[28px] bg-white/[0.04] p-1.5 ring-1 ring-[color:var(--color-bronze)]/30">
-      <div className="flex flex-col rounded-[calc(28px-0.375rem)] bg-[color:var(--color-ink)]/95 p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-        {/* Meta rows */}
-        <dl className="flex flex-col gap-3.5 text-[13px]">
-          <FactRow label="מחזור הבא" value={course.nextCohort.replace("מחזור הבא: ", "")} />
-          <FactRow label="שעות אקדמיות" value={`${course.totalHours} שעות`} />
-          <FactRow label="מס' מפגשים" value={`${course.liveSessions} מפגשים`} />
-          <FactRow label="רמה" value={cert.exit} />
-        </dl>
+      <div className="flex flex-col gap-5 rounded-[calc(28px-0.375rem)] bg-[color:var(--color-ink)]/95 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+        {hasCo ? (
+          <div className="grid grid-cols-2 gap-3">
+            <PortraitSquare src={course.instructorPortraitUrl} alt={course.instructorName} />
+            <PortraitSquare src={course.coInstructorPortraitUrl!} alt={course.coInstructorName!} />
+          </div>
+        ) : (
+          <PortraitSquare
+            src={course.instructorPortraitUrl}
+            alt={course.instructorName}
+            large
+          />
+        )}
 
-        {/* CTAs */}
-        <div className="mt-8 flex flex-col gap-3">
-          <Button as="a" href="/#lead" variant="primary" size="lg">
-            להרשמה לקורס
-          </Button>
-          <Button as="a" href="/#lead" variant="secondary" size="lg" trailingIcon={false}>
-            תיאום ייעוץ
-          </Button>
+        <div className="flex flex-col gap-1">
+          <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
+            ראש התחום
+          </span>
+          <p className="font-display text-[17px] font-medium text-[color:var(--color-paper-soft)]">
+            {course.instructorName}
+          </p>
+          {course.instructorTitle && (
+            <p className="text-[12px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
+              {course.instructorTitle}
+            </p>
+          )}
         </div>
 
-        <p className="mt-4 text-center text-[11px] text-[color:var(--color-paper-soft)]/40">
-          ללא התחייבות · ניתן לבטל עד 14 יום לפני תחילת הקורס
-        </p>
+        {hasCo && (
+          <div className="flex flex-col gap-1 border-t border-white/10 pt-4">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
+              ראש התחום משותף
+            </span>
+            <p className="font-display text-[17px] font-medium text-[color:var(--color-paper-soft)]">
+              {course.coInstructorName}
+            </p>
+            {course.coInstructorTitle && (
+              <p className="text-[12px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
+                {course.coInstructorTitle}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-function FactRow({ label, value }: { label: string; value: string }) {
+function PortraitSquare({
+  src,
+  alt,
+  large = false,
+}: {
+  src: string;
+  alt: string;
+  large?: boolean;
+}) {
   return (
-    <div className="flex items-center justify-between gap-4">
-      <dt className="text-[color:var(--color-paper-soft)]/50">{label}</dt>
-      <dd className="text-right font-medium text-[color:var(--color-paper-soft)]/85">{value}</dd>
+    <div
+      className={
+        "relative w-full overflow-hidden " +
+        (large
+          ? "aspect-square rounded-[24px] ring-2 ring-[color:var(--color-bronze)]/60 ring-offset-4 ring-offset-[color:var(--color-ink)]"
+          : "aspect-square rounded-[18px] ring-2 ring-[color:var(--color-bronze)]/55 ring-offset-2 ring-offset-[color:var(--color-ink)]")
+      }
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={large ? "340px" : "170px"}
+        className="object-cover"
+      />
     </div>
   );
 }

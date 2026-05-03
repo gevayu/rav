@@ -77,7 +77,7 @@ function TypewriterCycle() {
   const cursor2 = phase === "typing" || (phase === "deleting" && chars2 > 0);
 
   return (
-    <span dir="ltr" className="flex flex-col gap-1 items-center">
+    <span dir="ltr" className="inline">
       <span className="text-[color:var(--color-paper-soft)]">
         Ai for{" "}
         <span className="text-[color:var(--color-bronze)]">
@@ -85,6 +85,7 @@ function TypewriterCycle() {
           {cursor1 && <Cursor />}
         </span>
       </span>
+      {" "}
       <span className="text-[color:var(--color-paper-soft)]">
         by{" "}
         <span className="text-[color:var(--color-bronze)]">
@@ -238,13 +239,13 @@ export function Hero() {
           <span className="text-center text-[12px] font-medium leading-relaxed tracking-wide text-[color:var(--color-paper-soft)]/70">
             מבית אנליזה - גוף הכשרה מפוקח של האגף להכשרה מקצועית במשרד העבודה
           </span>
-          <div className="flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-bronze)]/30 bg-white/35 px-6 py-4 backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-bronze)]/30 bg-white/75 px-6 py-4 backdrop-blur-sm">
             <div className="inline-flex items-center gap-2">
               <ShieldCheck
                 className="h-4 w-4 text-[color:var(--color-bronze)]"
                 strokeWidth={1.6}
               />
-              <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-paper-soft)]/80">
+              <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-ink)]">
                 מכללה מפוקחת · משרד העבודה, הביטחון והחינוך
               </span>
             </div>

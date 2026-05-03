@@ -1,17 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 
-const navItems = [
-  { label: "קורסים", href: "/courses" },
-  { label: "מדרג ההסמכה", href: "/certification" },
-  { label: "לעצמאים", href: "/solo", disabled: true },
-  { label: "לארגונים", href: "/business", disabled: true },
+type NavItem = {
+  label: string;
+  href: string;
+  disabled?: boolean;
+  submenu?: { label: string; href: string }[];
+};
+
+const courseSubmenu = [
+  { label: "Ai לשופטים, עורכי דין ומשפטנים",                    href: "/courses/ai-law-applied" },
+  { label: "Ai לרופאים, אחיות וצוותים רפואיים",                  href: "/courses/ai-medicine" },
+  { label: "Ai לרואי חשבון ותפקידנים פיננסיים",                  href: "/courses/ai-finance" },
+  { label: "Ai למשקיעי נדל״ן ומתווכים",                          href: "/courses/ai-realestate" },
+  { label: "Ai למנהלי פרוייקטים בדגש על הנדסה אזרחית",            href: "/courses/ai-engineering" },
+  { label: "Ai לאנשי פיתוח עסקי, שיווק ומכירות",                 href: "/courses" },
+];
+
+const navItems: NavItem[] = [
+  { label: "אודות", href: "/about" },
+  { label: "קורסים", href: "/courses", submenu: courseSubmenu },
+  { label: "תחומים מקצועיים", href: "/#sectors" },
   { label: "המומחים", href: "/#champions" },
-  { label: "תוכן מקצועי", href: "/#free" },
+  { label: "מדרג ההסמכה", href: "/#certification" },
+  { label: "קהילתיות", href: "/#community" },
 ];
 
 export function Header({ forceDark = false }: { forceDark?: boolean }) {
@@ -64,15 +80,46 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
             aria-label="ניווט ראשי"
             className="hidden items-center gap-1 lg:flex"
           >
-            {navItems.map((item) =>
-              item.disabled ? (
-                <span
-                  key={item.href}
-                  className="rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 cursor-default"
-                >
-                  {item.label}
-                </span>
-              ) : (
+            {navItems.map((item) => {
+              if (item.disabled) {
+                return (
+                  <span
+                    key={item.href}
+                    className="rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 cursor-default"
+                  >
+                    {item.label}
+                  </span>
+                );
+              }
+              if (item.submenu) {
+                return (
+                  <div key={item.href} className="group relative">
+                    <a
+                      href={item.href}
+                      className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[16px] font-medium text-[color:var(--color-paper-soft)]/85 transition-colors hover:bg-white/5 hover:text-[color:var(--color-paper-soft)]"
+                    >
+                      {item.label}
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" strokeWidth={1.8} aria-hidden="true" />
+                    </a>
+                    <div
+                      role="menu"
+                      className="invisible absolute right-0 top-full z-50 mt-3 w-[340px] origin-top-right scale-95 rounded-[20px] border border-[color:var(--color-bronze)]/25 bg-[color:var(--color-ink)]/95 p-2 opacity-0 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-200 group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+                    >
+                      {item.submenu.map((sub) => (
+                        <a
+                          key={sub.href}
+                          role="menuitem"
+                          href={sub.href}
+                          className="block rounded-full px-4 py-2.5 text-right text-[14px] text-[color:var(--color-paper-soft)]/80 transition-colors hover:bg-[color:var(--color-bronze)]/12 hover:text-[color:var(--color-bronze)]"
+                        >
+                          {sub.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              return (
                 <a
                   key={item.href}
                   href={item.href}
@@ -80,8 +127,8 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
                 >
                   {item.label}
                 </a>
-              )
-            )}
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -114,33 +161,49 @@ export function Header({ forceDark = false }: { forceDark?: boolean }) {
           role="dialog"
           aria-modal="true"
         >
-          <div className="flex flex-col gap-6 px-8 pb-24 pt-28">
+          <div className="flex flex-col gap-6 px-8 pb-24 pt-28 overflow-y-auto">
             <nav className="flex flex-col divide-y divide-white/10">
-              {navItems.map((item, idx) =>
-                item.disabled ? (
-                  <span
+              {navItems.map((item, idx) => {
+                if (item.disabled) {
+                  return (
+                    <span
+                      key={item.href}
+                      className="py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] cursor-default"
+                      style={{ animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both` }}
+                    >
+                      {item.label}
+                    </span>
+                  );
+                }
+                return (
+                  <div
                     key={item.href}
-                    className="py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] cursor-default"
-                    style={{
-                      animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both`,
-                    }}
+                    style={{ animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both` }}
                   >
-                    {item.label}
-                  </span>
-                ) : (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] transition-colors hover:text-[color:var(--color-bronze)]"
-                    style={{
-                      animation: `slideUpIn 520ms cubic-bezier(0.22,1,0.36,1) ${idx * 70}ms both`,
-                    }}
-                  >
-                    {item.label}
-                  </a>
-                )
-              )}
+                    <a
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block py-5 font-display text-3xl font-medium text-[color:var(--color-paper-soft)] transition-colors hover:text-[color:var(--color-bronze)]"
+                    >
+                      {item.label}
+                    </a>
+                    {item.submenu && (
+                      <div className="flex flex-col gap-1 pb-4 pr-4">
+                        {item.submenu.map((sub) => (
+                          <a
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="text-[15px] text-[color:var(--color-paper-soft)]/70 transition-colors hover:text-[color:var(--color-bronze)]"
+                          >
+                            ← {sub.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
             <Button as="a" href="#lead" variant="primary" size="lg">
               לתיאום ייעוץ

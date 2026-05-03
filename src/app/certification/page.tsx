@@ -13,7 +13,7 @@ import { CertFaq } from "@/components/certification/CertFaq";
 export const metadata: Metadata = {
   title: "מדרג ההסמכה Ai01 / Ai05 / Ai10 | המרכז הרב-תחומי להכשרות Ai",
   description:
-    "שלוש דרגות מדרג ההסמכה ממכללה מפוקחת - Ai01 יסוד, Ai05 מקצועי, Ai10 מאסטר. תעודות שמסמנות יכולות אמיתיות בשוק העבודה.",
+    "שלוש דרגות מדרג ההסמכה ממכללה מפוקחת - Ai01 יסוד, Ai05 יישום ארגוני, Ai10 מאסטר. תעודות שמסמנות יכולות אמיתיות בשוק העבודה.",
   openGraph: {
     title: "מדרג ההסמכה | המרכז הרב-תחומי להכשרות Ai",
     description:

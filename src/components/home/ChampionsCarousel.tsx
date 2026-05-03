@@ -21,7 +21,7 @@ export function ChampionsCarousel() {
   return (
     <section
       id="champions"
-      className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-14 sm:py-18"
+      className="relative isolate overflow-hidden bg-[color:var(--color-ink)] py-14 sm:py-18 scroll-mt-28"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ backgroundImage: "url('/images/grunge-bg.png')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.3 }} />
       <div
@@ -115,10 +115,6 @@ export function ChampionsCarousel() {
                     {person.experience}
                   </p>
 
-                  <div className="mt-auto pt-6 flex items-center justify-center gap-2 text-[12px] font-medium text-[color:var(--color-bronze)]">
-                    <span>לפרופיל המלא</span>
-                    <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" strokeWidth={1.8} />
-                  </div>
                 </div>
               </article>
             ))}
