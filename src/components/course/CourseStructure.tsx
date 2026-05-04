@@ -33,7 +33,7 @@ export function CourseStructure({ course }: CourseStructureProps) {
     },
     {
       icon: Award,
-      label: "תעודה",
+      label: "כלי עזר",
       value: "גישה למרכז ידע",
     },
   ];
@@ -41,7 +41,7 @@ export function CourseStructure({ course }: CourseStructureProps) {
   return (
     <section
       aria-labelledby="structure-title"
-      className="relative bg-[color:var(--color-paper-soft)] py-20 sm:py-24"
+      className="relative bg-[color:var(--color-paper-soft)] pt-20 pb-10 sm:pt-24 sm:pb-12"
     >
       <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
         <h2 id="structure-title" className="sr-only">

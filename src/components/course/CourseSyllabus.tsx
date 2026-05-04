@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useId, useState } from "react";
-import { ChevronDown, Play, Sparkles } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Course, CourseModule, PreCourseBlock } from "@/data/courses";
 
@@ -65,7 +65,7 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
   return (
     <section
       aria-labelledby="syllabus-title"
-      className="relative bg-[color:var(--color-paper-soft)] py-24 sm:py-28"
+      className="relative bg-[color:var(--color-paper-soft)] pt-10 pb-24 sm:pt-12 sm:pb-28"
     >
       <div className="mx-auto max-w-[1040px] px-6 sm:px-10">
         <Reveal className="mb-12 flex flex-col gap-4">
@@ -101,19 +101,12 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
                   >
                     <span
                       className={
-                        "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium tracking-[0.06em] " +
+                        "inline-flex w-[72px] shrink-0 items-center justify-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium tracking-[0.06em] " +
                         (item.isPreCourse
                           ? "bg-[color:var(--color-bronze)]/15 text-[color:var(--color-bronze-ink)]"
                           : "border border-[color:var(--color-ink)]/15 text-[color:var(--color-ink-muted)]")
                       }
                     >
-                      {item.isPreCourse && (
-                        <Sparkles
-                          className="h-3 w-3"
-                          strokeWidth={2}
-                          aria-hidden="true"
-                        />
-                      )}
                       {item.badge}
                     </span>
 

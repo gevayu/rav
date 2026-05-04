@@ -15,10 +15,9 @@ type NavItem = {
 const courseSubmenu = [
   { label: "Ai לשופטים, עורכי דין ומשפטנים",                    href: "/courses/ai-law-applied" },
   { label: "Ai לרופאים, אחיות וצוותים רפואיים",                  href: "/courses/ai-medicine" },
-  { label: "Ai לרואי חשבון ותפקידנים פיננסיים",                  href: "/courses/ai-finance" },
+  { label: "Ai לרואי חשבון ותפקידים פיננסיים",                  href: "/courses/ai-finance" },
   { label: "Ai למשקיעי נדל״ן ומתווכים",                          href: "/courses/ai-realestate" },
   { label: "Ai למנהלי פרוייקטים בדגש על הנדסה אזרחית",            href: "/courses/ai-engineering" },
-  { label: "Ai לאנשי פיתוח עסקי, שיווק ומכירות",                 href: "/courses" },
 ];
 
 const navItems: NavItem[] = [

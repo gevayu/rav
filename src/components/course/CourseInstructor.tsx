@@ -13,7 +13,8 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
   const years = sector?.guideYears;
   const bio = course.instructorBio ?? "";
   const paragraphs = bio.split("\n\n").filter(Boolean);
-  const quote = paragraphs[0]?.split(".").slice(0, 2).join(".").trim();
+  const quote = paragraphs.length > 1 ? paragraphs[0]?.split(".").slice(0, 2).join(".").trim() : "";
+  const bodyParagraphs = paragraphs.length > 1 ? paragraphs.slice(1) : paragraphs;
   const coTitleParts = (course.coInstructorTitle ?? "").split(", ");
   const coTitle = coTitleParts[0];
   const coSub = coTitleParts[1];
@@ -85,7 +86,7 @@ export function CourseInstructor({ course }: CourseInstructorProps) {
             )}
 
             <div className="flex flex-col gap-4">
-              {paragraphs.map((p, idx) => (
+              {bodyParagraphs.map((p, idx) => (
                 <p
                   key={idx}
                   className="text-[15px] leading-relaxed text-[color:var(--color-paper-soft)]/70"

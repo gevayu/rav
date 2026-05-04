@@ -7,6 +7,7 @@ import { CourseStructure } from "@/components/course/CourseStructure";
 import { CourseCertificationPath } from "@/components/course/CourseCertificationPath";
 import { CourseAxes } from "@/components/course/CourseAxes";
 import { CourseInstructor } from "@/components/course/CourseInstructor";
+import { CourseVideos } from "@/components/course/CourseVideos";
 import { CourseAudience } from "@/components/course/CourseAudience";
 import { CourseOutcomes } from "@/components/course/CourseOutcomes";
 import { CourseSyllabus } from "@/components/course/CourseSyllabus";
@@ -46,6 +47,7 @@ export default async function CoursePage(props: PageProps<"/courses/[slug]">) {
       <Header />
       <main className="flex flex-col">
         <CourseHero course={course} />
+        <CourseVideos course={course} />
         <CourseStructure course={course} />
         <CourseSyllabus course={course} />
         <CourseCertificationPath course={course} />

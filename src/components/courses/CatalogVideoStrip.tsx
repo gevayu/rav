@@ -4,9 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 
-// TODO: Replace with actual video URL and subtitle text
-const VIDEO_URL = "";
-const SUBTITLE = "כותרת משנה לסטריפ הוידאו — יש למלא תוכן";
+const VIDEO_ID = "6jLpfYrgdno";
+const VIDEO_URL = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1`;
+const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+const SUBTITLE = "למה צריך הכשרת Ai מותאמת למקצוע";
 
 export function CatalogVideoStrip() {
   const [playing, setPlaying] = useState(false);
@@ -33,11 +34,12 @@ export function CatalogVideoStrip() {
               ) : (
                 <>
                   <Image
-                    src="/images/lect/Man Speaking in Professional Setting.png"
-                    alt="מרצה מול כיתה"
+                    src={VIDEO_THUMB}
+                    alt="תצוגה מקדימה של הסרטון"
                     fill
-                    className="object-cover opacity-60"
+                    className="object-cover opacity-80"
                     sizes="(max-width: 1024px) 100vw, 650px"
+                    unoptimized
                   />
                   <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-ink)]/60 via-transparent to-transparent" />
                   <button
@@ -61,7 +63,7 @@ export function CatalogVideoStrip() {
           {/* Text */}
           <div className="flex flex-col gap-5 lg:w-[45%]">
             <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
-              מה לומדים אצלנו
+              נדב גולדשמיט מנור, מנהל ההדרכה של המרכז
             </span>
             <p className="text-lg leading-relaxed text-[color:var(--color-paper-soft)]/80">
               {SUBTITLE}

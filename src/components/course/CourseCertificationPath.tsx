@@ -22,8 +22,9 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
 
   return (
     <section
+      id="cert-standard"
       aria-labelledby="cert-path-title"
-      className="relative overflow-hidden bg-[color:var(--color-ink)] py-20 sm:py-24"
+      className="relative overflow-hidden bg-[color:var(--color-ink)] py-20 sm:py-24 scroll-mt-28"
     >
       <div
         aria-hidden="true"

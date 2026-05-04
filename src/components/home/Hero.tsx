@@ -13,9 +13,10 @@ type Phrase = { plural: string; singular: string };
 type Phase = "typing" | "pause" | "deleting";
 
 const PHRASES: Phrase[] = [
-  { plural: "Lawyers",     singular: "Lawyer" },
-  { plural: "Accountants", singular: "Accountant" },
-  { plural: "Doctors",     singular: "Doctor" },
+  { plural: "Lawyers",     singular: "Lawyers" },
+  { plural: "Accountants", singular: "Accountants" },
+  { plural: "Doctors",     singular: "Doctors" },
+  { plural: "Engineers",   singular: "Engineers" },
 ];
 
 function TypewriterCycle() {
@@ -224,9 +225,6 @@ export function Hero() {
         >
           <Button as="a" href="/courses" variant="primary" size="lg">
             לקטלוג הקורסים
-          </Button>
-          <Button as="a" href="#lead" variant="secondary" size="lg">
-            פתרונות לארגונים
           </Button>
         </motion.div>
 

@@ -1,4 +1,3 @@
-import { PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
@@ -57,13 +56,6 @@ export function CoursePricing({ course }: CoursePricingProps) {
             </Button>
           </div>
 
-          <a
-            href="/#free"
-            className="group inline-flex items-center gap-2 text-[13px] text-[color:var(--color-paper-soft)]/60 transition-colors hover:text-[color:var(--color-bronze)]"
-          >
-            <PlayCircle className="h-4 w-4" strokeWidth={1.6} aria-hidden="true" />
-            לא בטוחים? צפו בשיעור ניסיון חינם
-          </a>
         </Reveal>
       </div>
     </section>

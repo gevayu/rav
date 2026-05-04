@@ -121,7 +121,7 @@ export function CertificationShowcase() {
                   על השלמת דרישות ההסמכה ברמה
                 </p>
 
-                <span className="inline-flex items-center rounded-full border-2 border-[color:var(--color-bronze)]/50 bg-[color:var(--color-bronze)]/10 px-5 py-2 font-display text-2xl font-medium tracking-[0.06em] text-[color:var(--color-bronze-ink)]">
+                <span className="inline-flex items-center rounded-full border-2 border-[#16a34a] bg-[#22c55e] px-5 py-2 font-display text-2xl font-medium tracking-[0.06em] text-[#052e16]">
                   Ai03
                 </span>
 
@@ -134,8 +134,8 @@ export function CertificationShowcase() {
                 </p>
 
                 <div className="mt-2 flex items-center justify-center gap-8 text-[11px] text-[color:var(--color-ink-muted)]">
-                  <span>תאריך הנפקה: ________</span>
-                  <span>מספר: ________</span>
+                  <span>תאריך: ________</span>
+                  <span>חתימה: ________</span>
                 </div>
 
                 {/* Bottom accent */}

@@ -3,20 +3,16 @@ import { Reveal } from "@/components/ui/Reveal";
 
 type Partner = { name: string; file: string; dark?: boolean };
 
-const partners: Partner[] = [
+const BASE_PARTNERS: Partner[] = [
   { name: "המיזם הלאומי לשילוב חרדים בהייטק", file: "haredi-hitech.jpg", dark: true },
   { name: "ג'וינט ישראל", file: "jdc.png" },
   { name: "שירות התעסוקה הישראלי", file: "employment-service.jpg" },
   { name: "המכללה האקדמית ספיר", file: "sapir-college.png" },
   { name: "משרד הביטחון", file: "mod.jpg" },
   { name: "Python Institute", file: "python-institute.png" },
-  { name: "המיזם הלאומי לשילוב חרדים בהייטק 2", file: "haredi-hitech.jpg", dark: true },
-  { name: "ג'וינט ישראל 2", file: "jdc.png" },
-  { name: "שירות התעסוקה הישראלי 2", file: "employment-service.jpg" },
-  { name: "המכללה האקדמית ספיר 2", file: "sapir-college.png" },
-  { name: "משרד הביטחון 2", file: "mod.jpg" },
-  { name: "Python Institute 2", file: "python-institute.png" },
 ];
+
+const partners: Partner[] = Array.from({ length: 5 }, () => BASE_PARTNERS).flat();
 
 function LogoCard({ p }: { p: Partner }) {
   return (

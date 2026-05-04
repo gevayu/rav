@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -7,15 +10,10 @@ type CourseVideosProps = {
   course: Course;
 };
 
-const videos = [
-  {
-    id: "intro",
-    label: "סרטון היכרות",
-    caption: (name: string) => `${name} מספרת על הקורס, למי הוא מיועד ומה תקבלו ממנו.`,
-  },
-];
-
 export function CourseVideos({ course }: CourseVideosProps) {
+  const videos = course.introVideos ?? [];
+  if (videos.length === 0) return null;
+
   return (
     <section
       aria-labelledby="videos-title"
@@ -39,52 +37,81 @@ export function CourseVideos({ course }: CourseVideosProps) {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.15} className="grid gap-6 md:grid-cols-1 max-w-2xl">
-          {videos.map((v) => (
-            <article
-              key={v.id}
-              className="group flex flex-col gap-5 overflow-hidden rounded-[24px] border border-[color:var(--color-bronze)]/15 bg-[#26262A] transition-colors hover:border-[color:var(--color-bronze)]/45"
-            >
-              <div className="relative aspect-video w-full bg-[color:var(--color-ink)] cursor-pointer">
-                <Image
-                  src="/images/feel/Speaker on Stage.png"
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 672px"
-                  className="object-cover object-center"
-
-                  aria-hidden="true"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-signal)] shadow-[0_8px_32px_-8px_rgba(6,78,59,0.6)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110">
-                    <Play
-                      className="h-6 w-6 text-white"
-                      strokeWidth={2}
-                      fill="currentColor"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium tracking-[0.06em] text-[color:var(--color-paper-soft)] backdrop-blur-sm">
-                    {v.label}
-                  </span>
-                  <span className="text-[12px] text-[color:var(--color-paper-soft)]/50">
-                    {v.id === "intro" ? "4:32" : "12:18"}
-                  </span>
-                </div>
-              </div>
-
-              <div className="px-7 pb-7">
-                <p className="text-[14px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
-                  {v.caption(course.instructorName)}
-                </p>
-              </div>
-            </article>
+        <Reveal
+          delay={0.15}
+          className={`grid gap-6 ${videos.length > 1 ? "md:grid-cols-2" : "max-w-2xl"}`}
+        >
+          {videos.map((v, i) => (
+            <VideoCard key={v.videoId} speaker={v.speaker} videoId={v.videoId} delay={i * 0.1} />
           ))}
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function VideoCard({
+  speaker,
+  videoId,
+  delay,
+}: {
+  speaker: string;
+  videoId: string;
+  delay: number;
+}) {
+  const [playing, setPlaying] = useState(false);
+  const thumb = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+  return (
+    <article
+      style={{ animationDelay: `${delay}s` }}
+      className="group flex flex-col gap-5 overflow-hidden rounded-[24px] border border-[color:var(--color-bronze)]/15 bg-[#26262A] transition-colors hover:border-[color:var(--color-bronze)]/45"
+    >
+      <div className="relative aspect-video w-full bg-[color:var(--color-ink)]">
+        {playing ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            title={speaker}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="absolute inset-0 h-full w-full"
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setPlaying(true)}
+            className="group/btn relative block h-full w-full cursor-pointer"
+            aria-label={`הפעל סרטון של ${speaker}`}
+          >
+            <Image
+              src={thumb}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="object-cover object-center"
+              unoptimized
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)] shadow-[0_8px_32px_-8px_rgba(229,184,155,0.4)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/btn:scale-110">
+                <Play
+                  className="h-6 w-6 translate-x-0.5"
+                  strokeWidth={0}
+                  fill="currentColor"
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+          </button>
+        )}
+      </div>
+
+      <div className="px-7 pb-7">
+        <p className="text-[14px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
+          {speaker} מסביר/ה על הקורס.
+        </p>
+      </div>
+    </article>
   );
 }

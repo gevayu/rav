@@ -41,9 +41,13 @@ export function CourseHero({ course }: CourseHeroProps) {
                 <Eyebrow tone="bronze">{sector.displayName}</Eyebrow>
               )}
               <span className="h-3 w-px bg-[color:var(--color-bronze)]/30" aria-hidden="true" />
-              <span className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] ${TIER_COLORS[cert.exit].bg} ${TIER_COLORS[cert.exit].border} ${TIER_COLORS[cert.exit].text}`}>
+              <a
+                href="#cert-standard"
+                className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] transition-transform hover:scale-105 ${TIER_COLORS[cert.exit].bg} ${TIER_COLORS[cert.exit].border} ${TIER_COLORS[cert.exit].text}`}
+                aria-label={`עבור לסקשן הסטנדרט החדש בתעשייה — ${cert.exit}`}
+              >
                 {cert.exit}
-              </span>
+              </a>
             </div>
 
             <h1
