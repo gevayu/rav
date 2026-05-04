@@ -7,15 +7,12 @@ const columns: { title: string; links: FooterLink[] }[] = [
   {
     title: "תחומים",
     links: [
-      "עריכת דין",
-      "ראיית חשבון",
-      "רפואה",
-      "נדל״ן",
-      "הנדסה אזרחית",
-      "יצירת תוכן",
-      "מכירות",
-      "מקצועות ההייטק",
-    ].map((s) => ({ label: s, href: "#" })),
+      { label: "עריכת דין",     href: "/courses/ai-law-applied" },
+      { label: "ראיית חשבון",   href: "/courses/ai-finance" },
+      { label: "רפואה",         href: "/courses/ai-medicine" },
+      { label: "נדל״ן",          href: "/courses/ai-realestate" },
+      { label: "הנדסה אזרחית", href: "/courses/ai-engineering" },
+    ],
   },
   {
     title: "ניווט",
