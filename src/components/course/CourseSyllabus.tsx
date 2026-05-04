@@ -101,7 +101,7 @@ export function CourseSyllabus({ course }: CourseSyllabusProps) {
                   >
                     <span
                       className={
-                        "inline-flex w-[72px] shrink-0 items-center justify-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium tracking-[0.06em] " +
+                        "inline-flex w-[88px] shrink-0 items-center justify-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium tracking-[0.06em] whitespace-nowrap " +
                         (item.isPreCourse
                           ? "bg-[color:var(--color-bronze)]/15 text-[color:var(--color-bronze-ink)]"
                           : "border border-[color:var(--color-ink)]/15 text-[color:var(--color-ink-muted)]")
