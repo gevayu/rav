@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Calendar, Clock, Video } from "lucide-react";
+import { Calendar, Clock, Layers, Radio, UserRound, Video } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { CourseFormat } from "@/data/courses";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { sectors } from "@/data/sectors";
 import type { Course } from "@/data/courses";
@@ -84,9 +86,7 @@ export function CourseHero({ course }: CourseHeroProps) {
               <MetaPill icon={Clock} text={`${course.totalHours} שעות אקדמיות`} />
               <MetaPill icon={Calendar} text={`${course.durationWeeks} שבועות`} />
               <MetaPill icon={Video} text={`${course.liveSessions} מפגשי לייב`} />
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3 py-1.5 text-[12px] text-[color:var(--color-paper-soft)]/60">
-                {FORMAT_LABELS[course.format]}
-              </span>
+              <MetaPill icon={FORMAT_ICONS[course.format]} text={FORMAT_LABELS[course.format]} />
             </div>
 
             {/* Mobile portrait (below content on small screens) */}
@@ -188,7 +188,13 @@ function PortraitSquare({
   );
 }
 
-function MetaPill({ icon: Icon, text }: { icon: typeof Clock; text: string }) {
+const FORMAT_ICONS: Record<CourseFormat, LucideIcon> = {
+  live: Radio,
+  hybrid: Layers,
+  "self-paced": UserRound,
+};
+
+function MetaPill({ icon: Icon, text }: { icon: LucideIcon; text: string }) {
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--color-bronze)]/25 bg-[color:var(--color-bronze)]/5 px-3 py-1.5 text-[12px] text-[color:var(--color-paper-soft)]/65">
       <Icon className="h-3.5 w-3.5 text-[color:var(--color-bronze)]" strokeWidth={1.8} />

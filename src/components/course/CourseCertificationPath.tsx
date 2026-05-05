@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { ShieldCheck } from "lucide-react";
+import { Award, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
 import {
@@ -80,7 +80,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                               aria-hidden="true"
                               className="absolute -top-3.5 -right-3.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)]"
                             >
-                              <ShieldCheck className="h-5 w-5" strokeWidth={2.2} />
+                              <Award className="h-5 w-5" strokeWidth={2.2} />
                             </span>
                           )}
                         </div>

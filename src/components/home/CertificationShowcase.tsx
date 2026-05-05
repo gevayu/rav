@@ -113,7 +113,7 @@ export function CertificationShowcase() {
 
                 <div className="h-px w-40 bg-[color:var(--color-ink)]/10" />
                 <p className="font-display text-lg font-medium text-[color:var(--color-ink)]/30 italic">
-                  שם המשתתף
+                  שם המשתתפ.ת
                 </p>
                 <div className="h-px w-40 bg-[color:var(--color-ink)]/10" />
 

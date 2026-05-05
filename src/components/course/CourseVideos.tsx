@@ -42,7 +42,13 @@ export function CourseVideos({ course }: CourseVideosProps) {
           className={`grid gap-6 ${videos.length > 1 ? "md:grid-cols-2" : "max-w-2xl"}`}
         >
           {videos.map((v, i) => (
-            <VideoCard key={v.videoId} speaker={v.speaker} videoId={v.videoId} delay={i * 0.1} />
+            <VideoCard
+              key={v.videoId}
+              speaker={v.speaker}
+              videoId={v.videoId}
+              gender={v.gender ?? "f"}
+              delay={i * 0.1}
+            />
           ))}
         </Reveal>
       </div>
@@ -53,10 +59,12 @@ export function CourseVideos({ course }: CourseVideosProps) {
 function VideoCard({
   speaker,
   videoId,
+  gender,
   delay,
 }: {
   speaker: string;
   videoId: string;
+  gender: "f" | "m";
   delay: number;
 }) {
   const [playing, setPlaying] = useState(false);
@@ -109,7 +117,7 @@ function VideoCard({
 
       <div className="px-7 pb-7">
         <p className="text-[14px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
-          {speaker} מסביר/ה על הקורס.
+          {speaker} {gender === "f" ? "מסבירה" : "מסביר"} על הקורס.
         </p>
       </div>
     </article>

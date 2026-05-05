@@ -49,6 +49,7 @@ export type Course = {
   priceMax: number;
   nextCohort: string;
   instructorName: string;
+  instructorGender?: "f" | "m";
   instructorPortraitUrl: string;
   highlights: string[];
   isFlagship?: boolean;
@@ -73,7 +74,7 @@ export type Course = {
     exit: CertificationTier;
   };
   faq?: CourseFaqItem[];
-  introVideos?: { speaker: string; videoId: string }[];
+  introVideos?: { speaker: string; videoId: string; gender?: "f" | "m" }[];
 };
 
 const portraitFor = (slug: string) =>
@@ -156,7 +157,7 @@ export const courses: Course[] = [
     instructorBio:
       "עו״ד שרה צרפתי כהן מלווה משרדי עורכי דין ויחידות משפטיות בהטמעת כלי Ai. בפרקטיקה היומיומית שלה היא בונה תהליכי עבודה שעורכי דין באמת משתמשים בהם, ומפתחת שיטות לשילוב הכלים בצורה בטוחה.",
     introVideos: [
-      { speaker: "עו״ד שרה צרפתי", videoId: "wQEenY0iOMI" },
+      { speaker: "עו״ד שרה צרפתי", videoId: "wQEenY0iOMI", gender: "f" },
     ],
     highlights: [
       "10 מפגשים בהובלת עו״ד שרה צרפתי כהן",
@@ -340,7 +341,7 @@ export const courses: Course[] = [
     instructorTitle: "מנהלת תחום גידולי מערכת העיכול באסותא רמת החייל ומרצה מובילה בשימוש ב-AI לצוותי רפואה",
     instructorPortraitUrl: "/images/lect/esti-tachover.jpeg",
     introVideos: [
-      { speaker: "ד״ר אסתר טחובר", videoId: "2E4aYg2zNyc" },
+      { speaker: "ד״ר אסתר טחובר", videoId: "2E4aYg2zNyc", gender: "f" },
     ],
     highlights: [
       "10 מפגשים בהובלת ד״ר אסתר טחובר",
@@ -528,8 +529,8 @@ export const courses: Course[] = [
     coInstructorPortraitUrl: "/images/lect/roi-valnstein.png",
     instructorsTogetherImageUrl: "/images/lect/tal-roi.jpg",
     introVideos: [
-      { speaker: "רו״ח טל ולנשטיין", videoId: "wl2u-lNumIw" },
-      { speaker: "רועי ולנשטיין", videoId: "ifCX7OxWx1M" },
+      { speaker: "רו״ח טל ולנשטיין", videoId: "wl2u-lNumIw", gender: "f" },
+      { speaker: "רועי ולנשטיין", videoId: "ifCX7OxWx1M", gender: "m" },
     ],
     highlights: [
       "10 מפגשים בהובלת רו״ח טל ולנשטיין ורועי ולנשטיין",
@@ -711,7 +712,7 @@ export const courses: Course[] = [
     instructorTitle: "מייסדת חברת השקעות נדל״ן Happy Homes US ומרצה מובילה בתחום",
     instructorPortraitUrl: "/images/lect/yulia-chabia.jpeg",
     introVideos: [
-      { speaker: "יוליה חביה", videoId: "uNurZlVYhFM" },
+      { speaker: "יוליה חביה", videoId: "uNurZlVYhFM", gender: "f" },
     ],
     highlights: [
       "10 מפגשים בהובלת הגב׳ יוליה חביה",
@@ -892,6 +893,7 @@ export const courses: Course[] = [
     priceMax: 11900,
     nextCohort: "מחזור הבא: יולי 2026",
     instructorName: "מהנדס מתן מכלוף",
+    instructorGender: "m",
     instructorTitle: "מהנדס מנוסה בפרויקטי בנייה גדולים, מוביל בתחומי בינה מלאכותית בענף ההנדסה האזרחית",
     instructorPortraitUrl: "/images/lect/matan-makhluf.jpeg",
     highlights: [
