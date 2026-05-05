@@ -64,8 +64,8 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="relative pt-40 pb-20 sm:pt-48 sm:pb-24">
           <div className="mx-auto max-w-[860px] px-6 sm:px-10">
-            <Eyebrow tone="bronze">אודות</Eyebrow>
-            <h1 className="mt-6 font-display text-[clamp(2.4rem,5.5vw,4rem)] font-medium leading-[1.05] tracking-tight text-[color:var(--color-ink)]">
+            <Eyebrow tone="bronze" className="!text-[color:var(--color-bronze-ink)]">אודות</Eyebrow>
+            <h1 className="mt-6 whitespace-nowrap font-display text-[clamp(1.6rem,4vw,2.8rem)] font-medium leading-[1.1] tracking-tight text-[color:var(--color-ink)]">
               המרכז הרב-תחומי להכשרות Ai
             </h1>
             <p className="mt-8 text-lg leading-relaxed text-[color:var(--color-ink-muted)]">
@@ -78,9 +78,8 @@ export default function AboutPage() {
             </p>
 
             <FounderVideo
-              videoId="Ssv1xPEnpmY"
+              videoUrl="https://iframe.mediadelivery.net/embed/653849/e26d5ca1-d15f-448b-a015-ae090275d183"
               title="גל גנוט, ממייסדי המרכז, מסביר על חשיבות הכשרות ה-Ai המקצועיות"
-              caption="גל גנוט, ממייסדי המרכז, מסביר על חשיבות הכשרות ה-Ai המקצועיות"
             />
           </div>
         </section>
@@ -224,9 +223,8 @@ export default function AboutPage() {
 
             <div className="mt-14">
               <FounderVideo
-                videoId="6jLpfYrgdno"
+                videoUrl="https://iframe.mediadelivery.net/embed/653849/903b1f50-83b6-45be-b571-8d59a1b636f0"
                 title="נדב גולדשמיט מנור, מנהל ההדרכה של המרכז, מסביר למה צריך הכשרת Ai מותאמת למקצוע"
-                caption="נדב גולדשמיט מנור, מנהל ההדרכה של המרכז, מסביר למה צריך הכשרת Ai מותאמת למקצוע"
                 dark
               />
             </div>
@@ -266,14 +264,13 @@ export default function AboutPage() {
 }
 
 function FounderVideo({
-  videoId,
+  videoUrl,
   title,
   placeholder = false,
   dark = false,
 }: {
-  videoId?: string;
+  videoUrl?: string;
   title: string;
-  caption?: string;
   placeholder?: boolean;
   dark?: boolean;
 }) {
@@ -303,7 +300,7 @@ function FounderVideo({
           </div>
         ) : (
           <iframe
-            src={`https://www.youtube.com/embed/${videoId}`}
+            src={videoUrl}
             title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

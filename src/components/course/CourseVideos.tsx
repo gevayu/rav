@@ -43,9 +43,10 @@ export function CourseVideos({ course }: CourseVideosProps) {
         >
           {videos.map((v, i) => (
             <VideoCard
-              key={v.videoId}
+              key={v.videoUrl}
               speaker={v.speaker}
-              videoId={v.videoId}
+              videoUrl={v.videoUrl}
+              thumbUrl={v.thumbUrl}
               delay={i * 0.1}
             />
           ))}
@@ -57,26 +58,31 @@ export function CourseVideos({ course }: CourseVideosProps) {
 
 function VideoCard({
   speaker,
-  videoId,
+  videoUrl,
+  thumbUrl,
   delay,
 }: {
   speaker: string;
-  videoId: string;
+  videoUrl: string;
+  thumbUrl?: string;
   delay: number;
 }) {
   const [playing, setPlaying] = useState(false);
-  const thumb = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const playSrc = videoUrl.includes("?")
+    ? `${videoUrl}&autoplay=true`
+    : `${videoUrl}?autoplay=true`;
 
   return (
     <article
       style={{ animationDelay: `${delay}s` }}
       className="group flex flex-col gap-5 overflow-hidden rounded-[24px] border border-[color:var(--color-bronze)]/15 bg-[#26262A] transition-colors hover:border-[color:var(--color-bronze)]/45"
     >
-      <div className="relative aspect-video w-full bg-[color:var(--color-ink)]">
+      <div className="relative aspect-video w-full overflow-hidden bg-[color:var(--color-ink)]">
         {playing ? (
           <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            src={playSrc}
             title={speaker}
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="absolute inset-0 h-full w-full"
@@ -88,17 +94,27 @@ function VideoCard({
             className="group/btn relative block h-full w-full cursor-pointer"
             aria-label={`הפעל סרטון של ${speaker}`}
           >
-            <Image
-              src={thumb}
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 600px"
-              className="object-cover object-center"
-              unoptimized
+            {thumbUrl ? (
+              <Image
+                src={thumbUrl}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 600px"
+                className="object-cover object-center"
+                unoptimized
+                aria-hidden="true"
+              />
+            ) : (
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-br from-[color:var(--color-ink)] via-[#26262A] to-[color:var(--color-ink-soft)]"
+              />
+            )}
+            <span
               aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <span className="absolute inset-0 flex items-center justify-center">
               <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-bronze)] text-[color:var(--color-ink)] shadow-[0_8px_32px_-8px_rgba(229,184,155,0.4)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/btn:scale-110">
                 <Play
                   className="h-6 w-6 translate-x-0.5"
@@ -107,11 +123,10 @@ function VideoCard({
                   aria-hidden="true"
                 />
               </span>
-            </div>
+            </span>
           </button>
         )}
       </div>
-
     </article>
   );
 }

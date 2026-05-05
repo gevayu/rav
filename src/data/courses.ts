@@ -74,7 +74,12 @@ export type Course = {
     exit: CertificationTier;
   };
   faq?: CourseFaqItem[];
-  introVideos?: { speaker: string; videoId: string; gender?: "f" | "m" }[];
+  introVideos?: {
+    speaker: string;
+    videoUrl: string;
+    thumbUrl?: string;
+    gender?: "f" | "m";
+  }[];
 };
 
 const portraitFor = (slug: string) =>
@@ -157,7 +162,12 @@ export const courses: Course[] = [
     instructorBio:
       "עו״ד שרה צרפתי כהן מלווה משרדי עורכי דין ויחידות משפטיות בהטמעת כלי Ai. בפרקטיקה היומיומית שלה היא בונה תהליכי עבודה שעורכי דין באמת משתמשים בהם, ומפתחת שיטות לשילוב הכלים בצורה בטוחה.",
     introVideos: [
-      { speaker: "עו״ד שרה צרפתי", videoId: "wQEenY0iOMI", gender: "f" },
+      {
+        speaker: "עו״ד שרה צרפתי",
+        videoUrl: "https://iframe.mediadelivery.net/embed/653849/fa1e5ed3-2cdb-4a97-8a91-eb7b206bc4b6",
+        thumbUrl: "https://vz-d15780e3-ebb.b-cdn.net/fa1e5ed3-2cdb-4a97-8a91-eb7b206bc4b6/thumbnail.jpg",
+        gender: "f",
+      },
     ],
     highlights: [
       "10 מפגשים בהובלת עו״ד שרה צרפתי כהן",
@@ -341,7 +351,12 @@ export const courses: Course[] = [
     instructorTitle: "מנהלת תחום גידולי מערכת העיכול באסותא רמת החייל ומרצה מובילה בשימוש ב-AI לצוותי רפואה",
     instructorPortraitUrl: "/images/lect/esti-tachover.jpeg",
     introVideos: [
-      { speaker: "ד״ר אסתר טחובר", videoId: "2E4aYg2zNyc", gender: "f" },
+      {
+        speaker: "ד״ר אסתר טחובר",
+        videoUrl: "https://iframe.mediadelivery.net/embed/653849/68c58eb0-6711-425e-841b-6933b8b72353",
+        thumbUrl: "https://vz-d15780e3-ebb.b-cdn.net/68c58eb0-6711-425e-841b-6933b8b72353/thumbnail.jpg",
+        gender: "f",
+      },
     ],
     highlights: [
       "10 מפגשים בהובלת ד״ר אסתר טחובר",
@@ -529,8 +544,18 @@ export const courses: Course[] = [
     coInstructorPortraitUrl: "/images/lect/roi-valnstein.png",
     instructorsTogetherImageUrl: "/images/lect/tal-roi.jpg",
     introVideos: [
-      { speaker: "רו״ח טל ולנשטיין", videoId: "wl2u-lNumIw", gender: "f" },
-      { speaker: "רועי ולנשטיין", videoId: "ifCX7OxWx1M", gender: "m" },
+      {
+        speaker: "רו״ח טל ולנשטיין",
+        videoUrl: "https://iframe.mediadelivery.net/embed/653849/2f7ccdad-dd46-438e-ad99-e1729edc3848",
+        thumbUrl: "https://vz-d15780e3-ebb.b-cdn.net/2f7ccdad-dd46-438e-ad99-e1729edc3848/thumbnail.jpg",
+        gender: "f",
+      },
+      {
+        speaker: "רועי ולנשטיין",
+        videoUrl: "https://iframe.mediadelivery.net/embed/653849/be9d0be7-397b-4912-bb42-79e45109ec3c",
+        thumbUrl: "https://vz-d15780e3-ebb.b-cdn.net/be9d0be7-397b-4912-bb42-79e45109ec3c/thumbnail.jpg",
+        gender: "m",
+      },
     ],
     highlights: [
       "10 מפגשים בהובלת רו״ח טל ולנשטיין ורועי ולנשטיין",
@@ -712,7 +737,12 @@ export const courses: Course[] = [
     instructorTitle: "מייסדת חברת השקעות נדל״ן Happy Homes US ומרצה מובילה בתחום",
     instructorPortraitUrl: "/images/lect/yulia-chabia.jpeg",
     introVideos: [
-      { speaker: "יוליה חביה", videoId: "uNurZlVYhFM", gender: "f" },
+      {
+        speaker: "יוליה חביה",
+        videoUrl: "https://iframe.mediadelivery.net/embed/653849/bc4ec4b3-e959-4301-bf3e-2183eb101051",
+        thumbUrl: "https://vz-d15780e3-ebb.b-cdn.net/bc4ec4b3-e959-4301-bf3e-2183eb101051/thumbnail_16e5d4b1.jpg",
+        gender: "f",
+      },
     ],
     highlights: [
       "10 מפגשים בהובלת הגב׳ יוליה חביה",

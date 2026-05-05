@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Logo } from "@/components/brand/Logo";
 import { heroGridInstructors } from "@/data/instructors";
-import { ShieldCheck } from "lucide-react";
 import { useState, useEffect } from "react";
 
 type Phrase = { plural: string; singular: string };
@@ -237,28 +236,6 @@ export function Hero() {
           <span className="text-center text-[12px] font-medium leading-relaxed tracking-wide text-[color:var(--color-paper-soft)]/70">
             מבית אנליזה - גוף הכשרה מפוקח של האגף להכשרה מקצועית במשרד העבודה
           </span>
-          <div className="flex flex-col items-center gap-3 rounded-2xl border border-[color:var(--color-bronze)]/30 bg-white/75 px-6 py-4 backdrop-blur-sm">
-            <div className="inline-flex items-center gap-2">
-              <ShieldCheck
-                className="h-4 w-4 text-[color:var(--color-bronze)]"
-                strokeWidth={1.6}
-              />
-              <span className="text-[12px] font-medium tracking-wide text-[color:var(--color-ink)]">
-                מכללה מפוקחת · משרד העבודה, הביטחון והחינוך
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="relative h-14 w-32">
-                <Image src="/images/ministries/labor.png" alt="משרד העבודה" fill className="object-contain" />
-              </div>
-              <div className="relative h-14 w-32">
-                <Image src="/images/ministries/defense.svg" alt="משרד הביטחון" fill className="object-contain" />
-              </div>
-              <div className="relative h-14 w-32">
-                <Image src="/images/ministries/education.png" alt="משרד החינוך" fill className="object-contain" />
-              </div>
-            </div>
-          </div>
         </motion.div>
       </div>
 

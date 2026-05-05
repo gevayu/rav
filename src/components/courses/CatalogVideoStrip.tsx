@@ -4,9 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 
-const VIDEO_ID = "6jLpfYrgdno";
-const VIDEO_URL = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1`;
-const VIDEO_THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
+const VIDEO_URL =
+  "https://iframe.mediadelivery.net/embed/653849/903b1f50-83b6-45be-b571-8d59a1b636f0";
+const PLAY_URL = `${VIDEO_URL}?autoplay=true`;
+const VIDEO_THUMB =
+  "https://vz-d15780e3-ebb.b-cdn.net/903b1f50-83b6-45be-b571-8d59a1b636f0/thumbnail.jpg";
 const SUBTITLE = "למה צריך הכשרת Ai מותאמת למקצוע";
 
 export function CatalogVideoStrip() {
@@ -24,10 +26,12 @@ export function CatalogVideoStrip() {
           {/* Video */}
           <div className="w-full lg:w-[55%]">
             <div className="group relative aspect-video w-full overflow-hidden rounded-2xl bg-[color:var(--color-ink-soft)] ring-1 ring-white/10">
-              {playing && VIDEO_URL ? (
+              {playing ? (
                 <iframe
-                  src={VIDEO_URL}
-                  allow="autoplay; fullscreen"
+                  src={PLAY_URL}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                   className="absolute inset-0 h-full w-full"
                   title="סרטון הסבר"
                 />
@@ -41,7 +45,10 @@ export function CatalogVideoStrip() {
                     sizes="(max-width: 1024px) 100vw, 650px"
                     unoptimized
                   />
-                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-ink)]/60 via-transparent to-transparent" />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-ink)]/60 via-transparent to-transparent"
+                  />
                   <button
                     type="button"
                     onClick={() => setPlaying(true)}
