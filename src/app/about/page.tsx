@@ -119,8 +119,8 @@ export default function AboutPage() {
 
             {/* Partner credentials */}
             <div className="mt-12 rounded-2xl border border-[color:var(--color-ink)]/10 bg-[color:var(--color-paper-soft)] p-6">
-              <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
-                גוף מפוקח וספק מורשה
+              <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
+                אנליזה הוא גוף מפוקח וספק מורשה
               </p>
               <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 {partners.map((p) => (
@@ -337,7 +337,7 @@ function FounderCard({
         <Image src={portraitUrl} alt={name} fill sizes="96px" className="object-cover" />
       </div>
       <div className="flex flex-col gap-1">
-        <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
+        <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
           {role}
         </span>
         <p className="font-display text-[18px] font-medium text-[color:var(--color-ink)]">
@@ -375,7 +375,7 @@ function SectorHeadCard({
           )}
         </div>
         <div className="flex flex-col">
-          <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-bronze)]">
+          <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-bronze-ink)]">
             {sector}
           </span>
           <p className="font-display text-[16px] font-medium text-[color:var(--color-ink)]">
