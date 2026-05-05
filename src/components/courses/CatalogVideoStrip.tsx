@@ -6,7 +6,7 @@ import { Play } from "lucide-react";
 
 const VIDEO_URL =
   "https://iframe.mediadelivery.net/embed/653849/903b1f50-83b6-45be-b571-8d59a1b636f0";
-const PLAY_URL = VIDEO_URL;
+const PLAY_URL = `${VIDEO_URL}?autoplay=false`;
 const VIDEO_THUMB =
   "https://vz-d15780e3-ebb.b-cdn.net/903b1f50-83b6-45be-b571-8d59a1b636f0/thumbnail.jpg";
 const SUBTITLE = "למה צריך הכשרת Ai מותאמת למקצוע";
