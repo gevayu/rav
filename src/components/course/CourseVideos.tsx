@@ -68,9 +68,7 @@ function VideoCard({
   delay: number;
 }) {
   const [playing, setPlaying] = useState(false);
-  const playSrc = videoUrl.includes("?")
-    ? `${videoUrl}&autoplay=true`
-    : `${videoUrl}?autoplay=true`;
+  const playSrc = videoUrl;
 
   return (
     <article
