@@ -58,7 +58,7 @@ export function Footer() {
             </p>
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[color:var(--color-bronze)]/35 bg-[color:var(--color-bronze)]/5 px-4 py-2 text-[11px] font-medium text-[color:var(--color-bronze)]">
               <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.6} />
-              מפוקח משרד העבודה, הביטחון והחינוך
+              מכללה מפוקחת מטעם משרד העבודה - האגף להכשרה מקצועית
             </div>
           </div>
 

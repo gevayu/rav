@@ -154,18 +154,22 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 text-[16px] leading-relaxed text-[color:var(--color-ink-muted)]">
                 המרכז נמצא בחלק העליון של סקאלת המורכבות והאיכות, ומציע מודל
-                הכשרה ייחודי המבוסס על התמחות לפי ענפים מקצועיים — בין היתר
+                הכשרה ייחודי המבוסס על התמחות לפי ענפים מקצועיים - בין היתר
                 בתחום הרפואה, המשפט, החשבונאות, הנדל&quot;ן, הנדסה וכדומה.
                 ההכשרות נבנות ומועברות על ידי אנשי מקצוע מובילים בתחומם,
                 המשלבים ניסיון מעשי עם הבנה טכנולוגית מתקדמת. גישה זו מאפשרת
                 יצירת חיבור ישיר בין עולם הבינה המלאכותית לבין תהליכי עבודה
-                קיימים, תוך התאמה מדויקת לצרכים הספציפיים של כל סקטור — החל
+                קיימים, תוך התאמה מדויקת לצרכים הספציפיים של כל סקטור - החל
                 ממשפטים וכספים, דרך רפואה ונדל&quot;ן, ועד תחומי תוכנה, נתונים
                 ותשתיות.
               </p>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <p className="mt-10 max-w-[760px] font-display text-[18px] font-medium leading-[1.5] text-[color:var(--color-ink)]">
+              בראש כל תחום נמצא איש מקצוע ממעלה ראשונה המוביל את ההכשרות בתחומו:
+            </p>
+
+            <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {sectorHeads.map((h) => (
                 <SectorHeadCard key={h.name} {...h} />
               ))}
@@ -195,7 +199,7 @@ export default function AboutPage() {
                 מקצועית עם AI: הגדרת תהליך ומשימות, הכנת חומרים, בקרה ומציאת
                 פתרונות AI רלוונטיים. בין היתר ההכשרה תעסוק בכלים לבניית
                 אוטומציות, פיתוח סוכני AI, שיפור תהליכים קיימים והטמעת פתרונות
-                חדשניים — תוך יצירת השפעה מדידה והחזר השקעה ברור כבר במהלך
+                חדשניים - תוך יצירת השפעה מדידה והחזר השקעה ברור כבר במהלך
                 ההכשרה.
               </p>
             </div>
@@ -204,17 +208,17 @@ export default function AboutPage() {
               <AxisCard
                 index="01"
                 title="תהליכי AI מתקדמים"
-                body="כלים, מודלים, סוכנים ואוטומציות בחזית הטכנולוגיה — עם הבנה עמוקה של איך לחבר אותם לעבודה האמיתית."
+                body="כלים, מודלים, סוכנים ואוטומציות בחזית הטכנולוגיה - עם הבנה עמוקה של איך לחבר אותם לעבודה האמיתית."
               />
               <AxisCard
                 index="02"
                 title="תהליכים עסקיים סקטוריאליים"
-                body="תהליכי העבודה האמיתיים של כל ענף — משפט, רפואה, פיננסים, נדל״ן, הנדסה ותוכנה — כנקודת מוצא ללמידה."
+                body="תהליכי העבודה האמיתיים של כל ענף - משפט, רפואה, פיננסים, נדל״ן, הנדסה ותוכנה - כנקודת מוצא ללמידה."
               />
               <AxisCard
                 index="03"
                 title="מתודולוגיות עבודה יישומיות"
-                body="הגדרת תהליך ומשימות, הכנת חומרים, בקרה ומדידת תוצאות — שיטת עבודה מקצועית עם AI."
+                body="הגדרת תהליך ומשימות, הכנת חומרים, בקרה ומדידת תוצאות - שיטת עבודה מקצועית עם AI."
               />
             </div>
 
@@ -264,20 +268,15 @@ export default function AboutPage() {
 function FounderVideo({
   videoId,
   title,
-  caption,
   placeholder = false,
   dark = false,
 }: {
   videoId?: string;
   title: string;
-  caption: string;
+  caption?: string;
   placeholder?: boolean;
   dark?: boolean;
 }) {
-  const captionTone = dark
-    ? "text-[color:var(--color-paper-soft)]/65"
-    : "text-[color:var(--color-ink-muted)]";
-
   return (
     <figure className="mt-12">
       <div
@@ -313,9 +312,6 @@ function FounderVideo({
           />
         )}
       </div>
-      <figcaption className={`mt-3 text-center text-[13px] ${captionTone}`}>
-        {caption}
-      </figcaption>
     </figure>
   );
 }

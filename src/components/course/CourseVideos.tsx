@@ -46,7 +46,6 @@ export function CourseVideos({ course }: CourseVideosProps) {
               key={v.videoId}
               speaker={v.speaker}
               videoId={v.videoId}
-              gender={v.gender ?? "f"}
               delay={i * 0.1}
             />
           ))}
@@ -59,12 +58,10 @@ export function CourseVideos({ course }: CourseVideosProps) {
 function VideoCard({
   speaker,
   videoId,
-  gender,
   delay,
 }: {
   speaker: string;
   videoId: string;
-  gender: "f" | "m";
   delay: number;
 }) {
   const [playing, setPlaying] = useState(false);
@@ -115,11 +112,6 @@ function VideoCard({
         )}
       </div>
 
-      <div className="px-7 pb-7">
-        <p className="text-[14px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
-          {speaker} {gender === "f" ? "מסבירה" : "מסביר"} על הקורס.
-        </p>
-      </div>
     </article>
   );
 }
