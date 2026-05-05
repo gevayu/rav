@@ -192,3 +192,45 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================
+   Accessibility widget — user preference modes
+   Toggled by AccessibilityToggle (writes classes on <html>)
+   ============================================================ */
+
+:root { --rav-a11y-font-scale: 1; }
+
+html[style*="--rav-a11y-font-scale"] body {
+  font-size: calc(1rem * var(--rav-a11y-font-scale, 1));
+}
+
+/* High contrast — invert/neutralize backgrounds, force pure ink/paper */
+html.rav-a11y-contrast {
+  filter: contrast(1.18) saturate(1.1);
+}
+html.rav-a11y-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+html.rav-a11y-contrast a,
+html.rav-a11y-contrast button {
+  outline-color: #fff !important;
+}
+
+/* Highlight every link with a strong underline */
+html.rav-a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-bronze);
+}
+
+/* Pause animations + transitions */
+html.rav-a11y-no-anim *,
+html.rav-a11y-no-anim *::before,
+html.rav-a11y-no-anim *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}

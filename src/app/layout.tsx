@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 import { StickyLead } from "@/components/layout/StickyLead";
+import { AccessibilityToggle } from "@/components/layout/AccessibilityToggle";
 
 const polin = localFont({
   src: [
@@ -60,6 +61,7 @@ export default function RootLayout({
         <NoiseOverlay />
         {children}
         <StickyLead />
+        <AccessibilityToggle />
       </body>
     </html>
   );

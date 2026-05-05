@@ -109,9 +109,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-[11px] text-[color:var(--color-paper-soft)]/45 sm:flex-row sm:items-center">
-          <span>© 2026 המרכז הרב-תחומי להכשרות Ai. כל הזכויות שמורות.</span>
-          <div className="flex items-center gap-5">
+        <div className="mt-20 grid grid-cols-1 items-center gap-4 border-t border-white/10 pt-8 text-[11px] text-[color:var(--color-paper-soft)]/45 sm:grid-cols-3">
+          <span className="text-start">© 2026 המרכז הרב-תחומי להכשרות Ai. כל הזכויות שמורות.</span>
+          <div className="flex items-center justify-center gap-5">
             <a href="/privacy" className="transition-colors hover:text-[color:var(--color-paper-soft)]">
               מדיניות פרטיות
             </a>
@@ -122,6 +122,12 @@ export function Footer() {
               תנאי שימוש
             </a>
           </div>
+          <a
+            href="/credits"
+            className="text-end transition-colors hover:text-[color:var(--color-paper-soft)]"
+          >
+            קרדיטים לאתר
+          </a>
         </div>
       </div>
     </footer>
