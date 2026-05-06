@@ -40,8 +40,7 @@ export function ChampionsCarousel() {
                   מדריכים{" "}
                   <span className="text-[color:var(--color-bronze)]">
                     מהתעשייה.
-                  </span>
-                  <br />
+                  </span>{" "}
                   כל תחום והמומחה שלו.
                 </>
               }
