@@ -83,7 +83,15 @@ export const champions: Instructor[] = [
     title: "בוגרת Big 4, ממייסדי קהילת Ai-Finance",
     sector: "Ai לראיית חשבון",
     experience: "מרצה מובילה בתחום ה-AI הפיננסי.",
-    portraitUrl: "/images/lect/tal-roi.jpg",
+    portraitUrl: "/images/lect/tal-valnstein.png",
+  },
+  {
+    id: "c4",
+    name: "רועי ולנשטיין",
+    title: "מומחה לשילוב כלי AI בעבודה פיננסית, מייסד קהילת AI-Finance",
+    sector: "Ai לראיית חשבון",
+    experience: "מומחה ליישום בינה מלאכותית בתהליכים פיננסיים בארגון.",
+    portraitUrl: "/images/lect/roi-valnstein.png",
   },
   {
     id: "c5",
