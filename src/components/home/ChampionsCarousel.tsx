@@ -34,7 +34,7 @@ export function ChampionsCarousel() {
             <SectionHeading
               tone="paper"
               eyebrow="הכירו את המדריכים"
-              ledeClassName="max-w-2xl"
+              ledeClassName="!max-w-none whitespace-nowrap"
               title={
                 <>
                   מדריכים{" "}
