@@ -37,11 +37,15 @@ export function ChampionsCarousel() {
               ledeClassName="!max-w-none whitespace-nowrap"
               title={
                 <>
-                  מדריכים{" "}
-                  <span className="text-[color:var(--color-bronze)]">
-                    מהתעשייה.
-                  </span>{" "}
-                  כל תחום והמומחה שלו.
+                  <span className="block whitespace-nowrap">
+                    מדריכים{" "}
+                    <span className="text-[color:var(--color-bronze)]">
+                      מהתעשייה.
+                    </span>
+                  </span>
+                  <span className="block whitespace-nowrap">
+                    כל תחום והמומחה שלו.
+                  </span>
                 </>
               }
               lede="אנשי מקצוע מהתחום שלך, בעלי ניסיון עשיר בהדרכה ושימוש עסקי אמיתי בכלי בינה מלאכותית."
