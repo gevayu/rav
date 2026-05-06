@@ -37,7 +37,7 @@ export function CourseStructure({ course }: CourseStructureProps) {
       aria-labelledby="structure-title"
       className="relative bg-[color:var(--color-paper-soft)] pt-20 pb-10 sm:pt-24 sm:pb-12"
     >
-      <div className="mx-auto max-w-[1240px] px-6 sm:px-10">
+      <div className="mx-auto max-w-[1040px] px-6 sm:px-10">
         <h2 id="structure-title" className="sr-only">
           מבנה הקורס
         </h2>
