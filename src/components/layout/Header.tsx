@@ -13,6 +13,7 @@ type NavItem = {
 };
 
 const courseSubmenu = [
+  { label: "קטלוג הקורסים",                                      href: "/courses" },
   { label: "Ai לשופטים, עורכי דין ומשפטנים",                    href: "/courses/ai-law-applied" },
   { label: "Ai לרופאים, אחיות וצוותים רפואיים",                  href: "/courses/ai-medicine" },
   { label: "Ai לרואי חשבון ותפקידים פיננסיים",                  href: "/courses/ai-finance" },
