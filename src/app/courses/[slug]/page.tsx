@@ -25,14 +25,23 @@ export async function generateMetadata(
   const { slug } = await props.params;
   const course = courses.find((c) => c.slug === slug);
   if (!course) return {};
+  const ogImage = course.instructorPortraitUrl || "/og-default.jpg";
   return {
     title: course.title,
     description: course.subtitle,
     openGraph: {
       title: `${course.title} | המרכז הרב-תחומי להכשרות Ai`,
       description: course.subtitle,
+      url: `/courses/${slug}`,
       locale: "he_IL",
       type: "article",
+      images: [{ url: ogImage, alt: course.instructorName }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: course.title,
+      description: course.subtitle,
+      images: [ogImage],
     },
   };
 }

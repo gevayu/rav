@@ -17,20 +17,37 @@ const polin = localFont({
   preload: true,
 });
 
+const SITE_URL = "https://www.ravthumi.ai";
+const OG_IMAGE = {
+  url: "/og-default.jpg",
+  width: 1200,
+  height: 630,
+  alt: "המרכז הרב-תחומי להכשרות Ai",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ai.rav-thumi.co.il"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "המרכז הרב-תחומי להכשרות Ai | השלב הבא של Ai - התמקצעות",
     template: "%s | המרכז הרב-תחומי להכשרות Ai",
   },
   description:
-    "הכשרות Ai סקטוריאליות לעורכי דין, רופאים, אנשי נדל\"ן, מהנדסים ואנשי מקצוע. מפוקח משרד העבודה, הביטחון והחינוך. +4,500 בוגרים, +40 מדריכים מהתעשייה.",
+    "הכשרות Ai סקטוריאליות לעורכי דין, רופאים, אנשי נדל\"ן, מהנדסים ואנשי מקצוע. מכללה מפוקחת מטעם משרד העבודה - האגף להכשרה מקצועית. +4,500 בוגרים, +40 מדריכים מהתעשייה.",
   openGraph: {
     title: "המרכז הרב-תחומי להכשרות Ai",
     description:
       "לא מלמדים Ai. מלמדים איך ליישם את ה-Ai בתחום שלך. הכשרות סקטוריאליות ברמה הגבוהה בישראל.",
     locale: "he_IL",
     type: "website",
+    siteName: "המרכז הרב-תחומי להכשרות Ai",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "המרכז הרב-תחומי להכשרות Ai",
+    description:
+      "הכשרות Ai סקטוריאליות לעורכי דין, רופאים, אנשי נדל\"ן ומהנדסים. מכללה מפוקחת.",
+    images: ["/og-default.jpg"],
   },
   icons: {
     icon: "/favicon.ico",

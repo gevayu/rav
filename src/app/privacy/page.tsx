@@ -4,9 +4,17 @@ import { Footer } from "@/components/layout/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "מדיניות פרטיות | המרכז הרב-תחומי להכשרות Ai",
+  title: "מדיניות פרטיות",
   description:
-    "מדיניות הפרטיות של המרכז הרב-תחומי להכשרות Ai - איזה מידע אנחנו אוספים, איך אנחנו משתמשים בו ומה הזכויות שלך. עדכון אחרון: 1.5.2026.",
+    "מדיניות הפרטיות של המרכז הרב-תחומי להכשרות Ai - איזה מידע אנחנו אוספים, איך אנחנו מעבדים אותו, עם מי אנחנו משתפים, ומה הזכויות שלך. עדכון אחרון: 01.05.2026.",
+  openGraph: {
+    title: "מדיניות פרטיות | המרכז הרב-תחומי להכשרות Ai",
+    description: "המידע שאנחנו אוספים, איך אנחנו מעבדים אותו, ומה הזכויות שלך.",
+    url: "/privacy",
+    locale: "he_IL",
+    type: "article",
+  },
+  robots: { index: true, follow: true },
 };
 
 const sections: { title: string; items: { num: string; body: string }[] }[] = [

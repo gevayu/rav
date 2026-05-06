@@ -4,9 +4,18 @@ import { Footer } from "@/components/layout/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "הצהרת נגישות | המרכז הרב-תחומי להכשרות Ai",
+  title: "הצהרת נגישות",
   description:
-    "הצהרת הנגישות של המרכז הרב-תחומי להכשרות Ai - הסדרי נגישות במשרדים, התאמות באתר, ופרטי רכז הנגישות. עדכון אחרון: 1.5.2026.",
+    "הצהרת הנגישות של המרכז הרב-תחומי להכשרות Ai - הסדרי נגישות במשרדים ברחוב מנחם בגין 152 תל אביב, התאמות נגישות באתר, פרטי רכז הנגישות ודרכי פנייה. עדכון אחרון: 01.05.2026.",
+  openGraph: {
+    title: "הצהרת נגישות | המרכז הרב-תחומי להכשרות Ai",
+    description:
+      "הסדרי נגישות במבנה ובאתר, ודרכי פנייה לבקשות והצעות שיפור.",
+    url: "/accessibility",
+    locale: "he_IL",
+    type: "article",
+  },
+  robots: { index: true, follow: true },
 };
 
 const buildingFeatures = [

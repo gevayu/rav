@@ -6,9 +6,16 @@ import { LeadForm } from "@/components/home/LeadForm";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "אודות | המרכז הרב-תחומי להכשרות Ai",
+  title: "אודות",
   description:
-    "המרכז הרב-תחומי להכשרות Ai - התמחות סקטוריאלית עמוקה בהובלת אנשי מקצוע מובילים בתחומם.",
+    "המרכז הרב-תחומי להכשרות Ai מקבוצת אנליזה. מודל הכשרה ייחודי לפי ענפים - רפואה, משפט, פיננסים, נדל\"ן, הנדסה ותוכנה - בהובלת מומחים מובילים. מכללה מפוקחת מטעם משרד העבודה.",
+  openGraph: {
+    title: "אודות | המרכז הרב-תחומי להכשרות Ai",
+    description:
+      "מודל הכשרה ייחודי לפי ענפים מקצועיים, בהובלת מומחים מובילים בתחומם. מקבוצת אנליזה.",
+    url: "/about",
+    type: "article",
+  },
 };
 
 const sectorHeads = [

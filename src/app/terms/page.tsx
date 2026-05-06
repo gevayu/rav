@@ -4,9 +4,17 @@ import { Footer } from "@/components/layout/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = {
-  title: "תנאי שימוש | המרכז הרב-תחומי להכשרות Ai",
+  title: "תקנון ותנאי שימוש",
   description:
-    "תקנון ותנאי השימוש באתר המרכז הרב-תחומי להכשרות Ai. עדכון אחרון: 1.5.2026.",
+    "תקנון ותנאי השימוש באתר המרכז הרב-תחומי להכשרות Ai - שימוש באתר, קניין רוחני, אחריות וסיכונים, קישורים חיצוניים וסמכות שיפוט. עדכון אחרון: 01.05.2026.",
+  openGraph: {
+    title: "תקנון ותנאי שימוש | המרכז הרב-תחומי להכשרות Ai",
+    description: "תנאי השימוש באתר וההסכם בין הגולש לבעלי האתר.",
+    url: "/terms",
+    locale: "he_IL",
+    type: "article",
+  },
+  robots: { index: true, follow: true },
 };
 
 const sections: { title: string; items: (string | { intro: string; sub: string[] })[] }[] = [
