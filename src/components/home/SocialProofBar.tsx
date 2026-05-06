@@ -18,9 +18,6 @@ export function SocialProofBar() {
       />
       <div className="mx-auto max-w-[1180px] px-6 sm:px-10">
         <Reveal className="mb-14 flex flex-col items-center gap-4 text-center">
-          <span className="text-[11px] uppercase tracking-[0.24em] text-[color:var(--color-bronze-ink)]">
-            תוצאות מדידות
-          </span>
           <h2 className="max-w-2xl font-display text-[clamp(2rem,4.2vw,3.25rem)] font-medium leading-[1.1] text-[color:var(--color-ink)]">
             מדריכים טכנולוגיה מקצועית מאז 2021.
           </h2>
