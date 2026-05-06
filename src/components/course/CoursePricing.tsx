@@ -56,6 +56,15 @@ export function CoursePricing({ course }: CoursePricingProps) {
             </Button>
           </div>
 
+          <p className="max-w-md border-t border-white/10 pt-6 text-[13px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
+            נציגי ארגון? להכשרה ייעודית בארגון או לקבלת הנחה לקבוצת לומדים{" "}
+            <a
+              href="/#lead"
+              className="text-[color:var(--color-bronze)] underline-offset-4 hover:underline"
+            >
+              צרו קשר
+            </a>
+          </p>
         </Reveal>
       </div>
     </section>
