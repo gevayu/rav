@@ -76,8 +76,12 @@ function TypewriterCycle() {
   const cursor1 = phase === "typing" || (phase === "deleting" && chars1 > 0);
   const cursor2 = phase === "typing" || (phase === "deleting" && chars2 > 0);
 
+  // Long phrases (e.g. "Accountants") shrink slightly so the line doesn't wrap
+  // and shift the layout below.
+  const isLong = phrase.plural.length >= 10;
+
   return (
-    <span dir="ltr" className="inline">
+    <span dir="ltr" className={`inline ${isLong ? "text-[0.78em]" : ""}`}>
       <span className="text-[color:var(--color-paper-soft)]">
         Ai for{" "}
         <span className="text-[color:var(--color-bronze)]">
