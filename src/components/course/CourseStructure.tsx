@@ -1,7 +1,6 @@
-import { Award, BookOpen, Clock, LayoutGrid, Video } from "lucide-react";
+import { Award, Clock, LayoutGrid, Users } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Course } from "@/data/courses";
-import { FORMAT_LABELS } from "@/components/courses/labels";
 
 type CourseStructureProps = {
   course: Course;
@@ -22,14 +21,9 @@ export function CourseStructure({ course }: CourseStructureProps) {
       value: `${course.totalHours} שעות`,
     },
     {
-      icon: Video,
-      label: "פורמט",
-      value: FORMAT_LABELS[course.format],
-    },
-    {
-      icon: BookOpen,
-      label: "מפגשי לייב",
-      value: `${course.liveSessions} מפגשים`,
+      icon: Users,
+      label: "קהילה",
+      value: "חיבור לקהילת מומחים בתחום",
     },
     {
       icon: Award,
@@ -47,7 +41,7 @@ export function CourseStructure({ course }: CourseStructureProps) {
         <h2 id="structure-title" className="sr-only">
           מבנה הקורס
         </h2>
-        <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-[24px] border border-[color:var(--color-ink)]/10 bg-[color:var(--color-ink)]/10 sm:grid-cols-3 lg:grid-cols-5">
+        <Reveal className="grid grid-cols-2 gap-px overflow-hidden rounded-[24px] border border-[color:var(--color-ink)]/10 bg-[color:var(--color-ink)]/10 sm:grid-cols-2 lg:grid-cols-4">
           {cells.map(({ icon: Icon, label, value }) => (
             <div
               key={label}

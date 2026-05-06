@@ -7,6 +7,7 @@ import {
   CERTIFICATION_TIERS,
   TIER_COLORS,
   getCertificationPath,
+  getTierBadgeLabel,
 } from "@/components/courses/labels";
 
 type CourseCertificationPathProps = {
@@ -64,6 +65,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                   {displayTiers.map((tier, idx) => {
                     const exit = isExit(tier);
                     const { label } = CERTIFICATION_TIERS[tier];
+                    const display = exit ? getTierBadgeLabel(tier, course.sectorSlug) : label;
                     return (
                       <Fragment key={tier}>
                         <div className="relative inline-flex" aria-current={exit ? "step" : undefined}>
@@ -73,7 +75,7 @@ export function CourseCertificationPath({ course }: CourseCertificationPathProps
                               `${TIER_COLORS[tier].bg} ${TIER_COLORS[tier].border} ${TIER_COLORS[tier].text}`
                             }
                           >
-                            {label}
+                            {display}
                           </span>
                           {exit && (
                             <span

@@ -68,3 +68,23 @@ export function getCertificationPath(course: Course): CertificationPath {
       return { entry: "Ai03", exit: "Ai05" };
   }
 }
+
+// English suffix per sector — used on course-specific tier badges (e.g. "Ai03 - Legal").
+const SECTOR_EN_SUFFIX: Record<string, string> = {
+  law: "Legal",
+  finance: "Finance",
+  medicine: "Healthcare",
+  realestate: "Real Estate",
+  engineering: "Civil Engineering",
+};
+
+// Returns the badge text for a tier in the context of a specific course.
+// Ai03 gets a sector-specific suffix; Ai01/Ai05 stay generic.
+export function getTierBadgeLabel(
+  tier: CertificationTier,
+  sectorSlug?: string,
+): string {
+  if (tier !== "Ai03" || !sectorSlug) return tier;
+  const suffix = SECTOR_EN_SUFFIX[sectorSlug];
+  return suffix ? `${tier} - ${suffix}` : tier;
+}

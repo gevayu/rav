@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Calendar, Check, ChevronLeft, ChevronRight, Clock, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import type { Course } from "@/data/courses";
-import { FORMAT_LABELS, TIER_COLORS } from "./labels";
+import { FORMAT_LABELS, TIER_COLORS, getTierBadgeLabel } from "./labels";
 
 type FlagshipBannerProps = {
   courses: Course[];
@@ -243,7 +243,7 @@ export function FlagshipBanner({ courses }: FlagshipBannerProps) {
                 const t = TIER_COLORS[course.certification.exit];
                 return (
                   <span className={`inline-flex items-center rounded-full border-2 px-4 py-2 font-display text-xl font-medium tracking-[0.06em] ${t.bg} ${t.border} ${t.text}`}>
-                    {course.certification.exit}
+                    {getTierBadgeLabel(course.certification.exit, course.sectorSlug)}
                   </span>
                 );
               })()}

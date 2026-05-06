@@ -9,6 +9,7 @@ import {
   FORMAT_LABELS,
   TIER_COLORS,
   getCertificationPath,
+  getTierBadgeLabel,
 } from "@/components/courses/labels";
 
 type CourseHeroProps = {
@@ -48,7 +49,7 @@ export function CourseHero({ course }: CourseHeroProps) {
                 className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] transition-transform hover:scale-105 ${TIER_COLORS[cert.exit].bg} ${TIER_COLORS[cert.exit].border} ${TIER_COLORS[cert.exit].text}`}
                 aria-label={`עבור לסקשן הסטנדרט החדש בתעשייה — ${cert.exit}`}
               >
-                {cert.exit}
+                {getTierBadgeLabel(cert.exit, course.sectorSlug)}
               </a>
             </div>
 

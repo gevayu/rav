@@ -209,17 +209,13 @@ function PrefToggle({
       </span>
       <span
         aria-hidden="true"
+        dir="ltr"
         className={
-          "inline-block h-4 w-7 rounded-full transition-colors " +
-          (active ? "bg-[color:var(--color-bronze)]" : "bg-white/15")
+          "relative inline-flex h-5 w-10 items-center rounded-full p-0.5 transition-colors " +
+          (active ? "justify-end bg-[color:var(--color-bronze)]" : "justify-start bg-white/15")
         }
       >
-        <span
-          className={
-            "block h-full w-3 rounded-full bg-white transition-transform " +
-            (active ? "translate-x-0" : "translate-x-4")
-          }
-        />
+        <span className="block h-4 w-4 rounded-full bg-white shadow-sm transition-all" />
       </span>
     </button>
   );

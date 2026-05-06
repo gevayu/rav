@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, GraduationCap, ShieldCheck, Video } from "lucide-react";
 import type { Course } from "@/data/courses";
-import { LEVEL_LABELS, FORMAT_LABELS, getCertificationPath, TIER_COLORS } from "./labels";
+import { LEVEL_LABELS, FORMAT_LABELS, getCertificationPath, getTierBadgeLabel, TIER_COLORS } from "./labels";
 
 type CourseCardProps = {
   course: Course;
@@ -41,7 +41,7 @@ export function CourseCard({ course }: CourseCardProps) {
 
         <div className="mt-6 flex items-center gap-2">
           <span className={`inline-flex items-center rounded-full border-2 px-3 py-1 font-display text-[13px] font-medium tracking-[0.06em] ${TIER_COLORS[cert.exit].bg} ${TIER_COLORS[cert.exit].border} ${TIER_COLORS[cert.exit].text}`}>
-            {cert.exit}
+            {getTierBadgeLabel(cert.exit, course.sectorSlug)}
           </span>
           {cert.entry && (
             <span className="text-[10px] text-[color:var(--color-ink-muted)]/70">
