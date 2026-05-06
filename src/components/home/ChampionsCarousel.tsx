@@ -111,7 +111,7 @@ export function ChampionsCarousel() {
                     </p>
                   </div>
 
-                  <p className="mt-6 rounded-2xl border border-white/5 bg-white/[0.02] p-4 text-[12px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
+                  <p className="mt-auto rounded-2xl border border-white/5 bg-white/[0.02] p-4 text-[12px] leading-relaxed text-[color:var(--color-paper-soft)]/65">
                     {person.experience}
                   </p>
 
