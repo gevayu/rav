@@ -8,7 +8,6 @@ import { FlagshipBanner } from "@/components/courses/FlagshipBanner";
 import { CatalogGrid } from "@/components/courses/CatalogGrid";
 import { CertificationLegend } from "@/components/courses/CertificationLegend";
 import { CatalogCtaBand } from "@/components/courses/CatalogCtaBand";
-import { CatalogVideoStrip } from "@/components/courses/CatalogVideoStrip";
 import { Reveal } from "@/components/ui/Reveal";
 
 function CatalogPageInner() {
@@ -18,8 +17,6 @@ function CatalogPageInner() {
         totalCourses={allCourses.length}
         totalSectors={sectors.length}
       />
-
-      <CatalogVideoStrip />
 
       <Reveal>
         <FlagshipBanner courses={allCourses} />
