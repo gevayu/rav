@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -78,69 +79,18 @@ export function CertificationShowcase() {
           ))}
         </div>
 
-        {/* Certificate mockup */}
+        {/* Certificate sample */}
         <Reveal delay={0.3}>
           <div className="mt-16 flex justify-center">
             <div className="relative w-full max-w-md overflow-hidden rounded-2xl border border-[color:var(--color-bronze)]/30 bg-white shadow-[0_24px_60px_-20px_rgba(28,28,30,0.18)]">
-              {/* Watermark */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 flex items-center justify-center"
-              >
-                <span
-                  className="select-none font-display text-[5rem] font-bold tracking-widest text-[color:var(--color-ink)]/[0.06]"
-                  style={{ transform: "rotate(-25deg)" }}
-                >
-                  דוגמה
-                </span>
-              </div>
-
-              <div className="relative flex flex-col items-center gap-5 px-10 py-10 text-center">
-                {/* Top accent line */}
-                <div className="h-1 w-20 rounded-full bg-gradient-to-l from-[color:var(--color-bronze)] to-[color:var(--color-bronze)]/40" />
-
-                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)]">
-                  המרכז הרב-תחומי להכשרות Ai · אנליזה
-                </p>
-
-                <h4 className="font-display text-2xl font-medium leading-snug text-[color:var(--color-ink)]">
-                  תעודת הסמכה מקצועית
-                </h4>
-
-                <p className="text-sm text-[color:var(--color-ink-muted)]">
-                  מוענקת בזאת ל
-                </p>
-
-                <div className="h-px w-40 bg-[color:var(--color-ink)]/10" />
-                <p className="font-display text-lg font-medium text-[color:var(--color-ink)]/30 italic">
-                  שם המשתתפ.ת
-                </p>
-                <div className="h-px w-40 bg-[color:var(--color-ink)]/10" />
-
-                <p className="text-sm text-[color:var(--color-ink-muted)]">
-                  על השלמת דרישות ההסמכה ברמה
-                </p>
-
-                <span className="inline-flex items-center rounded-full border-2 border-[#16a34a] bg-[#22c55e] px-5 py-2 font-display text-2xl font-medium tracking-[0.06em] text-[#052e16]">
-                  Ai03
-                </span>
-
-                <p className="text-[13px] font-medium text-[color:var(--color-ink)]">
-                  התמחות מקצועית · עריכת דין ומשפטים
-                </p>
-
-                <p className="text-[13px] font-medium text-[color:var(--color-ink-muted)]">
-                  40 שעות אקדמיות
-                </p>
-
-                <div className="mt-2 flex items-center justify-center gap-8 text-[11px] text-[color:var(--color-ink-muted)]">
-                  <span>תאריך: ________</span>
-                  <span>חתימה: ________</span>
-                </div>
-
-                {/* Bottom accent */}
-                <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-l from-[color:var(--color-bronze)] to-[color:var(--color-bronze)]/40" />
-              </div>
+              <Image
+                src="/images/certificate-sample.jpg"
+                alt="תעודת הסמכה לדוגמה — Ai03 Legal, 40 שעות לימוד"
+                width={1241}
+                height={1755}
+                sizes="(max-width: 768px) 90vw, 448px"
+                className="block h-auto w-full"
+              />
             </div>
           </div>
         </Reveal>
